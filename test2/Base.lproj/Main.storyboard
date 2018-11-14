@@ -18,26 +18,76 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GTx-N9-Rnp">
-                                <rect key="frame" x="131" y="488" width="58" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lZ8-F6-QEM">
+                                <rect key="frame" x="221" y="503" width="54" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <state key="normal" title="Camera"/>
+                                <connections>
+                                    <action selector="startCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aTK-3d-xEu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nln-RV-K3N">
+                                <rect key="frame" x="45" y="503" width="44" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <state key="normal" title="Album"/>
+                                <connections>
+                                    <action selector="startAlbum:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ioL-EQ-e6G"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4ss-pW-CRr">
+                                <rect key="frame" x="22" y="38" width="276" height="432"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="432" id="2e0-J5-rdk"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GTx-N9-Rnp">
+                                <rect key="frame" x="130" y="488" width="60" height="60"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Nfr-S6-tF4"/>
+                                    <constraint firstAttribute="width" constant="60" id="afG-z9-OdY"/>
+                                </constraints>
                                 <connections>
                                     <action selector="cameraButton_TouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y71-cv-600"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.15275255290241962" green="0.35343448646104791" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="GTx-N9-Rnp" firstAttribute="top" secondItem="4ss-pW-CRr" secondAttribute="bottom" constant="18" id="Ddr-IV-hKY"/>
+                            <constraint firstItem="4ss-pW-CRr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="18" id="FaS-9B-aud"/>
+                            <constraint firstItem="4ss-pW-CRr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NBn-y3-ibx"/>
+                            <constraint firstItem="4ss-pW-CRr" firstAttribute="centerX" secondItem="GTx-N9-Rnp" secondAttribute="centerX" id="TGw-0Z-FDA"/>
+                            <constraint firstItem="4ss-pW-CRr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="22" id="TRL-bl-8iL"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="cameraButton" destination="GTx-N9-Rnp" id="6VH-R6-wkm"/>
+                        <outlet property="imageVIew" destination="4ss-pW-CRr" id="ju4-hA-Xwb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-72" y="133"/>
+            <point key="canvasLocation" x="-73.125" y="132.04225352112675"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="cEs-Ux-35k">
+            <objects>
+                <viewController id="vBY-H0-g3O" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zXi-Pv-xUK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="v6q-kg-tPf"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2pM-AM-7RB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="559" y="133"/>
         </scene>
     </scenes>
 </document>

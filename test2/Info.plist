@@ -8,6 +8,8 @@
     <string>ビデオ撮影のためにマイクを使用します。</string>
     <key>NSPhotoLibraryAddUsageDescription</key>
     <string>アルバムにアクセスします。</string>
+    <key>NSLocalizedDescription</key>
+    <string>OK</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

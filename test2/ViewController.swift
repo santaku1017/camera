@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController,AVCapturePhotoCaptureDelegate {
+class ViewController: UIViewController,AVCapturePhotoCaptureDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
     var captureSession = AVCaptureSession()
     
@@ -18,20 +18,25 @@ class ViewController: UIViewController,AVCapturePhotoCaptureDelegate {
     var currentDevice : AVCaptureDevice?
     var photoOutput : AVCapturePhotoOutput?
     var cameraPreviewLayer : AVCaptureVideoPreviewLayer?
+    
+    //var isBackCamera : Bool = true
+    
     @IBOutlet var cameraButton: UIButton!
+    @IBOutlet var imageVIew: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupCaptureSession()
-        setupDevice()
-        setupInputOutput()
-        setupPreviewLayer()
-        captureSession.startRunning()
+        //setupCaptureSession()
+        //setupDevice()
+        //setupInputOutput()
+        //setupPreviewLayer()
+        //captureSession.startRunning()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
+
     @IBAction func cameraButton_TouchUpInside(_ sender: Any) {
         let settings = AVCapturePhotoSettings()
         
@@ -39,26 +44,51 @@ class ViewController: UIViewController,AVCapturePhotoCaptureDelegate {
         settings.isAutoStillImageStabilizationEnabled = true
         
         self.photoOutput?.capturePhoto(with: settings, delegate: self as AVCapturePhotoCaptureDelegate)
+        imageVIew.image = nil
+    }
+    @IBAction func startCamera(_ sender: Any) {
+        let pickerController = UIImagePickerController()
+        pickerController.sourceType = .camera
+        pickerController.delegate = self
+        present(pickerController, animated: true, completion: nil)
+        //flag = true
+    }
+    @IBAction func startAlbum(_ sender: Any) {
+        let pickerController = UIImagePickerController()
+        pickerController.sourceType = .photoLibrary
+        pickerController.delegate = self
+        present(pickerController, animated: true, completion: nil)
     }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        self.imageVIew.image = image
+        self.imageVIew.contentMode = UIViewContentMode.scaleAspectFit
+        self.dismiss(animated: true, completion: nil)
+    }
 }
+
 
 extension ViewController{
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         if let imageData = photo.fileDataRepresentation(){
             let uiImage = UIImage(data: imageData)
             UIImageWriteToSavedPhotosAlbum(uiImage!, nil,nil,nil)
+            imageVIew.image = uiImage
+            self.imageVIew.contentMode = UIViewContentMode.scaleAspectFit
         }
     }
 }
 
 extension ViewController{
 
-    
+    //画質の設定
     func setupCaptureSession(){
         captureSession.sessionPreset = AVCaptureSession.Preset.photo
     }
     
+    //デバイスの設定
     func setupDevice(){
         let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [AVCaptureDevice.DeviceType.builtInWideAngleCamera], mediaType: AVMediaType.video, position: AVCaptureDevice.Position.unspecified)
         let devices = deviceDiscoverySession.devices
