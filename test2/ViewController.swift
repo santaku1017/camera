@@ -7,25 +7,33 @@
 //
 
 import UIKit
-import AVFoundation
+import AWSRekognition
+import SafariServices
+//import AVFoundation
 
-class ViewController: UIViewController,AVCapturePhotoCaptureDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,SFSafariViewControllerDelegate {
     
-    var captureSession = AVCaptureSession()
-    
-    var mainCamera : AVCaptureDevice?
-    var innerCamera : AVCaptureDevice?
-    var currentDevice : AVCaptureDevice?
-    var photoOutput : AVCapturePhotoOutput?
-    var cameraPreviewLayer : AVCaptureVideoPreviewLayer?
-    
-    //var isBackCamera : Bool = true
+//    var captureSession = AVCaptureSession()
+//    var mainCamera : AVCaptureDevice?
+//    var innerCamera : AVCaptureDevice?
+//    var currentDevice : AVCaptureDevice?
+//    var photoOutput : AVCapturePhotoOutput?
+//    var cameraPreviewLayer : AVCaptureVideoPreviewLayer?
     
     @IBOutlet var cameraButton: UIButton!
     @IBOutlet var imageVIew: UIImageView!
+    @IBOutlet var mainView: UIView!
+    @IBOutlet var Search: UIButton!
+    @IBOutlet var label: UILabel!
+    
+    var infoLinksMap: [Int:String] = [1000:""]
+    var searchButton:UIButton!
+    //var HoldImage:UIImage!
+    var celebImage:Data!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.Search.isHidden = true
         //setupCaptureSession()
         //setupDevice()
         //setupInputOutput()
@@ -35,99 +43,232 @@ class ViewController: UIViewController,AVCapturePhotoCaptureDelegate,UIImagePick
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
 
     @IBAction func cameraButton_TouchUpInside(_ sender: Any) {
-        let settings = AVCapturePhotoSettings()
+//        let settings = AVCapturePhotoSettings()
+//
+//        settings.flashMode = .auto
+//        settings.isAutoStillImageStabilizationEnabled = true
+//
+//        self.photoOutput?.capturePhoto(with: settings, delegate: self as AVCapturePhotoCaptureDelegate)
+//        imageVIew.image = nil
+
         
-        settings.flashMode = .auto
-        settings.isAutoStillImageStabilizationEnabled = true
+        let rekognitionClient:AWSRekognition = AWSRekognition.default()
+        let Request = AWSRekognitionRecognizeCelebritiesRequest()
+        //let image = HoldImage
         
-        self.photoOutput?.capturePhoto(with: settings, delegate: self as AVCapturePhotoCaptureDelegate)
-        imageVIew.image = nil
+        let sourceImage = AWSRekognitionImage()
+        sourceImage!.bytes = celebImage
+        Request?.image = sourceImage
+        
+        
+        rekognitionClient.recognizeCelebrities(Request!) { res, err in
+            if err != nil {
+                DispatchQueue.main.async {
+                    self.NoFaces(code: "1")
+                    return
+                }
+            }
+            
+            if res != nil {
+                print(res!.celebrityFaces!.enumerated())
+
+                if((res!.celebrityFaces?.count)! > 0){
+                    for (_, celebFace) in res!.celebrityFaces!.enumerated(){
+                        if(celebFace.matchConfidence!.intValue > 25){
+                            DispatchQueue.main.async{
+                                [weak self] in
+                                self?.label.text = celebFace.name!
+                                self?.Search.isHidden = false
+                                self?.Search.isEnabled = true
+
+//                                let SearchButton:UIButton = (self?.createButton())!
+//                                SearchButton.tag = 1
+//                                SearchButton.addTarget(self, action: #selector(self?.search), for: UIControlEvents.touchUpInside)
+//                                self?.mainView.addSubview(SearchButton)
+                                
+//                                let celebImage = Celebrity()
+//
+//                                celebImage.scene = (self?.imageVIew)!
+//
+//                                celebImage.boundingBox = ["height":celebFace.face?.boundingBox?.height,"left":celebFace.face?.boundingBox?.left,"top":celebFace.face?.boundingBox?.top, "width":celebFace.face?.boundingBox?.width] as! [String : CGFloat]
+//
+//                                celebImage.name = celebFace.name!
+//
+//                                if (celebFace.urls!.count > 0){
+//                                    celebImage.infoLink = celebFace.urls![0]
+//                                } else {
+//                                    celebImage.infoLink = "www.google.com/search?q=" + celebImage.name
+//                                }
+//
+//                                self?.infoLinksMap[index] = "https://"+celebFace.urls![0]
+//
+//                                let infoButton:UIButton = celebImage.createInfoButton()
+//                                infoButton.tag = index
+//                                infoButton.addTarget(self, action: #selector(self?.handleTap), for: UIControlEvents.touchUpInside)
+//                                self?.imageVIew.addSubview(infoButton)
+                                
+                            }
+                            
+                        }
+                    }
+                }
+                else {
+                    self.NoFaces(code: "2")
+                }
+            }
+            else{
+                DispatchQueue.main.async {
+                    self.NoFaces(code: "3")
+                }
+            }
+        }
+        //self.label.text = labeltext
     }
+    
+    func NoFaces(code: String){
+        DispatchQueue.main.async {
+            self.label.text = "No faces in this pic   code:" + code
+        }
+    }
+    
+    var Cam:Bool = false
     @IBAction func startCamera(_ sender: Any) {
+        Cam = true
         let pickerController = UIImagePickerController()
-        pickerController.sourceType = .camera
         pickerController.delegate = self
+        pickerController.sourceType = .camera
+        pickerController.cameraCaptureMode = .photo
         present(pickerController, animated: true, completion: nil)
-        //flag = true
     }
     @IBAction func startAlbum(_ sender: Any) {
         let pickerController = UIImagePickerController()
-        pickerController.sourceType = .photoLibrary
         pickerController.delegate = self
+        pickerController.sourceType = .savedPhotosAlbum
         present(pickerController, animated: true, completion: nil)
     }
     
+//    @objc func search(){
+//        let text:String = self.label.text!
+//        let Text = text.replacingOccurrences(of: " ", with: "+")
+//        let vc = SFSafariViewController(url: URL(string: "https://www.google.com/search?q=" + Text)!)
+//        present(vc, animated: true, completion: nil)
+//    }
+    
+    @IBAction func SearchToupped(_ sender: Any) {
+        let text:String = self.label.text!
+        let Text = text.replacingOccurrences(of: " ", with: "+")
+        let vc = SFSafariViewController(url: URL(string: "https://www.google.com/search?q=" + Text)!)
+        present(vc, animated: true, completion: nil)
+    }
+    
+    //selected Photo from Album or Toupped "Use" in Camera View
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-        self.imageVIew.image = image
+        dismiss(animated: true)
+        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+            fatalError("couldn't load image from Photos")
+        }
+        //HoldImage = image
+        //Save taken photo with a Camara
+        if Cam == true {
+            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+            Cam = false
+        }
         self.imageVIew.contentMode = UIViewContentMode.scaleAspectFit
-        self.dismiss(animated: true, completion: nil)
-    }
-}
-
-
-extension ViewController{
-    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
-        if let imageData = photo.fileDataRepresentation(){
-            let uiImage = UIImage(data: imageData)
-            UIImageWriteToSavedPhotosAlbum(uiImage!, nil,nil,nil)
-            imageVIew.image = uiImage
-            self.imageVIew.contentMode = UIViewContentMode.scaleAspectFit
-        }
-    }
-}
-
-extension ViewController{
-
-    //画質の設定
-    func setupCaptureSession(){
-        captureSession.sessionPreset = AVCaptureSession.Preset.photo
-    }
-    
-    //デバイスの設定
-    func setupDevice(){
-        let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [AVCaptureDevice.DeviceType.builtInWideAngleCamera], mediaType: AVMediaType.video, position: AVCaptureDevice.Position.unspecified)
-        let devices = deviceDiscoverySession.devices
+        self.imageVIew.image = image
+        self.celebImage = UIImagePNGRepresentation(image)!
         
-        for device in devices{
-            if device.position == AVCaptureDevice.Position.back{
-                mainCamera = device
-            } else if device.position == AVCaptureDevice.Position.front{
-                innerCamera = device
-            }
-        }
-        currentDevice = mainCamera
-    }
-    
-    func setupInputOutput(){
-        do {
-            let captureDeviceInput = try AVCaptureDeviceInput(device: currentDevice!)
-            captureSession.addInput(captureDeviceInput)
-            photoOutput = AVCapturePhotoOutput()
-            photoOutput!.setPreparedPhotoSettingsArray([AVCapturePhotoSettings(format: [AVVideoCodecKey : AVVideoCodecType.jpeg])], completionHandler: nil)
-            captureSession.addOutput(photoOutput!)
-        } catch {
-            print(error)
+        self.label.text = nil
+        //Hide SearachButton
+        if self.Search.isHidden == false {
+            self.Search.isHidden = true
         }
     }
     
-    func setupPreviewLayer(){
-        self.cameraPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        self.cameraPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
-        self.cameraPreviewLayer?.connection?.videoOrientation = AVCaptureVideoOrientation.portrait
-        
-        self.cameraPreviewLayer?.frame = view.frame
-        self.view.layer.insertSublayer(self.cameraPreviewLayer!, at: 0)
-    }
     
-    func styleCaptureButton(){
-        cameraButton.layer.borderColor = UIColor.white.cgColor
-        cameraButton.layer.borderWidth = 5
-        cameraButton.clipsToBounds = true
-        cameraButton.layer.cornerRadius = min(cameraButton.frame.width, cameraButton.frame.height)/2
-    }
+//    @objc func handleTap(sender:UIButton){
+//        print("tap recognized")
+//        let celebURL = URL(string: self.infoLinksMap[sender.tag]!)
+//        let safariController = SFSafariViewController(url: celebURL!)
+//        safariController.delegate = self
+//        self.present(safariController, animated:true)
+//    }
+    
+//    func createButton()-> UIButton{
+//
+//        self.searchButton = UIButton.init(frame: CGRect(origin: CGPoint(x: 233,y: 460), size: CGSize(width: 65, height: 15)))
+//        self.searchButton.backgroundColor = UIColor.white
+//        self.searchButton.clipsToBounds = true
+//        self.searchButton.layer.cornerRadius = 8
+//        self.searchButton.setTitleColor(UIColor.blue, for: UIControlState.normal)
+//        self.searchButton.titleLabel?.adjustsFontSizeToFitWidth = true
+//        self.searchButton.titleLabel?.textAlignment = NSTextAlignment.center
+//        self.searchButton.setTitle("Search", for: UIControlState.normal)
+//
+//        return self.searchButton
+//    }
 }
+
+
+//extension ViewController{
+//    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+//        if let imageData = photo.fileDataRepresentation(){
+//            let uiImage = UIImage(data: imageData)
+//            UIImageWriteToSavedPhotosAlbum(uiImage!, nil,nil,nil)
+//            imageVIew.image = uiImage
+//            self.imageVIew.contentMode = UIViewContentMode.scaleAspectFit
+//        }
+//    }
+//}
+//
+//extension ViewController{
+//
+//    //画質の設定
+//    func setupCaptureSession(){
+//        captureSession.sessionPreset = AVCaptureSession.Preset.photo
+//    }
+//
+//    //デバイスの設定
+//    func setupDevice(){
+//        let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [AVCaptureDevice.DeviceType.builtInWideAngleCamera], mediaType: AVMediaType.video, position: AVCaptureDevice.Position.unspecified)
+//        let devices = deviceDiscoverySession.devices
+//
+//        for device in devices{
+//            if device.position == AVCaptureDevice.Position.back{
+//                mainCamera = device
+//            } else if device.position == AVCaptureDevice.Position.front{
+//                innerCamera = device
+//            }
+//        }
+//        currentDevice = mainCamera
+//    }
+//
+//    func setupInputOutput(){
+//        do {
+//            let captureDeviceInput = try AVCaptureDeviceInput(device: currentDevice!)
+//            captureSession.addInput(captureDeviceInput)
+//            photoOutput = AVCapturePhotoOutput()
+//            photoOutput!.setPreparedPhotoSettingsArray([AVCapturePhotoSettings(format: [AVVideoCodecKey : AVVideoCodecType.jpeg])], completionHandler: nil)
+//            captureSession.addOutput(photoOutput!)
+//        } catch {
+//            print(error)
+//        }
+//    }
+//
+//    func setupPreviewLayer(){
+//        self.cameraPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+//        self.cameraPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
+//        self.cameraPreviewLayer?.connection?.videoOrientation = AVCaptureVideoOrientation.portrait
+//
+//        self.cameraPreviewLayer?.frame = view.frame
+//        self.view.layer.insertSublayer(self.cameraPreviewLayer!, at: 0)
+//    }
+//
+//    func styleCaptureButton(){
+//        cameraButton.layer.borderColor = UIColor.white.cgColor
+//        cameraButton.layer.borderWidth = 5
+//        cameraButton.clipsToBounds = true
+//        cameraButton.layer.cornerRadius = min(cameraButton.frame.width, cameraButton.frame.height)/2
+//    }
+//}

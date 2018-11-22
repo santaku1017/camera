@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -36,8 +35,8 @@
                                     <action selector="startAlbum:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ioL-EQ-e6G"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4ss-pW-CRr">
-                                <rect key="frame" x="22" y="38" width="276" height="432"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4ss-pW-CRr">
+                                <rect key="frame" x="22" y="20" width="276" height="432"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="432" id="2e0-J5-rdk"/>
                                 </constraints>
@@ -54,6 +53,22 @@
                                     <action selector="cameraButton_TouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y71-cv-600"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRd-gL-pXI">
+                                <rect key="frame" x="28" y="461" width="276" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M2T-z5-xub">
+                                <rect key="frame" x="234" y="462" width="64" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="SearchToupped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mcu-N4-pd0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.15275255290241962" green="0.35343448646104791" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -66,8 +81,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="Search" destination="M2T-z5-xub" id="GEB-b5-ZRd"/>
+                        <outlet property="View" destination="8bC-Xf-vdC" id="A1t-1H-az9"/>
                         <outlet property="cameraButton" destination="GTx-N9-Rnp" id="6VH-R6-wkm"/>
                         <outlet property="imageVIew" destination="4ss-pW-CRr" id="ju4-hA-Xwb"/>
+                        <outlet property="label" destination="KRd-gL-pXI" id="SLL-0t-N4n"/>
+                        <outlet property="mainView" destination="8bC-Xf-vdC" id="Qif-QN-CF0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

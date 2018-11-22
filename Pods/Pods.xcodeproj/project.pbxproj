@@ -1,0 +1,1765 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		03E7E0C7E49DCDEC01647CBA83626962 /* AWSCognitoIdentityModel.h in Headers */ = {isa = PBXBuildFile; fileRef = DDC5E05DB6D92EAF4628ABB3EBF27719 /* AWSCognitoIdentityModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		05575B3750A2427DB7DDACF380085025 /* NSValueTransformer+AWSMTLInversionAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7397D805DB58E5B675399A39B702DB16 /* NSValueTransformer+AWSMTLInversionAdditions.m */; };
+		064DFF15DF2607F692DB554C81688B08 /* AWSRekognition-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5860676D347018FC5CC1B3049419DFFC /* AWSRekognition-dummy.m */; };
+		082A64760C0B63D17D0C87C8ADA09450 /* AWSDDLegacyMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 446A01C9F381CF6D34F3739CC2D24E21 /* AWSDDLegacyMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		08A0E156264804BE346A107E5579206A /* AWSSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = FA808C42E1B2839EEC0899370447804A /* AWSSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0EA0130E6902C0ACA221BC24E2633060 /* AWSMTLJSONAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 24122B07586990821DE90AD33AAFED2E /* AWSMTLJSONAdapter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0FE87B9A62AA4DCB49C20881780B36DB /* AWSCognitoUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 574D4133B7F0FAAE7DD5A3CB40EED3FC /* AWSCognitoUtil.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		1210235849D762E178A04E13ECA0A6AE /* AWSUICKeyChainStore.m in Sources */ = {isa = PBXBuildFile; fileRef = A68211624633BCB259FBB2DE8B56AD71 /* AWSUICKeyChainStore.m */; };
+		12473C9607986458803A7B62CEED20A9 /* AWSFMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 93593A1B23296196B1D328637DFC1C05 /* AWSFMResultSet.m */; };
+		131D8F7364814080F36F9F8A81184D56 /* AWSSTSResources.h in Headers */ = {isa = PBXBuildFile; fileRef = BDF08730BB3E64214FB277FEBEB94796 /* AWSSTSResources.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1454F67536BB0553BC7E4E23D02C561C /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FC95026C96D1C3A2DB888D335FBC677 /* AWSCore.framework */; };
+		15BC605DE39DAD1B35C36D8DCEF90526 /* AWSEXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = 091A9525426A4C5661E9BBAA806A394E /* AWSEXTScope.m */; };
+		1D96CB9BA12C9F62C1A900A05CA1A62D /* AWSMTLModel+NSCoding.h in Headers */ = {isa = PBXBuildFile; fileRef = 200C0FEBA19731EB11F51F307B6A074A /* AWSMTLModel+NSCoding.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1EFD62FF206ED7F2034AFAC0C2CD431C /* AWSCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 93611DF7D9F81A8F5874DF49AD8A5EE9 /* AWSCategory.m */; };
+		21D9AA3291CD3AAA714FF835D1D30654 /* AWSEXTRuntimeExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 057656FA79FCCD0942508D1A71A870BE /* AWSEXTRuntimeExtensions.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		224D04D9B57B9802F78F5D18FF7625BF /* AWSExecutor.h in Headers */ = {isa = PBXBuildFile; fileRef = C47D7DFD463CF93DAB15BE726696AA66 /* AWSExecutor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22C1CC7D39E027200EA53AEB5E637195 /* AWSCognitoSyncService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E715D1858F19B33AA680EB370F51C71 /* AWSCognitoSyncService.m */; };
+		22FBEE8ABE29BD2BC2462D421A9F0BBF /* AWSFMDatabasePool.h in Headers */ = {isa = PBXBuildFile; fileRef = 677DEE7DABDE42A4144FA98862690CAC /* AWSFMDatabasePool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24E85DDDE3688AE0117B90AEAE6D105C /* AWSFMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 9939B9F5648F838870A3387C4268CC7D /* AWSFMDatabaseQueue.m */; };
+		254CA87B15EDF9C833EB3830182A1F33 /* AWSLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = C4B991F4001FA8D4EBC8D3E6E2385A1C /* AWSLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2610373C16ED408B77A4A0AED672C3C2 /* AWSFMDB.h in Headers */ = {isa = PBXBuildFile; fileRef = D5BF6A27E9902887C55C56E694261C05 /* AWSFMDB.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		261BA374E306C185F3CF8620554F5B5C /* NSDictionary+AWSMTLManipulationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A3E5CBEFF12999077D4C148C572630FD /* NSDictionary+AWSMTLManipulationAdditions.m */; };
+		261E76B60CA52B4F54F09086D007E067 /* AWSDDAbstractDatabaseLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = A1900729CA25A1C34069DD1471D5788F /* AWSDDAbstractDatabaseLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2661A916360196651720364E4AA25A44 /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FC95026C96D1C3A2DB888D335FBC677 /* AWSCore.framework */; };
+		26B17B7182E6DE280DDF3E2B75C3C4CA /* AWSCognitoDataset.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AD248192B129052B6B43A1897CA80E /* AWSCognitoDataset.m */; };
+		276C1CF4484053A98074C63675A98CC8 /* AWSCancellationToken.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5ACC753095F4E1AB482C631DF300B8 /* AWSCancellationToken.m */; };
+		282E65FB03B4803571ED55251703D764 /* NSValueTransformer+AWSMTLInversionAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EF0D911087FBD52AE3000AAE65D88353 /* NSValueTransformer+AWSMTLInversionAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2B5EEEEDF22650D2D7DA08EC0F970014 /* AWSValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = 391FA3EAA842AE006F06225E45D3EF89 /* AWSValidation.m */; };
+		2BA01CC249C4383EA1726AD3F55939C8 /* AWSCore-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF903ADF4FDEFD1C87D932CA5085333 /* AWSCore-dummy.m */; };
+		2FC202A3B6149337A8819B4C56768C79 /* FABKitProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 439DA321C6FB781DFE6EE2E696985A5C /* FABKitProtocol.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		2FEDBE601B9F7A883913001E7CC6EACA /* AWSCognitoSQLiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEA9C6B18CC98555EDEFAF1E0E79B99 /* AWSCognitoSQLiteManager.m */; };
+		2FFF5578BDF097AFC5FC0E09A77D89B7 /* AWSXMLDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CF141CBDB05E94FC310F6EB473EE971 /* AWSXMLDictionary.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		309B91D0097C71F800589D701AADA034 /* AWSMTLValueTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = AA5EF4F705A127E5B328A2202D02BFAD /* AWSMTLValueTransformer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		30FA3EE4FDE2729FC84FAACD447DD420 /* AWSMTLReflection.h in Headers */ = {isa = PBXBuildFile; fileRef = 818B8E128D55DBB36197AA2B602A1F51 /* AWSMTLReflection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		31676A2267E4A213AC161ADCF15F50BD /* AWSIdentityProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = EFCC296D6BD3559EB326DD42D44AA338 /* AWSIdentityProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3185B7663A61B658576C204618CCD3F9 /* AWSGZIP.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CC9C90E159955676B8D7C678940A58 /* AWSGZIP.m */; };
+		3364C533DCCE2B1BB29C5F6630336A15 /* AWSMTLReflection.m in Sources */ = {isa = PBXBuildFile; fileRef = 1596BEE942733758094865597773A60E /* AWSMTLReflection.m */; };
+		33D3DA98942FC56DDC2EDE9FAB916907 /* AWSCognitoRecord_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 098A41E02C19DA49D10892B822C27925 /* AWSCognitoRecord_Internal.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		37E95B2DAE973AA5C5B1318B005632CA /* AWSCognitoSyncService.h in Headers */ = {isa = PBXBuildFile; fileRef = 26A5BEA653F4C4EF865F1F9528989BF2 /* AWSCognitoSyncService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		389CCC9A6F11923E84634F7476D08F04 /* AWSURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CFD40ACD8CB08EE172E1369E4B20E4 /* AWSURLResponseSerialization.m */; };
+		3AA460D2DDC8DB41B066D64F0EE98C18 /* AWSCore-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FE06B6BFE942327741D132E8A8F38F3 /* AWSCore-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3CCC6E4871DF687CEA48178CAB641B63 /* AWSDDASLLogCapture.h in Headers */ = {isa = PBXBuildFile; fileRef = 32CB5981043582CAE76FC602EBC1BA63 /* AWSDDASLLogCapture.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3F6E6958477B257E05763AD5C38F4F17 /* AWSCognitoSyncResources.h in Headers */ = {isa = PBXBuildFile; fileRef = 2668D7AC0D933A3DAC25E4AC53342C9F /* AWSCognitoSyncResources.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		40264C99928B46A01927E022D5834A16 /* AWSCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 0EAFF98ADEF1B6EBCE6E43545EFD158E /* AWSCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		41441D266B17D3BFB4AE71FBE64CFB8E /* AWSSTSModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CA99BA6D6BFF9DDC687AB8359B3D9 /* AWSSTSModel.m */; };
+		4151C9A86047BA6D88B7BFEE7C0E1888 /* AWSInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E64AC65693ABA194501C805CF22C49A /* AWSInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		432EBBEF37B194CB4B289191C6320609 /* AWSNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF75EC6525C4FC6E2916C559A7558B9 /* AWSNetworking.m */; };
+		43FC26779183CDEB063C33528104E1B0 /* AWSDDAssertMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F527FDFF44A16A63C1EAA5A93A3A879 /* AWSDDAssertMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4430AD53EE0D44551B2757D19B5A5442 /* AWSURLResponseSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 2142AD16BF53CA66428330942FD69C13 /* AWSURLResponseSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45B309484D5B826218D3E988FF7B8323 /* AWSDDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A45BFCD1134994D2531A9E85B9EA526 /* AWSDDFileLogger.m */; };
+		4684CB43352CCD74AED932D996E5D792 /* AWSSignature.m in Sources */ = {isa = PBXBuildFile; fileRef = 262CEE276D125BE92BA33D224BF1EBF1 /* AWSSignature.m */; };
+		475F92F1DB39C574627A9C3D4EBE8C51 /* AWSFMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C6841AAAB69282DC5BD548BAF9D0C00A /* AWSFMDatabaseAdditions.m */; };
+		4794138162919C6E1AF6623D7A356CD1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F307ACB43CF2F7D66BC5D3B4446614DE /* Foundation.framework */; };
+		48ECB959EADD653A4DCFDCA2F19CFB80 /* AWSCredentialsProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D5B4AE919032817B57A6891F7171CB3 /* AWSCredentialsProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4B423231D31DA0A0E4F68EE2B0233F9F /* AWSBolts.h in Headers */ = {isa = PBXBuildFile; fileRef = ACAEF60A048DB117556E259A1EECED8A /* AWSBolts.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4DE5E7DAA5C207FBE21BC36F05CDC2F7 /* AWSCognitoIdentityService.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F6644EF67CF9D1EC72E4F2328D426BC /* AWSCognitoIdentityService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E7455AAA55EF061008972C6ECCB0E5E /* AWSFMDatabaseQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FF61616A87AF9F05D742617C615D5C8 /* AWSFMDatabaseQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4EE4B19C191CFAED6518623DB9E61180 /* AWSSignature.h in Headers */ = {isa = PBXBuildFile; fileRef = D006D7E0FF77A8514EACEB2BDA6AB8C2 /* AWSSignature.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4FD30E550DB8167D2EFAB030469CAEB7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F307ACB43CF2F7D66BC5D3B4446614DE /* Foundation.framework */; };
+		50A8B0CF8C380A7CAC7C7D2C841D8627 /* AWSSTSModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 0420D54C932590BE0F268CB0A7221AF8 /* AWSSTSModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		50C94B29E014F9F40F6DD24373DD5A85 /* AWSDDLogMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F043D96A95360016380279489112CAD /* AWSDDLogMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5352444CC53F08A2167C4AE164E6F6ED /* Fabric.h in Headers */ = {isa = PBXBuildFile; fileRef = A032AC91293744EB055E73671F2EC06A /* Fabric.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		539C7CBC31BA7EA36E3BE2C85543A73A /* AWSRekognitionResources.m in Sources */ = {isa = PBXBuildFile; fileRef = 636183FE4E03DE08A4EA8528D7B0E6DE /* AWSRekognitionResources.m */; };
+		53C6F9FC53777EF7B7B490C5D4276894 /* NSError+AWSMTLModelException.h in Headers */ = {isa = PBXBuildFile; fileRef = 89AEEDC5F29F3524F67FA696317F9836 /* NSError+AWSMTLModelException.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		570FA88BEC405011F1C0D8A4B8B3254F /* AWSCognitoIdentityResources.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E9ED8B75525E4388E32CA87655CBA6B /* AWSCognitoIdentityResources.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		587ECC61C0CC24C6358021B484AC5FE2 /* AWSFMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 365C55DE7AFCA928667FED1DDDE72F95 /* AWSFMDatabase.m */; };
+		59258A3117F3EA3E53A9F1ADBFDDA49C /* AWSBolts.m in Sources */ = {isa = PBXBuildFile; fileRef = 006A1204B084A43184B52E6465594983 /* AWSBolts.m */; };
+		5AE66F6A6F217463B3615B3B7633A6F8 /* AWSKSReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 69504E47A5286ADB1C4DD0A3133FCF9E /* AWSKSReachability.m */; };
+		5AF39094DD8452F8FA65E7B0C03F7A8A /* AWSRekognition-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AAD9B4D55924D048AA7E6E7EF9D097DF /* AWSRekognition-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5E4D694203098683E003828D5BC80775 /* AWSCognitoSQLiteManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 6406EC46B212FBF420D34D3A437E6C04 /* AWSCognitoSQLiteManager.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		5EC4F64FFCA8067B65B977EBD23BA91E /* AWSMTLModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B3848806F287AA1222470D6A4B3F98C9 /* AWSMTLModel.m */; };
+		5F41282A9840C6554423B8D6DD0050CC /* AWSLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 803124C1A479739A9163D18F3C4CDB27 /* AWSLogging.m */; };
+		5FB923E76FE0EDBB199D87538FAC48C9 /* AWSURLSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E2EB3C0CFAC0326B68C74FB154FD347C /* AWSURLSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6237B709D3980BA1021098A67F512A81 /* AWSDDDispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = B5810A111BA221956857D4EFA11D4EEF /* AWSDDDispatchQueueLogFormatter.m */; };
+		6332079A53B19D5B816610D1B48897B3 /* AWSCognitoService.h in Headers */ = {isa = PBXBuildFile; fileRef = 70B46DD73AE54BE4F19D6897822346B9 /* AWSCognitoService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63BF6B62A59ACFA2793182866413BB9A /* AWSFMDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = 7190E29D429848B87D6D9EF7EBF43EB5 /* AWSFMDatabase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		657588440D7A253F8515EE9DD541BF6F /* AWSGZIP.h in Headers */ = {isa = PBXBuildFile; fileRef = DC0CC67BC69C7F3351179394FE2EE2FA /* AWSGZIP.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65CB83DBB4FBC1FE0FB44CE331CE1097 /* AWSCredentialsProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D88E4562F5F2DDA3FA91FD92EF29F9 /* AWSCredentialsProvider.m */; };
+		68E0091DDA23079F32A438D12BF2C65E /* AWSSynchronizedMutableDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = AE78191EC7E5F10FF51C6B8D6F02FF8C /* AWSSynchronizedMutableDictionary.m */; };
+		6AE00DDD40FDBDE0DB8E3D52A09A1653 /* AWSSynchronizedMutableDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C7AF181639866903D2CD7FF759C9A49 /* AWSSynchronizedMutableDictionary.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6CD629C2771102A815A5650EB5CCBA6A /* AWSCognitoUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 979AC965EC49250C220F148B76B5EEC4 /* AWSCognitoUtil.m */; };
+		6D2DDE84732783DA0FD6B4CF45079217 /* AWSValidation.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B16E01085D9876C379ED97A71F5A791 /* AWSValidation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6E66934C1FCD70B1FC8055C00F9553EF /* AWSDDASLLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 041EBEE70469DDCF6CCCE04C5547EA4F /* AWSDDASLLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6EF6F2978D30093FFEBEE1CDB826412E /* AWSModel.h in Headers */ = {isa = PBXBuildFile; fileRef = C7455053CAD54A9AFAFCC4F7EAECAC70 /* AWSModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7073527D9CF14EE4DB6BEEFF832FA8CE /* AWSDDOSLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C8ADE7CBEFAD2C61690D601FBE33F50 /* AWSDDOSLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		71085683F0A41C0725F060084039281C /* AWSRekognitionService.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B2E36B0DF39DB73B62F685B38426AC /* AWSRekognitionService.m */; };
+		719F22CFA600B4239162CD8E04F2DB90 /* AWSEXTRuntimeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B06883CA5C59E4AA70461D1D3FC89BF0 /* AWSEXTRuntimeExtensions.m */; };
+		730116FE7EAB28D8F754CA8C3DD3BE54 /* AWSRekognitionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0907BED793707E07AFB102033B8A91 /* AWSRekognitionModel.m */; };
+		742FC324B3EA94F52A2A4ACA9CE79870 /* AWSRekognitionService.h in Headers */ = {isa = PBXBuildFile; fileRef = AAE43E4DE1E9EFB75530571B53727786 /* AWSRekognitionService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7443827E85718EA94F36B1D301698AC3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E666D95E1715F8E9E0203D2CB10A2DF /* UIKit.framework */; };
+		74F7751EBE48162F7EDFC42903074244 /* AWSTMDiskCache.h in Headers */ = {isa = PBXBuildFile; fileRef = B3AFE936FFFC3C7EAE0D4E0FD5E509A3 /* AWSTMDiskCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		751BB43C9A038AEDAB7C696206999110 /* AWSFMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 543EDF52A34A7062D690D0CE96D408AE /* AWSFMDatabasePool.m */; };
+		757BEC61878A6AB77F701D377C9D10AB /* AWSMTLValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = E778B1B8564AACC7F1549BABC34F372C /* AWSMTLValueTransformer.m */; };
+		76712EDEEF2E5248A9016DE1FFB24E43 /* AWSCancellationTokenSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EE3A93E276DB9A85EBA06E83799EA9A /* AWSCancellationTokenSource.m */; };
+		77FB2AC26DE948BA2D18E0D995B96809 /* AWSService.m in Sources */ = {isa = PBXBuildFile; fileRef = 248346C61051B1077532272FBD044F05 /* AWSService.m */; };
+		787D8DFCDC2939B57045F1E91E724AE0 /* AWSCognitoDataset_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = E6AFC0707FF3DF9B51B974F550ADF2DC /* AWSCognitoDataset_Internal.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		7B753937CF2A0FC6341D61B023D7C51A /* AWSDDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8659C34397B3622EC38932E9A57D8F /* AWSDDAbstractDatabaseLogger.m */; };
+		7C41A57A4BCF7AA7EE68BBD8EE860B45 /* AWSURLRequestRetryHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 30890A83A43DAA5AEAEE6287C391926C /* AWSURLRequestRetryHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7C7C1D1822EE513BA88E698A1778138A /* AWSMTLManagedObjectAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D9D5A642D457A9745A12AC6C989883 /* AWSMTLManagedObjectAdapter.m */; };
+		7EFAC256FFEF765A53FE362B97455E9D /* AWSFMDatabaseAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3907352EF2A9FA660DF2B3D176D67B35 /* AWSFMDatabaseAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		82963B4F2C99EBF0137543430ECB3A44 /* AWSSTSResources.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E37F2E72F569FAB1D7F48C926D0467C /* AWSSTSResources.m */; };
+		85857AE981FDC71DC85AD6A002430C0E /* AWSModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C26A0056E2AB5FF5B8C215CBACCA24A8 /* AWSModel.m */; };
+		860A24B43A81F4F015E1DBE7B564A716 /* AWSSTSService.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B57416BF06FBE49A22BE617AD32B56 /* AWSSTSService.m */; };
+		88A9DA95907C6427BA57CE2D09E4118F /* AWSURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 169F59ACDA416F93B082AD35AF1BEA54 /* AWSURLSessionManager.m */; };
+		8A1C54048A7D0C3C8016F4877A9BEBC0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659478625EDF933CACAFC7A35BF41E9C /* CoreGraphics.framework */; };
+		8A614FBF75C42610E8B57700B6F99A61 /* AWSSTS.h in Headers */ = {isa = PBXBuildFile; fileRef = 381A670720F28C111BBD0769941B87A0 /* AWSSTS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8B4A1F6C9B6FEB283659009A9A90BDF2 /* AWSUICKeyChainStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F86F6E0CA791AFAC0D13B1FCD8DA123 /* AWSUICKeyChainStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F2013C5169BDBC618B164F172AF67AE /* AWSCognitoIdentityResources.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F7F1B739191741093603F80D92BAC6 /* AWSCognitoIdentityResources.m */; };
+		90BE8777F78818F34F82EF473AAE60D4 /* AWSDDContextFilterLogFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D5A8AD30E64060FDB8B808AC00AB88E /* AWSDDContextFilterLogFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		924E22DED998E1011085A74CD2975325 /* AWSDDOSLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 7259013BE602A81EC9092A05CD08B2DB /* AWSDDOSLogger.m */; };
+		9363FD714EB5475BDA567D50E5173F6B /* AWSXMLWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C0BB2836D7DAC7C51D8F6E59E8010F /* AWSXMLWriter.m */; };
+		976A3577B1DF8F6F13D36AEAE4E6575D /* NSArray+AWSMTLManipulationAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 087E5D13F0FCF7C45FDDCA5949E691C1 /* NSArray+AWSMTLManipulationAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		97FF948BCB91260E19459C11E1CA6EBD /* AWSCancellationTokenRegistration.h in Headers */ = {isa = PBXBuildFile; fileRef = 64E9CD35D8DADB2A1D39006309300725 /* AWSCancellationTokenRegistration.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		98ABA52E3CF4FF0467DDABABA12ED256 /* NSDictionary+AWSMTLManipulationAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D262C2EDF042F81E5725287BAE71C22 /* NSDictionary+AWSMTLManipulationAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		993073F120A2C850A4E2704DB458A682 /* AWSCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F3F138E7B1B1D2A1B60F4D5C07F7305 /* AWSCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		999CF64319311507F18CECC35D401467 /* AWSDDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = B43B42BC305B6F0C3563F3BB68CF166A /* AWSDDTTYLogger.m */; };
+		9A28081322620231EC80EA30C23C6DC2 /* AWSDDTTYLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = AB2D19840C615D9CDC14B2556C1A6A82 /* AWSDDTTYLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9A86891DE0F642EAD09F3E6229F816B3 /* NSValueTransformer+AWSMTLPredefinedTransformerAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = BF4F75D2FB46D47EFD17E153FE8AD7F0 /* NSValueTransformer+AWSMTLPredefinedTransformerAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9B5436971EAB451F1C8A6CCD606FB1C4 /* AWSCognitoConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 7020A984AE2042079E539A6087E9D41F /* AWSCognitoConstants.m */; };
+		9CC0CDE65441DDD74DCEB86A410B8A2C /* AWSCognito-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F60B7082408625B17982C1356FFEEE1C /* AWSCognito-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A00FF84CCD2FC1888909A68417EFAF36 /* AWSCognitoIdentity.h in Headers */ = {isa = PBXBuildFile; fileRef = 051E0D1B2271B293A32A1EF0F489126F /* AWSCognitoIdentity.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A0CE86E1DB86624CE5284D5F367B2E09 /* AWSCognitoIdentity+Fabric.h in Headers */ = {isa = PBXBuildFile; fileRef = B9688C132BA5B7054D18DD6F44992BCD /* AWSCognitoIdentity+Fabric.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		A117A5B83B1F3559C1A70768575ADBCE /* AWSCognitoSyncModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C99E066499F7EFD196E14CFA11F1456 /* AWSCognitoSyncModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A2982947D7175B6CE40626210D5DFBE1 /* AWSFMResultSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 06DC905DB1E8AF74B452367DBBBC999C /* AWSFMResultSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A38A7CA0BB17592A8EE1F7EB2E3B2EA5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F307ACB43CF2F7D66BC5D3B4446614DE /* Foundation.framework */; };
+		A69322FC390E726752B3DB9789264CA4 /* AWSTMDiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7158D342463FE543EDE77209E80B4E73 /* AWSTMDiskCache.m */; };
+		A78B84022CD4AEF124FC00A8EC2915C9 /* AWSClientContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC6108AF09F6276B2854A5DFC6E8D37 /* AWSClientContext.m */; };
+		A89AC992843514B00C30561DAF5EC201 /* NSObject+AWSMTLComparisonAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C717E1332D8903FFC964A8F7E51A3E2 /* NSObject+AWSMTLComparisonAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A94D1BB3366974B552FF1A069B7F4C62 /* AWSTaskCompletionSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 82BF7DFCA80E7D80F4915B1230AC1310 /* AWSTaskCompletionSource.m */; };
+		A9E4FD2F942BE3C804A451198DF05CFF /* AWSTask.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC89BA6F26AD6676CC4B75DEC25D26 /* AWSTask.m */; };
+		A9EB7EFF61FD60A8F76D8D7BB881B80B /* AWSEXTKeyPathCoding.h in Headers */ = {isa = PBXBuildFile; fileRef = 1ED55DA60BCB3C89FF1CAC45F1EDD465 /* AWSEXTKeyPathCoding.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		AAD05EF9B16C931BD5B977C1F3AC4DA6 /* AWSXMLDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = F769E970E2083C827B5978982DD18044 /* AWSXMLDictionary.m */; };
+		AAE5BFEB34ADBF3F8DEB424D2531B38A /* AWSServiceEnum.h in Headers */ = {isa = PBXBuildFile; fileRef = 94F280AB2B23C1D99BEFE7955038071B /* AWSServiceEnum.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ABC97645C86E9139A1A273EE5525A714 /* AWSTMCacheBackgroundTaskManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B477F14D23800AFD5EA6A7365256BF89 /* AWSTMCacheBackgroundTaskManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AC0E5BB842ABCEE5010B0048F43D668A /* AWSService.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EF1BE465E4F3EE489C8AE0354B35468 /* AWSService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ACF985D85801470084778E822A87BF73 /* NSObject+AWSMTLComparisonAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C3396089205C91FCF3898EA09CEF4B /* NSObject+AWSMTLComparisonAdditions.m */; };
+		AD75890A5FEB61A6E5BB77B37B566D4D /* AWSCancellationTokenRegistration.m in Sources */ = {isa = PBXBuildFile; fileRef = B369E8145F1E222EC65C07D20EC5FC91 /* AWSCancellationTokenRegistration.m */; };
+		AF3F0AA148DEDB09A7470F0B383A4BCE /* AWSTMMemoryCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 8997F4FA43135E190DAE4698DE6669EB /* AWSTMMemoryCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AF67895DBCFC11C08A9B80B16B82BE5C /* NSError+AWSMTLModelException.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF7EA0B3CFD0C326B63B54DBA140F83 /* NSError+AWSMTLModelException.m */; };
+		B0AC8A2545BFEA6A9C3F6C3EF3917BC5 /* AWSTMCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 852F15831DC676E92A3E90976ACE0AEB /* AWSTMCache.m */; };
+		B15EA44708AD6C690A2B8C05803F0EDF /* AWSCognito-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 28059C931FEF61DC443DB988E11C7BA1 /* AWSCognito-dummy.m */; };
+		B259C6D2CD46A47FC80CA91AEEB6B9EC /* AWSDDMultiFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EA480AE0265B2061C1B562EC3DD897 /* AWSDDMultiFormatter.m */; };
+		B3505D39C0FCF5DF1BD0DB9CF5976377 /* AWSURLRequestRetryHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E5A00E3B29FDD446178FA3E6F7DD69D4 /* AWSURLRequestRetryHandler.m */; };
+		B3C68A7AF0DC21533059A41BE1D3EE69 /* AWSCognito.h in Headers */ = {isa = PBXBuildFile; fileRef = B9BBB026E52A3E7D737CBC60709065F1 /* AWSCognito.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B405AE0B6F4A06A40DEAA2119F4FBFCF /* NSArray+AWSMTLManipulationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5674B10420290BBD9F5A8AAF345E5835 /* NSArray+AWSMTLManipulationAdditions.m */; };
+		B45F1CA2BD0A30918ABCF4E8AA0E82D8 /* AWSKSReachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 913260F35E29C44BD206048A91AB154C /* AWSKSReachability.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5F397DD4D8C76BB089B5C1AE2C8DE30 /* AWSMTLModel.h in Headers */ = {isa = PBXBuildFile; fileRef = D7A7F0CCCF766E69EDC7AD112B880AB7 /* AWSMTLModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B6A1CD87C309723E491CC61EEAA84782 /* AWSDDLog+LOGV.h in Headers */ = {isa = PBXBuildFile; fileRef = 43A8B1F5BD6E94071706E5F299D5D336 /* AWSDDLog+LOGV.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B9543676E3DE6C8EF87CF9F53B28ABF2 /* AWSInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B4B4A2E8224420B47AA0AFA9E2066 /* AWSInfo.m */; };
+		BA9413553EB567705BD2A249D359961E /* AWSCancellationTokenSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 6584C74AE81B0506DEFB925DD4456741 /* AWSCancellationTokenSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BC2C9724BA59D2260E52B48376E44BE4 /* AWSIdentityProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0CFE039A6D820D90CA9C9ECB5C6D3B /* AWSIdentityProvider.m */; };
+		BCD893872F00DAE1486B890BC0381A17 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F307ACB43CF2F7D66BC5D3B4446614DE /* Foundation.framework */; };
+		BD8EC732687A8EFD1B3FCBB2358E860A /* AWSCocoaLumberjack.h in Headers */ = {isa = PBXBuildFile; fileRef = 8332E5B59BA3407AD7341892013B5FA3 /* AWSCocoaLumberjack.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BE15D992D74DBB41B851C96B2ADC3799 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 087C7A52A317482FD12FEF9C42824986 /* Security.framework */; };
+		BE2252C7AC720F4FFA40CB1E0069D5E2 /* AWSCognitoSyncModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCFF9BA5A276ACF0D5C03AA1065809B /* AWSCognitoSyncModel.m */; };
+		BE3143A624413C32525DBA3102D1767F /* AWSMTLModel+NSCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CEECE938697B7189C6F432665ADD6F3 /* AWSMTLModel+NSCoding.m */; };
+		BF115041683F2E070E8955CEB6A63047 /* AWSDDFileLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = AE9E9C608AD369EB401D3A7329BFF2F1 /* AWSDDFileLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF7080DAE40B46787E36F81F1FC9EC8B /* AWSURLRequestSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = B29C291849FD085450661217F95EECA9 /* AWSURLRequestSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C02F9DC3BB2EE07A14E902670F0D07EE /* AWSCognitoIdentity+Fabric.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D8D66EB3DFF73B5FEDB4542E96AA73 /* AWSCognitoIdentity+Fabric.m */; };
+		C061B7A99D48241953F2B95189ABB3F4 /* AWSTaskCompletionSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F33BE6234B9863FD4C965E81545909 /* AWSTaskCompletionSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C0D2C3641B3B1747435F5DDDC8716A6E /* AWSCognitoConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 7874D42C8FD5A5B3D9264310261CD897 /* AWSCognitoConstants.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		C2112903DEAE71A7C29419AC9510B9B9 /* AWSClientContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 013D17CB3DB0F4C59428CB20793DDEA8 /* AWSClientContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C248CE0B1EC77B178F59195DD754E1B2 /* FABAttributes.h in Headers */ = {isa = PBXBuildFile; fileRef = ED93EC5CC9131A560BECC3D3D0171270 /* FABAttributes.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		C319426AB04A4386E1A6626D227B8DC4 /* AWSMTLManagedObjectAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 9072128DBAB33B9055E7D220021C3AAB /* AWSMTLManagedObjectAdapter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C3C4F87E91AD8E508EF6CF0C7656476B /* AWSGeneric.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FB4D2E895330465707C536C0C8D87E7 /* AWSGeneric.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C55F73343619A97DFEAC7613CBC5626C /* AWSDDLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 9967917063B5629825F7F5C27C455045 /* AWSDDLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C8D5ACCD8D38CD5CC4CF8807B6BCBC96 /* AWSCognitoConflict.h in Headers */ = {isa = PBXBuildFile; fileRef = BC8DB4F72882FB4F139E349ABA88258B /* AWSCognitoConflict.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CAC148B4B2694272D52553F9FBC6F373 /* AWSmetamacros.h in Headers */ = {isa = PBXBuildFile; fileRef = DE0E09003F66AA8F763AF76B5664FD77 /* AWSmetamacros.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		CCF48730840BDBE5403FCFD422C9ED01 /* AWSSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C02C50D12A39256F0216F6D85271D4C /* AWSSerialization.m */; };
+		CE675952F649AF9D57B7BC0C80F63E01 /* Pods-test2-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DD21C928D3307A7D33D22122961583 /* Pods-test2-dummy.m */; };
+		D01FF2D5837C184FFAC1F495936D65C8 /* NSValueTransformer+AWSMTLPredefinedTransformerAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C0FF7016EFCC9F7F745BDF295F97DF30 /* NSValueTransformer+AWSMTLPredefinedTransformerAdditions.m */; };
+		D332FEBD6EB57B1FEB15F11A47B0BC18 /* AWSDDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = A08BB101B238F6EA5313125D18600051 /* AWSDDLog.m */; };
+		D3CCB84AAF4A9C7694164642EA1FAB3C /* AWSNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 75BF71286D4545A789AB3F0F3854AB7C /* AWSNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D51D75A64C98F39A92AA6D1DE25CA60B /* AWSRekognitionModel.h in Headers */ = {isa = PBXBuildFile; fileRef = DEFDBAEF6C54A2EA0377B935FEAD1E3A /* AWSRekognitionModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D65C83C47DA258CFFF53D797D63EE6D7 /* AWSCognitoConflict.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4D630980820FE209C2BDE711EC54E8 /* AWSCognitoConflict.m */; };
+		D7AE2A6F2ECC0183BE3567180655F70B /* AWSURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 925BF5406393BB5084EBC30CB4EA745D /* AWSURLRequestSerialization.m */; };
+		D7C0718569F1BD29D6C826F6920C576E /* AWSCancellationToken.h in Headers */ = {isa = PBXBuildFile; fileRef = E26D7280CA578360A677EB191ECDBEF5 /* AWSCancellationToken.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D89041D44798C318D28B67229DF859F2 /* AWSCognitoRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 990C0686FE260165F824C3476E8D34D1 /* AWSCognitoRecord.m */; };
+		DCBE506739E024F0DC9330C770C2B04C /* AWSDDASLLogCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = F61D57C49A1C2CF588E1E4DF8E19DDFF /* AWSDDASLLogCapture.m */; };
+		DDDD904098A6E4002C2CAE1539132662 /* AWSSTSService.h in Headers */ = {isa = PBXBuildFile; fileRef = 5465124737D389C918813BA761B5E904 /* AWSSTSService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DDF7DDC39EB1A6CFDED5907491D8FB08 /* AWSCognitoDataset.h in Headers */ = {isa = PBXBuildFile; fileRef = 68F57A6DFA2C2AA461999E00564052EC /* AWSCognitoDataset.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DEE0C7DBE902F87A91BD0A43013D58B4 /* AWSDDDispatchQueueLogFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = CBCC9F6250F49182D17E3E484DAA1C2F /* AWSDDDispatchQueueLogFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DF7099AE45BC24EAF6F5FB1DCCC1BA65 /* AWSCognitoConflict_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = C609281F8BE6783B80E7CCA6C6C88121 /* AWSCognitoConflict_Internal.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		E217BDC7D6B6397365210A41399F8B72 /* AWSXMLWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FBB8BD6F61B4BB8D793586263615A44 /* AWSXMLWriter.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		E247CEF3D9E6D1E260604D9E61F937F3 /* AWSDDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE60A7CCE65A922017EDFFEDCCDA22C /* AWSDDASLLogger.m */; };
+		E5B8936DF5DFC285EF8C90BC1F974177 /* Pods-test2-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 12071F59F966C83E2AADF4D9CF644F17 /* Pods-test2-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E771847A2FCEBDF3193FDF3324249C07 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B576B435568E98A3E460B9069ADBFD6F /* SystemConfiguration.framework */; };
+		E77C4C0AE50B5FA883FA78BCB4CB4FCF /* AWSTask.h in Headers */ = {isa = PBXBuildFile; fileRef = FB68A1482470204E68F58A454EE1EFD7 /* AWSTask.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E79936A6F62433D36B5668395552CBF7 /* AWSCognitoSyncResources.m in Sources */ = {isa = PBXBuildFile; fileRef = D260C825B8E57DCCFA188E378948E496 /* AWSCognitoSyncResources.m */; };
+		ECED437E0C28D34405B0C5E473E1DA43 /* AWSFMDatabase+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = B7C08E19F8CE76B64C7C95B52D87726F /* AWSFMDatabase+Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		EDA1CE6AD1F6673C8F5285C6446DC832 /* AWSExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = A442A60F2F50E3B6C39A80AEA8FB730C /* AWSExecutor.m */; };
+		EDA91BE4BD3037B66DE7E67D0790A6F7 /* AWSCognitoRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = 4451A7B5B373FFFD5A8C8B7F004AD1E8 /* AWSCognitoRecord.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EDEF253D1C06678809B73D22EBAFDDF6 /* AWSEXTScope.h in Headers */ = {isa = PBXBuildFile; fileRef = 5224E75156325576B726B3C0A7971534 /* AWSEXTScope.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		EF69F5514C68E46986B00D20F92C0A89 /* AWSCognitoService.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA61B8602B896F7B934E2DB8ACD1EF7 /* AWSCognitoService.m */; };
+		F14371B4FC0B3455837CCC8DB4BCEC28 /* AWSTMMemoryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 241AFDB6837DE1085AB7DB932306D807 /* AWSTMMemoryCache.m */; };
+		F34CDDB2F49C671FA436CBA0E1422903 /* AWSTMCache.h in Headers */ = {isa = PBXBuildFile; fileRef = FFCA4A8490E410756643473E76FE687C /* AWSTMCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F393E86A0C0CAB2A78EE0CC1144E8E38 /* AWSCognitoIdentityService.m in Sources */ = {isa = PBXBuildFile; fileRef = 316E178C27BF546F64053A5F3AD99188 /* AWSCognitoIdentityService.m */; };
+		F664B230C0BA8583147FC323CBBF4679 /* AWSRekognitionResources.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F7B939EF0FC657F62C42BB89A516C3F /* AWSRekognitionResources.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F6A455266A9E8F43F8CB5D41C54376C8 /* AWSMantle.h in Headers */ = {isa = PBXBuildFile; fileRef = FEF6CF46642D0666784B418D36CADC6F /* AWSMantle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7A22DA25B876BCF0B5BBA312EF56E85 /* AWSDDMultiFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 98F8FAAAE61E9E3D629B0BBA97D321DE /* AWSDDMultiFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F83EE166458197F5889314F896621500 /* AWSCognitoIdentityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE7E8E3B513CD1FE71AB6D354DB9AFA /* AWSCognitoIdentityModel.m */; };
+		F978319F64E66217E8EAD508FA876915 /* Fabric+FABKits.h in Headers */ = {isa = PBXBuildFile; fileRef = DAA20D3180302D433C32F629C717191E /* Fabric+FABKits.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		FCD7BB7A376A9CDE2213C5B91CF31F1E /* AWSDDContextFilterLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D048339454FE2B0B6275CF852B9F49 /* AWSDDContextFilterLogFormatter.m */; };
+		FD6F361AE0F82DE50BE65E70AA154DB9 /* AWSRekognition.h in Headers */ = {isa = PBXBuildFile; fileRef = D0EA92AA714A0150E1E2C2AB479965B5 /* AWSRekognition.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FD96B8C6F38EFB4E26EDFB774DE21152 /* AWSCognitoHandlers.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B3C1D4B8B3B71EAC9EA19B42E542884 /* AWSCognitoHandlers.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FDA88BD5CCFCCB3D80E77503E5E3E79B /* AWSMTLJSONAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 29236A989B7007F60D300D7A92FE413C /* AWSMTLJSONAdapter.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0CC82B36E3C8A055BA602CFFF82276BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1AC1CA466FC085E9419D0B99E65DA79F;
+			remoteInfo = AWSCore;
+		};
+		3D688A2BBF5F541E1942568ADAA4A138 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1AC1CA466FC085E9419D0B99E65DA79F;
+			remoteInfo = AWSCore;
+		};
+		6C1E8E9E903CDA5FD773146CEAEFAF19 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 489A50FCB16B5A8AD05CAA57C1B423D5;
+			remoteInfo = AWSCognito;
+		};
+		C192EB0F723350D5D17767D5EFF3904E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1AC1CA466FC085E9419D0B99E65DA79F;
+			remoteInfo = AWSCore;
+		};
+		F20A9988614FB67999E6FCE932DA8BEF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B0B3CF91AE628FF6AFE619EC327629E1;
+			remoteInfo = AWSRekognition;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		006A1204B084A43184B52E6465594983 /* AWSBolts.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSBolts.m; path = AWSCore/Bolts/AWSBolts.m; sourceTree = "<group>"; };
+		013D17CB3DB0F4C59428CB20793DDEA8 /* AWSClientContext.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSClientContext.h; path = AWSCore/Service/AWSClientContext.h; sourceTree = "<group>"; };
+		041EBEE70469DDCF6CCCE04C5547EA4F /* AWSDDASLLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSDDASLLogger.h; path = AWSCore/Logging/AWSDDASLLogger.h; sourceTree = "<group>"; };
+		0420D54C932590BE0F268CB0A7221AF8 /* AWSSTSModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSSTSModel.h; path = AWSCore/STS/AWSSTSModel.h; sourceTree = "<group>"; };
+		051E0D1B2271B293A32A1EF0F489126F /* AWSCognitoIdentity.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCognitoIdentity.h; path = AWSCore/CognitoIdentity/AWSCognitoIdentity.h; sourceTree = "<group>"; };
+		057656FA79FCCD0942508D1A71A870BE /* AWSEXTRuntimeExtensions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSEXTRuntimeExtensions.h; path = AWSCore/Mantle/extobjc/AWSEXTRuntimeExtensions.h; sourceTree = "<group>"; };
+		06DC905DB1E8AF74B452367DBBBC999C /* AWSFMResultSet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSFMResultSet.h; path = AWSCore/FMDB/AWSFMResultSet.h; sourceTree = "<group>"; };
+		087C7A52A317482FD12FEF9C42824986 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		087E5D13F0FCF7C45FDDCA5949E691C1 /* NSArray+AWSMTLManipulationAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+AWSMTLManipulationAdditions.h"; path = "AWSCore/Mantle/NSArray+AWSMTLManipulationAdditions.h"; sourceTree = "<group>"; };
+		091A9525426A4C5661E9BBAA806A394E /* AWSEXTScope.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSEXTScope.m; path = AWSCore/Mantle/extobjc/AWSEXTScope.m; sourceTree = "<group>"; };
+		098A41E02C19DA49D10892B822C27925 /* AWSCognitoRecord_Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCognitoRecord_Internal.h; path = AWSCognito/Internal/AWSCognitoRecord_Internal.h; sourceTree = "<group>"; };
+		0B3C1D4B8B3B71EAC9EA19B42E542884 /* AWSCognitoHandlers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCognitoHandlers.h; path = AWSCognito/AWSCognitoHandlers.h; sourceTree = "<group>"; };
+		0D262C2EDF042F81E5725287BAE71C22 /* NSDictionary+AWSMTLManipulationAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+AWSMTLManipulationAdditions.h"; path = "AWSCore/Mantle/NSDictionary+AWSMTLManipulationAdditions.h"; sourceTree = "<group>"; };
+		0D5A8AD30E64060FDB8B808AC00AB88E /* AWSDDContextFilterLogFormatter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSDDContextFilterLogFormatter.h; path = AWSCore/Logging/Extensions/AWSDDContextFilterLogFormatter.h; sourceTree = "<group>"; };
+		0E64AC65693ABA194501C805CF22C49A /* AWSInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSInfo.h; path = AWSCore/Service/AWSInfo.h; sourceTree = "<group>"; };
+		0EAFF98ADEF1B6EBCE6E43545EFD158E /* AWSCore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCore.h; path = AWSCore/AWSCore.h; sourceTree = "<group>"; };
+		0EF75EC6525C4FC6E2916C559A7558B9 /* AWSNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSNetworking.m; path = AWSCore/Networking/AWSNetworking.m; sourceTree = "<group>"; };
+		0F527FDFF44A16A63C1EAA5A93A3A879 /* AWSDDAssertMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSDDAssertMacros.h; path = AWSCore/Logging/AWSDDAssertMacros.h; sourceTree = "<group>"; };
+		12071F59F966C83E2AADF4D9CF644F17 /* Pods-test2-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-test2-umbrella.h"; sourceTree = "<group>"; };
+		156E35F2FD08063D51191C4759B55386 /* AWSRekognition.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AWSRekognition.modulemap; sourceTree = "<group>"; };
+		158513A92B897E774C260ACC4F6FE409 /* AWSRekognition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AWSRekognition.framework; path = AWSRekognition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1596BEE942733758094865597773A60E /* AWSMTLReflection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSMTLReflection.m; path = AWSCore/Mantle/AWSMTLReflection.m; sourceTree = "<group>"; };
+		169F59ACDA416F93B082AD35AF1BEA54 /* AWSURLSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSURLSessionManager.m; path = AWSCore/Networking/AWSURLSessionManager.m; sourceTree = "<group>"; };
+		1C717E1332D8903FFC964A8F7E51A3E2 /* NSObject+AWSMTLComparisonAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+AWSMTLComparisonAdditions.h"; path = "AWSCore/Mantle/NSObject+AWSMTLComparisonAdditions.h"; sourceTree = "<group>"; };
+		1ED55DA60BCB3C89FF1CAC45F1EDD465 /* AWSEXTKeyPathCoding.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSEXTKeyPathCoding.h; path = AWSCore/Mantle/extobjc/AWSEXTKeyPathCoding.h; sourceTree = "<group>"; };
+		1FC95026C96D1C3A2DB888D335FBC677 /* AWSCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AWSCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FF61616A87AF9F05D742617C615D5C8 /* AWSFMDatabaseQueue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSFMDatabaseQueue.h; path = AWSCore/FMDB/AWSFMDatabaseQueue.h; sourceTree = "<group>"; };
+		1FF903ADF4FDEFD1C87D932CA5085333 /* AWSCore-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AWSCore-dummy.m"; sourceTree = "<group>"; };
+		200C0FEBA19731EB11F51F307B6A074A /* AWSMTLModel+NSCoding.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "AWSMTLModel+NSCoding.h"; path = "AWSCore/Mantle/AWSMTLModel+NSCoding.h"; sourceTree = "<group>"; };
+		2142AD16BF53CA66428330942FD69C13 /* AWSURLResponseSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSURLResponseSerialization.h; path = AWSCore/Serialization/AWSURLResponseSerialization.h; sourceTree = "<group>"; };
+		24122B07586990821DE90AD33AAFED2E /* AWSMTLJSONAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMTLJSONAdapter.h; path = AWSCore/Mantle/AWSMTLJSONAdapter.h; sourceTree = "<group>"; };
+		241AFDB6837DE1085AB7DB932306D807 /* AWSTMMemoryCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSTMMemoryCache.m; path = AWSCore/TMCache/AWSTMMemoryCache.m; sourceTree = "<group>"; };
+		248346C61051B1077532272FBD044F05 /* AWSService.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSService.m; path = AWSCore/Service/AWSService.m; sourceTree = "<group>"; };
+		262CEE276D125BE92BA33D224BF1EBF1 /* AWSSignature.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSSignature.m; path = AWSCore/Authentication/AWSSignature.m; sourceTree = "<group>"; };
+		2668D7AC0D933A3DAC25E4AC53342C9F /* AWSCognitoSyncResources.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCognitoSyncResources.h; path = AWSCognito/CognitoSync/AWSCognitoSyncResources.h; sourceTree = "<group>"; };
+		26A5BEA653F4C4EF865F1F9528989BF2 /* AWSCognitoSyncService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCognitoSyncService.h; path = AWSCognito/CognitoSync/AWSCognitoSyncService.h; sourceTree = "<group>"; };
+		28059C931FEF61DC443DB988E11C7BA1 /* AWSCognito-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AWSCognito-dummy.m"; sourceTree = "<group>"; };
+		29236A989B7007F60D300D7A92FE413C /* AWSMTLJSONAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSMTLJSONAdapter.m; path = AWSCore/Mantle/AWSMTLJSONAdapter.m; sourceTree = "<group>"; };
+		29EA480AE0265B2061C1B562EC3DD897 /* AWSDDMultiFormatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSDDMultiFormatter.m; path = AWSCore/Logging/AWSDDMultiFormatter.m; sourceTree = "<group>"; };
+		2A4401EDFCC756DCFD970F7B64C8777A /* AWSCognito.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AWSCognito.modulemap; sourceTree = "<group>"; };
+		2BCDEC61FE3E6F35EAD7D2CAD1BABE4D /* AWSCognito-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AWSCognito-prefix.pch"; sourceTree = "<group>"; };
+		2C8ADE7CBEFAD2C61690D601FBE33F50 /* AWSDDOSLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSDDOSLogger.h; path = AWSCore/Logging/AWSDDOSLogger.h; sourceTree = "<group>"; };
+		2C99E066499F7EFD196E14CFA11F1456 /* AWSCognitoSyncModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCognitoSyncModel.h; path = AWSCognito/CognitoSync/AWSCognitoSyncModel.h; sourceTree = "<group>"; };
+		2F6644EF67CF9D1EC72E4F2328D426BC /* AWSCognitoIdentityService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCognitoIdentityService.h; path = AWSCore/CognitoIdentity/AWSCognitoIdentityService.h; sourceTree = "<group>"; };
+		2F8659C34397B3622EC38932E9A57D8F /* AWSDDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSDDAbstractDatabaseLogger.m; path = AWSCore/Logging/AWSDDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
+		2FE06B6BFE942327741D132E8A8F38F3 /* AWSCore-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AWSCore-umbrella.h"; sourceTree = "<group>"; };
+		30890A83A43DAA5AEAEE6287C391926C /* AWSURLRequestRetryHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSURLRequestRetryHandler.h; path = AWSCore/Serialization/AWSURLRequestRetryHandler.h; sourceTree = "<group>"; };
+		316E178C27BF546F64053A5F3AD99188 /* AWSCognitoIdentityService.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSCognitoIdentityService.m; path = AWSCore/CognitoIdentity/AWSCognitoIdentityService.m; sourceTree = "<group>"; };
+		32CB5981043582CAE76FC602EBC1BA63 /* AWSDDASLLogCapture.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSDDASLLogCapture.h; path = AWSCore/Logging/AWSDDASLLogCapture.h; sourceTree = "<group>"; };
+		32D9D5A642D457A9745A12AC6C989883 /* AWSMTLManagedObjectAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSMTLManagedObjectAdapter.m; path = AWSCore/Mantle/AWSMTLManagedObjectAdapter.m; sourceTree = "<group>"; };
+		33B2E36B0DF39DB73B62F685B38426AC /* AWSRekognitionService.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSRekognitionService.m; path = AWSRekognition/AWSRekognitionService.m; sourceTree = "<group>"; };
+		365C55DE7AFCA928667FED1DDDE72F95 /* AWSFMDatabase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSFMDatabase.m; path = AWSCore/FMDB/AWSFMDatabase.m; sourceTree = "<group>"; };
+		37A61013E70FAA68DF4AFE02EA315301 /* AWSCore-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AWSCore-prefix.pch"; sourceTree = "<group>"; };
+		381A670720F28C111BBD0769941B87A0 /* AWSSTS.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSSTS.h; path = AWSCore/STS/AWSSTS.h; sourceTree = "<group>"; };
+		3907352EF2A9FA660DF2B3D176D67B35 /* AWSFMDatabaseAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSFMDatabaseAdditions.h; path = AWSCore/FMDB/AWSFMDatabaseAdditions.h; sourceTree = "<group>"; };
+		391FA3EAA842AE006F06225E45D3EF89 /* AWSValidation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSValidation.m; path = AWSCore/Serialization/AWSValidation.m; sourceTree = "<group>"; };
+		3A45BFCD1134994D2531A9E85B9EA526 /* AWSDDFileLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSDDFileLogger.m; path = AWSCore/Logging/AWSDDFileLogger.m; sourceTree = "<group>"; };
+		3D0CFE039A6D820D90CA9C9ECB5C6D3B /* AWSIdentityProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSIdentityProvider.m; path = AWSCore/Authentication/AWSIdentityProvider.m; sourceTree = "<group>"; };
+		3E715D1858F19B33AA680EB370F51C71 /* AWSCognitoSyncService.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSCognitoSyncService.m; path = AWSCognito/CognitoSync/AWSCognitoSyncService.m; sourceTree = "<group>"; };
+		439DA321C6FB781DFE6EE2E696985A5C /* FABKitProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FABKitProtocol.h; path = AWSCore/Fabric/FABKitProtocol.h; sourceTree = "<group>"; };
+		43A8B1F5BD6E94071706E5F299D5D336 /* AWSDDLog+LOGV.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "AWSDDLog+LOGV.h"; path = "AWSCore/Logging/AWSDDLog+LOGV.h"; sourceTree = "<group>"; };
+		4451A7B5B373FFFD5A8C8B7F004AD1E8 /* AWSCognitoRecord.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCognitoRecord.h; path = AWSCognito/AWSCognitoRecord.h; sourceTree = "<group>"; };
+		446A01C9F381CF6D34F3739CC2D24E21 /* AWSDDLegacyMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSDDLegacyMacros.h; path = AWSCore/Logging/AWSDDLegacyMacros.h; sourceTree = "<group>"; };
+		45F33BE6234B9863FD4C965E81545909 /* AWSTaskCompletionSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSTaskCompletionSource.h; path = AWSCore/Bolts/AWSTaskCompletionSource.h; sourceTree = "<group>"; };
+		49CFD40ACD8CB08EE172E1369E4B20E4 /* AWSURLResponseSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSURLResponseSerialization.m; path = AWSCore/Serialization/AWSURLResponseSerialization.m; sourceTree = "<group>"; };
+		4B16E01085D9876C379ED97A71F5A791 /* AWSValidation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSValidation.h; path = AWSCore/Serialization/AWSValidation.h; sourceTree = "<group>"; };
+		4B5C2AFFC3C8B44D094D77160018E645 /* AWSCognito.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AWSCognito.xcconfig; sourceTree = "<group>"; };
+		4BF7EA0B3CFD0C326B63B54DBA140F83 /* NSError+AWSMTLModelException.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSError+AWSMTLModelException.m"; path = "AWSCore/Mantle/NSError+AWSMTLModelException.m"; sourceTree = "<group>"; };
+		4C02C50D12A39256F0216F6D85271D4C /* AWSSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSSerialization.m; path = AWSCore/Serialization/AWSSerialization.m; sourceTree = "<group>"; };
+		4D5B4AE919032817B57A6891F7171CB3 /* AWSCredentialsProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCredentialsProvider.h; path = AWSCore/Authentication/AWSCredentialsProvider.h; sourceTree = "<group>"; };
+		4E666D95E1715F8E9E0203D2CB10A2DF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		4EE3A93E276DB9A85EBA06E83799EA9A /* AWSCancellationTokenSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSCancellationTokenSource.m; path = AWSCore/Bolts/AWSCancellationTokenSource.m; sourceTree = "<group>"; };
+		4F86F6E0CA791AFAC0D13B1FCD8DA123 /* AWSUICKeyChainStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSUICKeyChainStore.h; path = AWSCore/UICKeyChainStore/AWSUICKeyChainStore.h; sourceTree = "<group>"; };
+		4FC5B9CF52A1B74528617ADB5A7F5208 /* Pods_test2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_test2.framework; path = "Pods-test2.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5224E75156325576B726B3C0A7971534 /* AWSEXTScope.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSEXTScope.h; path = AWSCore/Mantle/extobjc/AWSEXTScope.h; sourceTree = "<group>"; };
+		543EDF52A34A7062D690D0CE96D408AE /* AWSFMDatabasePool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSFMDatabasePool.m; path = AWSCore/FMDB/AWSFMDatabasePool.m; sourceTree = "<group>"; };
+		5465124737D389C918813BA761B5E904 /* AWSSTSService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSSTSService.h; path = AWSCore/STS/AWSSTSService.h; sourceTree = "<group>"; };
+		5674B10420290BBD9F5A8AAF345E5835 /* NSArray+AWSMTLManipulationAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+AWSMTLManipulationAdditions.m"; path = "AWSCore/Mantle/NSArray+AWSMTLManipulationAdditions.m"; sourceTree = "<group>"; };
+		574D4133B7F0FAAE7DD5A3CB40EED3FC /* AWSCognitoUtil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCognitoUtil.h; path = AWSCognito/Internal/AWSCognitoUtil.h; sourceTree = "<group>"; };
+		5860676D347018FC5CC1B3049419DFFC /* AWSRekognition-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AWSRekognition-dummy.m"; sourceTree = "<group>"; };
+		5BC6108AF09F6276B2854A5DFC6E8D37 /* AWSClientContext.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSClientContext.m; path = AWSCore/Service/AWSClientContext.m; sourceTree = "<group>"; };
+		5E37F2E72F569FAB1D7F48C926D0467C /* AWSSTSResources.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSSTSResources.m; path = AWSCore/STS/AWSSTSResources.m; sourceTree = "<group>"; };
+		5E423F02529284172EC5C54D3AF73EFC /* AWSCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AWSCore.framework; path = AWSCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F4AEDAD1DA364CC8400AD2FCA290921 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F7B939EF0FC657F62C42BB89A516C3F /* AWSRekognitionResources.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSRekognitionResources.h; path = AWSRekognition/AWSRekognitionResources.h; sourceTree = "<group>"; };
+		5FBB8BD6F61B4BB8D793586263615A44 /* AWSXMLWriter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSXMLWriter.h; path = AWSCore/XMLWriter/AWSXMLWriter.h; sourceTree = "<group>"; };
+		5FCFF9BA5A276ACF0D5C03AA1065809B /* AWSCognitoSyncModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSCognitoSyncModel.m; path = AWSCognito/CognitoSync/AWSCognitoSyncModel.m; sourceTree = "<group>"; };
+		60D2A2464566B2B76A044EEC7FD4E88B /* AWSCognito.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AWSCognito.framework; path = AWSCognito.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		636183FE4E03DE08A4EA8528D7B0E6DE /* AWSRekognitionResources.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSRekognitionResources.m; path = AWSRekognition/AWSRekognitionResources.m; sourceTree = "<group>"; };
+		6406EC46B212FBF420D34D3A437E6C04 /* AWSCognitoSQLiteManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCognitoSQLiteManager.h; path = AWSCognito/Internal/AWSCognitoSQLiteManager.h; sourceTree = "<group>"; };
+		64E9CD35D8DADB2A1D39006309300725 /* AWSCancellationTokenRegistration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCancellationTokenRegistration.h; path = AWSCore/Bolts/AWSCancellationTokenRegistration.h; sourceTree = "<group>"; };
+		6584C74AE81B0506DEFB925DD4456741 /* AWSCancellationTokenSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCancellationTokenSource.h; path = AWSCore/Bolts/AWSCancellationTokenSource.h; sourceTree = "<group>"; };
+		659478625EDF933CACAFC7A35BF41E9C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		677DEE7DABDE42A4144FA98862690CAC /* AWSFMDatabasePool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSFMDatabasePool.h; path = AWSCore/FMDB/AWSFMDatabasePool.h; sourceTree = "<group>"; };
+		68F57A6DFA2C2AA461999E00564052EC /* AWSCognitoDataset.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCognitoDataset.h; path = AWSCognito/AWSCognitoDataset.h; sourceTree = "<group>"; };
+		69504E47A5286ADB1C4DD0A3133FCF9E /* AWSKSReachability.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSKSReachability.m; path = AWSCore/KSReachability/AWSKSReachability.m; sourceTree = "<group>"; };
+		6B0BE392FC93549962F8A3B0C7251B24 /* Pods-test2-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-test2-acknowledgements.markdown"; sourceTree = "<group>"; };
+		6CEECE938697B7189C6F432665ADD6F3 /* AWSMTLModel+NSCoding.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "AWSMTLModel+NSCoding.m"; path = "AWSCore/Mantle/AWSMTLModel+NSCoding.m"; sourceTree = "<group>"; };
+		6CF141CBDB05E94FC310F6EB473EE971 /* AWSXMLDictionary.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSXMLDictionary.h; path = AWSCore/XMLDictionary/AWSXMLDictionary.h; sourceTree = "<group>"; };
+		6E9ED8B75525E4388E32CA87655CBA6B /* AWSCognitoIdentityResources.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCognitoIdentityResources.h; path = AWSCore/CognitoIdentity/AWSCognitoIdentityResources.h; sourceTree = "<group>"; };
+		6FB4D2E895330465707C536C0C8D87E7 /* AWSGeneric.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSGeneric.h; path = AWSCore/Bolts/AWSGeneric.h; sourceTree = "<group>"; };
+		7020A984AE2042079E539A6087E9D41F /* AWSCognitoConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSCognitoConstants.m; path = AWSCognito/Internal/AWSCognitoConstants.m; sourceTree = "<group>"; };
+		70B46DD73AE54BE4F19D6897822346B9 /* AWSCognitoService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCognitoService.h; path = AWSCognito/AWSCognitoService.h; sourceTree = "<group>"; };
+		70D8D66EB3DFF73B5FEDB4542E96AA73 /* AWSCognitoIdentity+Fabric.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "AWSCognitoIdentity+Fabric.m"; path = "AWSCore/CognitoIdentity/AWSCognitoIdentity+Fabric.m"; sourceTree = "<group>"; };
+		7158D342463FE543EDE77209E80B4E73 /* AWSTMDiskCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSTMDiskCache.m; path = AWSCore/TMCache/AWSTMDiskCache.m; sourceTree = "<group>"; };
+		7190E29D429848B87D6D9EF7EBF43EB5 /* AWSFMDatabase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSFMDatabase.h; path = AWSCore/FMDB/AWSFMDatabase.h; sourceTree = "<group>"; };
+		71B27484D377596D0CA688CCF496E6BD /* AWSRekognition-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AWSRekognition-prefix.pch"; sourceTree = "<group>"; };
+		7259013BE602A81EC9092A05CD08B2DB /* AWSDDOSLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSDDOSLogger.m; path = AWSCore/Logging/AWSDDOSLogger.m; sourceTree = "<group>"; };
+		7397D805DB58E5B675399A39B702DB16 /* NSValueTransformer+AWSMTLInversionAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSValueTransformer+AWSMTLInversionAdditions.m"; path = "AWSCore/Mantle/NSValueTransformer+AWSMTLInversionAdditions.m"; sourceTree = "<group>"; };
+		75BF71286D4545A789AB3F0F3854AB7C /* AWSNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSNetworking.h; path = AWSCore/Networking/AWSNetworking.h; sourceTree = "<group>"; };
+		7874D42C8FD5A5B3D9264310261CD897 /* AWSCognitoConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCognitoConstants.h; path = AWSCognito/Internal/AWSCognitoConstants.h; sourceTree = "<group>"; };
+		7C7AF181639866903D2CD7FF759C9A49 /* AWSSynchronizedMutableDictionary.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSSynchronizedMutableDictionary.h; path = AWSCore/Utility/AWSSynchronizedMutableDictionary.h; sourceTree = "<group>"; };
+		7EF1BE465E4F3EE489C8AE0354B35468 /* AWSService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSService.h; path = AWSCore/Service/AWSService.h; sourceTree = "<group>"; };
+		7F3F138E7B1B1D2A1B60F4D5C07F7305 /* AWSCategory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCategory.h; path = AWSCore/Utility/AWSCategory.h; sourceTree = "<group>"; };
+		8005622D1ED3C793AC8403D397C57BCD /* Pods-test2.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-test2.modulemap"; sourceTree = "<group>"; };
+		803124C1A479739A9163D18F3C4CDB27 /* AWSLogging.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSLogging.m; path = AWSCore/Utility/AWSLogging.m; sourceTree = "<group>"; };
+		818B8E128D55DBB36197AA2B602A1F51 /* AWSMTLReflection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMTLReflection.h; path = AWSCore/Mantle/AWSMTLReflection.h; sourceTree = "<group>"; };
+		82BF7DFCA80E7D80F4915B1230AC1310 /* AWSTaskCompletionSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSTaskCompletionSource.m; path = AWSCore/Bolts/AWSTaskCompletionSource.m; sourceTree = "<group>"; };
+		8332E5B59BA3407AD7341892013B5FA3 /* AWSCocoaLumberjack.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCocoaLumberjack.h; path = AWSCore/Logging/AWSCocoaLumberjack.h; sourceTree = "<group>"; };
+		833B6BA98272DC923FAD40EA4BA06AF3 /* Pods-test2-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-test2-acknowledgements.plist"; sourceTree = "<group>"; };
+		83DEBAB95A75E139FFDB17AC8351C814 /* Pods-test2-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-test2-frameworks.sh"; sourceTree = "<group>"; };
+		84F7F1B739191741093603F80D92BAC6 /* AWSCognitoIdentityResources.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSCognitoIdentityResources.m; path = AWSCore/CognitoIdentity/AWSCognitoIdentityResources.m; sourceTree = "<group>"; };
+		852F15831DC676E92A3E90976ACE0AEB /* AWSTMCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSTMCache.m; path = AWSCore/TMCache/AWSTMCache.m; sourceTree = "<group>"; };
+		8997F4FA43135E190DAE4698DE6669EB /* AWSTMMemoryCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSTMMemoryCache.h; path = AWSCore/TMCache/AWSTMMemoryCache.h; sourceTree = "<group>"; };
+		89AEEDC5F29F3524F67FA696317F9836 /* NSError+AWSMTLModelException.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSError+AWSMTLModelException.h"; path = "AWSCore/Mantle/NSError+AWSMTLModelException.h"; sourceTree = "<group>"; };
+		8DF0A6476A3B3C35877C2A48ECF42A30 /* Pods-test2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-test2.debug.xcconfig"; sourceTree = "<group>"; };
+		8F043D96A95360016380279489112CAD /* AWSDDLogMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSDDLogMacros.h; path = AWSCore/Logging/AWSDDLogMacros.h; sourceTree = "<group>"; };
+		9072128DBAB33B9055E7D220021C3AAB /* AWSMTLManagedObjectAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMTLManagedObjectAdapter.h; path = AWSCore/Mantle/AWSMTLManagedObjectAdapter.h; sourceTree = "<group>"; };
+		913260F35E29C44BD206048A91AB154C /* AWSKSReachability.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSKSReachability.h; path = AWSCore/KSReachability/AWSKSReachability.h; sourceTree = "<group>"; };
+		925BF5406393BB5084EBC30CB4EA745D /* AWSURLRequestSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSURLRequestSerialization.m; path = AWSCore/Serialization/AWSURLRequestSerialization.m; sourceTree = "<group>"; };
+		93593A1B23296196B1D328637DFC1C05 /* AWSFMResultSet.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSFMResultSet.m; path = AWSCore/FMDB/AWSFMResultSet.m; sourceTree = "<group>"; };
+		93611DF7D9F81A8F5874DF49AD8A5EE9 /* AWSCategory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSCategory.m; path = AWSCore/Utility/AWSCategory.m; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		94C3396089205C91FCF3898EA09CEF4B /* NSObject+AWSMTLComparisonAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+AWSMTLComparisonAdditions.m"; path = "AWSCore/Mantle/NSObject+AWSMTLComparisonAdditions.m"; sourceTree = "<group>"; };
+		94F280AB2B23C1D99BEFE7955038071B /* AWSServiceEnum.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSServiceEnum.h; path = AWSCore/Service/AWSServiceEnum.h; sourceTree = "<group>"; };
+		95B687F43A72F0FDDCEA42130F5196F4 /* AWSCore.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AWSCore.modulemap; sourceTree = "<group>"; };
+		979AC965EC49250C220F148B76B5EEC4 /* AWSCognitoUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSCognitoUtil.m; path = AWSCognito/Internal/AWSCognitoUtil.m; sourceTree = "<group>"; };
+		98F8FAAAE61E9E3D629B0BBA97D321DE /* AWSDDMultiFormatter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSDDMultiFormatter.h; path = AWSCore/Logging/Extensions/AWSDDMultiFormatter.h; sourceTree = "<group>"; };
+		990C0686FE260165F824C3476E8D34D1 /* AWSCognitoRecord.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSCognitoRecord.m; path = AWSCognito/AWSCognitoRecord.m; sourceTree = "<group>"; };
+		9939B9F5648F838870A3387C4268CC7D /* AWSFMDatabaseQueue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSFMDatabaseQueue.m; path = AWSCore/FMDB/AWSFMDatabaseQueue.m; sourceTree = "<group>"; };
+		9967917063B5629825F7F5C27C455045 /* AWSDDLog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSDDLog.h; path = AWSCore/Logging/AWSDDLog.h; sourceTree = "<group>"; };
+		9B8B4B4A2E8224420B47AA0AFA9E2066 /* AWSInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSInfo.m; path = AWSCore/Service/AWSInfo.m; sourceTree = "<group>"; };
+		A032AC91293744EB055E73671F2EC06A /* Fabric.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Fabric.h; path = AWSCore/Fabric/Fabric.h; sourceTree = "<group>"; };
+		A08BB101B238F6EA5313125D18600051 /* AWSDDLog.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSDDLog.m; path = AWSCore/Logging/AWSDDLog.m; sourceTree = "<group>"; };
+		A1900729CA25A1C34069DD1471D5788F /* AWSDDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSDDAbstractDatabaseLogger.h; path = AWSCore/Logging/AWSDDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
+		A1B57416BF06FBE49A22BE617AD32B56 /* AWSSTSService.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSSTSService.m; path = AWSCore/STS/AWSSTSService.m; sourceTree = "<group>"; };
+		A3E5CBEFF12999077D4C148C572630FD /* NSDictionary+AWSMTLManipulationAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+AWSMTLManipulationAdditions.m"; path = "AWSCore/Mantle/NSDictionary+AWSMTLManipulationAdditions.m"; sourceTree = "<group>"; };
+		A442A60F2F50E3B6C39A80AEA8FB730C /* AWSExecutor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSExecutor.m; path = AWSCore/Bolts/AWSExecutor.m; sourceTree = "<group>"; };
+		A4AD248192B129052B6B43A1897CA80E /* AWSCognitoDataset.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSCognitoDataset.m; path = AWSCognito/AWSCognitoDataset.m; sourceTree = "<group>"; };
+		A68211624633BCB259FBB2DE8B56AD71 /* AWSUICKeyChainStore.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSUICKeyChainStore.m; path = AWSCore/UICKeyChainStore/AWSUICKeyChainStore.m; sourceTree = "<group>"; };
+		AA5EF4F705A127E5B328A2202D02BFAD /* AWSMTLValueTransformer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMTLValueTransformer.h; path = AWSCore/Mantle/AWSMTLValueTransformer.h; sourceTree = "<group>"; };
+		AAD9B4D55924D048AA7E6E7EF9D097DF /* AWSRekognition-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AWSRekognition-umbrella.h"; sourceTree = "<group>"; };
+		AAE43E4DE1E9EFB75530571B53727786 /* AWSRekognitionService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSRekognitionService.h; path = AWSRekognition/AWSRekognitionService.h; sourceTree = "<group>"; };
+		AB2D19840C615D9CDC14B2556C1A6A82 /* AWSDDTTYLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSDDTTYLogger.h; path = AWSCore/Logging/AWSDDTTYLogger.h; sourceTree = "<group>"; };
+		ACAEF60A048DB117556E259A1EECED8A /* AWSBolts.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSBolts.h; path = AWSCore/Bolts/AWSBolts.h; sourceTree = "<group>"; };
+		AE78191EC7E5F10FF51C6B8D6F02FF8C /* AWSSynchronizedMutableDictionary.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSSynchronizedMutableDictionary.m; path = AWSCore/Utility/AWSSynchronizedMutableDictionary.m; sourceTree = "<group>"; };
+		AE9E9C608AD369EB401D3A7329BFF2F1 /* AWSDDFileLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSDDFileLogger.h; path = AWSCore/Logging/AWSDDFileLogger.h; sourceTree = "<group>"; };
+		B06883CA5C59E4AA70461D1D3FC89BF0 /* AWSEXTRuntimeExtensions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSEXTRuntimeExtensions.m; path = AWSCore/Mantle/extobjc/AWSEXTRuntimeExtensions.m; sourceTree = "<group>"; };
+		B29C291849FD085450661217F95EECA9 /* AWSURLRequestSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSURLRequestSerialization.h; path = AWSCore/Serialization/AWSURLRequestSerialization.h; sourceTree = "<group>"; };
+		B2C0BB2836D7DAC7C51D8F6E59E8010F /* AWSXMLWriter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSXMLWriter.m; path = AWSCore/XMLWriter/AWSXMLWriter.m; sourceTree = "<group>"; };
+		B369E8145F1E222EC65C07D20EC5FC91 /* AWSCancellationTokenRegistration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSCancellationTokenRegistration.m; path = AWSCore/Bolts/AWSCancellationTokenRegistration.m; sourceTree = "<group>"; };
+		B3848806F287AA1222470D6A4B3F98C9 /* AWSMTLModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSMTLModel.m; path = AWSCore/Mantle/AWSMTLModel.m; sourceTree = "<group>"; };
+		B3AFE936FFFC3C7EAE0D4E0FD5E509A3 /* AWSTMDiskCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSTMDiskCache.h; path = AWSCore/TMCache/AWSTMDiskCache.h; sourceTree = "<group>"; };
+		B3B3C15042BD4ADCBB161253F63FDE26 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B43B42BC305B6F0C3563F3BB68CF166A /* AWSDDTTYLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSDDTTYLogger.m; path = AWSCore/Logging/AWSDDTTYLogger.m; sourceTree = "<group>"; };
+		B477F14D23800AFD5EA6A7365256BF89 /* AWSTMCacheBackgroundTaskManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSTMCacheBackgroundTaskManager.h; path = AWSCore/TMCache/AWSTMCacheBackgroundTaskManager.h; sourceTree = "<group>"; };
+		B4DD21C928D3307A7D33D22122961583 /* Pods-test2-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-test2-dummy.m"; sourceTree = "<group>"; };
+		B576B435568E98A3E460B9069ADBFD6F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		B5810A111BA221956857D4EFA11D4EEF /* AWSDDDispatchQueueLogFormatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSDDDispatchQueueLogFormatter.m; path = AWSCore/Logging/Extensions/AWSDDDispatchQueueLogFormatter.m; sourceTree = "<group>"; };
+		B78FDE352DA6D61DA2CE4CEA0FFCCA38 /* Pods-test2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-test2.release.xcconfig"; sourceTree = "<group>"; };
+		B7C08E19F8CE76B64C7C95B52D87726F /* AWSFMDatabase+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "AWSFMDatabase+Private.h"; path = "AWSCore/FMDB/AWSFMDatabase+Private.h"; sourceTree = "<group>"; };
+		B9688C132BA5B7054D18DD6F44992BCD /* AWSCognitoIdentity+Fabric.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "AWSCognitoIdentity+Fabric.h"; path = "AWSCore/CognitoIdentity/AWSCognitoIdentity+Fabric.h"; sourceTree = "<group>"; };
+		B9BBB026E52A3E7D737CBC60709065F1 /* AWSCognito.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCognito.h; path = AWSCognito/AWSCognito.h; sourceTree = "<group>"; };
+		BC8DB4F72882FB4F139E349ABA88258B /* AWSCognitoConflict.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCognitoConflict.h; path = AWSCognito/AWSCognitoConflict.h; sourceTree = "<group>"; };
+		BDF08730BB3E64214FB277FEBEB94796 /* AWSSTSResources.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSSTSResources.h; path = AWSCore/STS/AWSSTSResources.h; sourceTree = "<group>"; };
+		BEE7E8E3B513CD1FE71AB6D354DB9AFA /* AWSCognitoIdentityModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSCognitoIdentityModel.m; path = AWSCore/CognitoIdentity/AWSCognitoIdentityModel.m; sourceTree = "<group>"; };
+		BF0907BED793707E07AFB102033B8A91 /* AWSRekognitionModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSRekognitionModel.m; path = AWSRekognition/AWSRekognitionModel.m; sourceTree = "<group>"; };
+		BF4F75D2FB46D47EFD17E153FE8AD7F0 /* NSValueTransformer+AWSMTLPredefinedTransformerAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSValueTransformer+AWSMTLPredefinedTransformerAdditions.h"; path = "AWSCore/Mantle/NSValueTransformer+AWSMTLPredefinedTransformerAdditions.h"; sourceTree = "<group>"; };
+		C0FF7016EFCC9F7F745BDF295F97DF30 /* NSValueTransformer+AWSMTLPredefinedTransformerAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSValueTransformer+AWSMTLPredefinedTransformerAdditions.m"; path = "AWSCore/Mantle/NSValueTransformer+AWSMTLPredefinedTransformerAdditions.m"; sourceTree = "<group>"; };
+		C26A0056E2AB5FF5B8C215CBACCA24A8 /* AWSModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSModel.m; path = AWSCore/Utility/AWSModel.m; sourceTree = "<group>"; };
+		C2F681671365CF5FE23E7A6DFAFA1C12 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C47D7DFD463CF93DAB15BE726696AA66 /* AWSExecutor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSExecutor.h; path = AWSCore/Bolts/AWSExecutor.h; sourceTree = "<group>"; };
+		C4ACFD3E68185BE174D5E4553DA574BA /* Pods-test2-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-test2-resources.sh"; sourceTree = "<group>"; };
+		C4B991F4001FA8D4EBC8D3E6E2385A1C /* AWSLogging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSLogging.h; path = AWSCore/Utility/AWSLogging.h; sourceTree = "<group>"; };
+		C5B0E20C914EFD9B1A6821E75A77596A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C609281F8BE6783B80E7CCA6C6C88121 /* AWSCognitoConflict_Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCognitoConflict_Internal.h; path = AWSCognito/Internal/AWSCognitoConflict_Internal.h; sourceTree = "<group>"; };
+		C6841AAAB69282DC5BD548BAF9D0C00A /* AWSFMDatabaseAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSFMDatabaseAdditions.m; path = AWSCore/FMDB/AWSFMDatabaseAdditions.m; sourceTree = "<group>"; };
+		C7455053CAD54A9AFAFCC4F7EAECAC70 /* AWSModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSModel.h; path = AWSCore/Utility/AWSModel.h; sourceTree = "<group>"; };
+		CB5ACC753095F4E1AB482C631DF300B8 /* AWSCancellationToken.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSCancellationToken.m; path = AWSCore/Bolts/AWSCancellationToken.m; sourceTree = "<group>"; };
+		CBCC9F6250F49182D17E3E484DAA1C2F /* AWSDDDispatchQueueLogFormatter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSDDDispatchQueueLogFormatter.h; path = AWSCore/Logging/Extensions/AWSDDDispatchQueueLogFormatter.h; sourceTree = "<group>"; };
+		CEEA9C6B18CC98555EDEFAF1E0E79B99 /* AWSCognitoSQLiteManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSCognitoSQLiteManager.m; path = AWSCognito/Internal/AWSCognitoSQLiteManager.m; sourceTree = "<group>"; };
+		D006D7E0FF77A8514EACEB2BDA6AB8C2 /* AWSSignature.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSSignature.h; path = AWSCore/Authentication/AWSSignature.h; sourceTree = "<group>"; };
+		D0EA92AA714A0150E1E2C2AB479965B5 /* AWSRekognition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSRekognition.h; path = AWSRekognition/AWSRekognition.h; sourceTree = "<group>"; };
+		D1D048339454FE2B0B6275CF852B9F49 /* AWSDDContextFilterLogFormatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSDDContextFilterLogFormatter.m; path = AWSCore/Logging/Extensions/AWSDDContextFilterLogFormatter.m; sourceTree = "<group>"; };
+		D260C825B8E57DCCFA188E378948E496 /* AWSCognitoSyncResources.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSCognitoSyncResources.m; path = AWSCognito/CognitoSync/AWSCognitoSyncResources.m; sourceTree = "<group>"; };
+		D2CC9C90E159955676B8D7C678940A58 /* AWSGZIP.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSGZIP.m; path = AWSCore/GZIP/AWSGZIP.m; sourceTree = "<group>"; };
+		D5BF6A27E9902887C55C56E694261C05 /* AWSFMDB.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSFMDB.h; path = AWSCore/FMDB/AWSFMDB.h; sourceTree = "<group>"; };
+		D64CE4CE7964BBEED79A8AF6C6A0E3C9 /* AWSRekognition.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AWSRekognition.xcconfig; sourceTree = "<group>"; };
+		D75CA99BA6D6BFF9DDC687AB8359B3D9 /* AWSSTSModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSSTSModel.m; path = AWSCore/STS/AWSSTSModel.m; sourceTree = "<group>"; };
+		D7A7F0CCCF766E69EDC7AD112B880AB7 /* AWSMTLModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMTLModel.h; path = AWSCore/Mantle/AWSMTLModel.h; sourceTree = "<group>"; };
+		DAA20D3180302D433C32F629C717191E /* Fabric+FABKits.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Fabric+FABKits.h"; path = "AWSCore/Fabric/Fabric+FABKits.h"; sourceTree = "<group>"; };
+		DABC89BA6F26AD6676CC4B75DEC25D26 /* AWSTask.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSTask.m; path = AWSCore/Bolts/AWSTask.m; sourceTree = "<group>"; };
+		DB4D630980820FE209C2BDE711EC54E8 /* AWSCognitoConflict.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSCognitoConflict.m; path = AWSCognito/AWSCognitoConflict.m; sourceTree = "<group>"; };
+		DC0CC67BC69C7F3351179394FE2EE2FA /* AWSGZIP.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSGZIP.h; path = AWSCore/GZIP/AWSGZIP.h; sourceTree = "<group>"; };
+		DDC5E05DB6D92EAF4628ABB3EBF27719 /* AWSCognitoIdentityModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCognitoIdentityModel.h; path = AWSCore/CognitoIdentity/AWSCognitoIdentityModel.h; sourceTree = "<group>"; };
+		DE0E09003F66AA8F763AF76B5664FD77 /* AWSmetamacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSmetamacros.h; path = AWSCore/Mantle/extobjc/AWSmetamacros.h; sourceTree = "<group>"; };
+		DEFDBAEF6C54A2EA0377B935FEAD1E3A /* AWSRekognitionModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSRekognitionModel.h; path = AWSRekognition/AWSRekognitionModel.h; sourceTree = "<group>"; };
+		E0D88E4562F5F2DDA3FA91FD92EF29F9 /* AWSCredentialsProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSCredentialsProvider.m; path = AWSCore/Authentication/AWSCredentialsProvider.m; sourceTree = "<group>"; };
+		E26D7280CA578360A677EB191ECDBEF5 /* AWSCancellationToken.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCancellationToken.h; path = AWSCore/Bolts/AWSCancellationToken.h; sourceTree = "<group>"; };
+		E2EB3C0CFAC0326B68C74FB154FD347C /* AWSURLSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSURLSessionManager.h; path = AWSCore/Networking/AWSURLSessionManager.h; sourceTree = "<group>"; };
+		E5A00E3B29FDD446178FA3E6F7DD69D4 /* AWSURLRequestRetryHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSURLRequestRetryHandler.m; path = AWSCore/Serialization/AWSURLRequestRetryHandler.m; sourceTree = "<group>"; };
+		E6AFC0707FF3DF9B51B974F550ADF2DC /* AWSCognitoDataset_Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCognitoDataset_Internal.h; path = AWSCognito/Internal/AWSCognitoDataset_Internal.h; sourceTree = "<group>"; };
+		E778B1B8564AACC7F1549BABC34F372C /* AWSMTLValueTransformer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSMTLValueTransformer.m; path = AWSCore/Mantle/AWSMTLValueTransformer.m; sourceTree = "<group>"; };
+		EBE60A7CCE65A922017EDFFEDCCDA22C /* AWSDDASLLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSDDASLLogger.m; path = AWSCore/Logging/AWSDDASLLogger.m; sourceTree = "<group>"; };
+		ED93EC5CC9131A560BECC3D3D0171270 /* FABAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FABAttributes.h; path = AWSCore/Fabric/FABAttributes.h; sourceTree = "<group>"; };
+		EF0D911087FBD52AE3000AAE65D88353 /* NSValueTransformer+AWSMTLInversionAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSValueTransformer+AWSMTLInversionAdditions.h"; path = "AWSCore/Mantle/NSValueTransformer+AWSMTLInversionAdditions.h"; sourceTree = "<group>"; };
+		EFCC296D6BD3559EB326DD42D44AA338 /* AWSIdentityProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSIdentityProvider.h; path = AWSCore/Authentication/AWSIdentityProvider.h; sourceTree = "<group>"; };
+		F1DC5CD9C0CEDC7CB713CB950B7D7F87 /* AWSCore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AWSCore.xcconfig; sourceTree = "<group>"; };
+		F307ACB43CF2F7D66BC5D3B4446614DE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		F60B7082408625B17982C1356FFEEE1C /* AWSCognito-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AWSCognito-umbrella.h"; sourceTree = "<group>"; };
+		F61D57C49A1C2CF588E1E4DF8E19DDFF /* AWSDDASLLogCapture.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSDDASLLogCapture.m; path = AWSCore/Logging/AWSDDASLLogCapture.m; sourceTree = "<group>"; };
+		F769E970E2083C827B5978982DD18044 /* AWSXMLDictionary.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSXMLDictionary.m; path = AWSCore/XMLDictionary/AWSXMLDictionary.m; sourceTree = "<group>"; };
+		FA808C42E1B2839EEC0899370447804A /* AWSSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSSerialization.h; path = AWSCore/Serialization/AWSSerialization.h; sourceTree = "<group>"; };
+		FB68A1482470204E68F58A454EE1EFD7 /* AWSTask.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSTask.h; path = AWSCore/Bolts/AWSTask.h; sourceTree = "<group>"; };
+		FEF6CF46642D0666784B418D36CADC6F /* AWSMantle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMantle.h; path = AWSCore/Mantle/AWSMantle.h; sourceTree = "<group>"; };
+		FFA61B8602B896F7B934E2DB8ACD1EF7 /* AWSCognitoService.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSCognitoService.m; path = AWSCognito/AWSCognitoService.m; sourceTree = "<group>"; };
+		FFCA4A8490E410756643473E76FE687C /* AWSTMCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSTMCache.h; path = AWSCore/TMCache/AWSTMCache.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0CA22DBC51E55DD0E339F4FECFBF6E27 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FD30E550DB8167D2EFAB030469CAEB7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B56A1321F0C8BE5A3AC7FDF30FF36D44 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2661A916360196651720364E4AA25A44 /* AWSCore.framework in Frameworks */,
+				4794138162919C6E1AF6623D7A356CD1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8528454B5EA55BB974B9E33D6E1D6CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A1C54048A7D0C3C8016F4877A9BEBC0 /* CoreGraphics.framework in Frameworks */,
+				BCD893872F00DAE1486B890BC0381A17 /* Foundation.framework in Frameworks */,
+				BE15D992D74DBB41B851C96B2ADC3799 /* Security.framework in Frameworks */,
+				E771847A2FCEBDF3193FDF3324249C07 /* SystemConfiguration.framework in Frameworks */,
+				7443827E85718EA94F36B1D301698AC3 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC20497BBD684F804A9F8C532BA1AFA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1454F67536BB0553BC7E4E23D02C561C /* AWSCore.framework in Frameworks */,
+				A38A7CA0BB17592A8EE1F7EB2E3B2EA5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5CD1586F554F47F6FE77DC11E9CB448C /* AWSCognito */ = {
+			isa = PBXGroup;
+			children = (
+				B9BBB026E52A3E7D737CBC60709065F1 /* AWSCognito.h */,
+				BC8DB4F72882FB4F139E349ABA88258B /* AWSCognitoConflict.h */,
+				DB4D630980820FE209C2BDE711EC54E8 /* AWSCognitoConflict.m */,
+				C609281F8BE6783B80E7CCA6C6C88121 /* AWSCognitoConflict_Internal.h */,
+				7874D42C8FD5A5B3D9264310261CD897 /* AWSCognitoConstants.h */,
+				7020A984AE2042079E539A6087E9D41F /* AWSCognitoConstants.m */,
+				68F57A6DFA2C2AA461999E00564052EC /* AWSCognitoDataset.h */,
+				A4AD248192B129052B6B43A1897CA80E /* AWSCognitoDataset.m */,
+				E6AFC0707FF3DF9B51B974F550ADF2DC /* AWSCognitoDataset_Internal.h */,
+				0B3C1D4B8B3B71EAC9EA19B42E542884 /* AWSCognitoHandlers.h */,
+				4451A7B5B373FFFD5A8C8B7F004AD1E8 /* AWSCognitoRecord.h */,
+				990C0686FE260165F824C3476E8D34D1 /* AWSCognitoRecord.m */,
+				098A41E02C19DA49D10892B822C27925 /* AWSCognitoRecord_Internal.h */,
+				70B46DD73AE54BE4F19D6897822346B9 /* AWSCognitoService.h */,
+				FFA61B8602B896F7B934E2DB8ACD1EF7 /* AWSCognitoService.m */,
+				6406EC46B212FBF420D34D3A437E6C04 /* AWSCognitoSQLiteManager.h */,
+				CEEA9C6B18CC98555EDEFAF1E0E79B99 /* AWSCognitoSQLiteManager.m */,
+				2C99E066499F7EFD196E14CFA11F1456 /* AWSCognitoSyncModel.h */,
+				5FCFF9BA5A276ACF0D5C03AA1065809B /* AWSCognitoSyncModel.m */,
+				2668D7AC0D933A3DAC25E4AC53342C9F /* AWSCognitoSyncResources.h */,
+				D260C825B8E57DCCFA188E378948E496 /* AWSCognitoSyncResources.m */,
+				26A5BEA653F4C4EF865F1F9528989BF2 /* AWSCognitoSyncService.h */,
+				3E715D1858F19B33AA680EB370F51C71 /* AWSCognitoSyncService.m */,
+				574D4133B7F0FAAE7DD5A3CB40EED3FC /* AWSCognitoUtil.h */,
+				979AC965EC49250C220F148B76B5EEC4 /* AWSCognitoUtil.m */,
+				8315B65070A18F6656BB48DAAC1EEE78 /* Support Files */,
+			);
+			name = AWSCognito;
+			path = AWSCognito;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				E5B4212A413E75A54D4A45E3A8BB855A /* Frameworks */,
+				F9FBFE38434AC8F74E2C3EC1CD49EE82 /* Pods */,
+				8B3D23055CAE778D5DDBC003A3DD2BB9 /* Products */,
+				99506C5A5A40697D22CB5FA7199F1032 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8315B65070A18F6656BB48DAAC1EEE78 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2A4401EDFCC756DCFD970F7B64C8777A /* AWSCognito.modulemap */,
+				4B5C2AFFC3C8B44D094D77160018E645 /* AWSCognito.xcconfig */,
+				28059C931FEF61DC443DB988E11C7BA1 /* AWSCognito-dummy.m */,
+				2BCDEC61FE3E6F35EAD7D2CAD1BABE4D /* AWSCognito-prefix.pch */,
+				F60B7082408625B17982C1356FFEEE1C /* AWSCognito-umbrella.h */,
+				5F4AEDAD1DA364CC8400AD2FCA290921 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/AWSCognito";
+			sourceTree = "<group>";
+		};
+		8B3D23055CAE778D5DDBC003A3DD2BB9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				60D2A2464566B2B76A044EEC7FD4E88B /* AWSCognito.framework */,
+				5E423F02529284172EC5C54D3AF73EFC /* AWSCore.framework */,
+				158513A92B897E774C260ACC4F6FE409 /* AWSRekognition.framework */,
+				4FC5B9CF52A1B74528617ADB5A7F5208 /* Pods_test2.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		991AEF1A8602537E603E9C15666272FF /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				659478625EDF933CACAFC7A35BF41E9C /* CoreGraphics.framework */,
+				F307ACB43CF2F7D66BC5D3B4446614DE /* Foundation.framework */,
+				087C7A52A317482FD12FEF9C42824986 /* Security.framework */,
+				B576B435568E98A3E460B9069ADBFD6F /* SystemConfiguration.framework */,
+				4E666D95E1715F8E9E0203D2CB10A2DF /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		99506C5A5A40697D22CB5FA7199F1032 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A2E2B9DF7451ABBD3FB309436472313D /* Pods-test2 */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		A2A3D84D7CE336EF37C75AA5761A9955 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				156E35F2FD08063D51191C4759B55386 /* AWSRekognition.modulemap */,
+				D64CE4CE7964BBEED79A8AF6C6A0E3C9 /* AWSRekognition.xcconfig */,
+				5860676D347018FC5CC1B3049419DFFC /* AWSRekognition-dummy.m */,
+				71B27484D377596D0CA688CCF496E6BD /* AWSRekognition-prefix.pch */,
+				AAD9B4D55924D048AA7E6E7EF9D097DF /* AWSRekognition-umbrella.h */,
+				B3B3C15042BD4ADCBB161253F63FDE26 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/AWSRekognition";
+			sourceTree = "<group>";
+		};
+		A2E2B9DF7451ABBD3FB309436472313D /* Pods-test2 */ = {
+			isa = PBXGroup;
+			children = (
+				C2F681671365CF5FE23E7A6DFAFA1C12 /* Info.plist */,
+				8005622D1ED3C793AC8403D397C57BCD /* Pods-test2.modulemap */,
+				6B0BE392FC93549962F8A3B0C7251B24 /* Pods-test2-acknowledgements.markdown */,
+				833B6BA98272DC923FAD40EA4BA06AF3 /* Pods-test2-acknowledgements.plist */,
+				B4DD21C928D3307A7D33D22122961583 /* Pods-test2-dummy.m */,
+				83DEBAB95A75E139FFDB17AC8351C814 /* Pods-test2-frameworks.sh */,
+				C4ACFD3E68185BE174D5E4553DA574BA /* Pods-test2-resources.sh */,
+				12071F59F966C83E2AADF4D9CF644F17 /* Pods-test2-umbrella.h */,
+				8DF0A6476A3B3C35877C2A48ECF42A30 /* Pods-test2.debug.xcconfig */,
+				B78FDE352DA6D61DA2CE4CEA0FFCCA38 /* Pods-test2.release.xcconfig */,
+			);
+			name = "Pods-test2";
+			path = "Target Support Files/Pods-test2";
+			sourceTree = "<group>";
+		};
+		A37AE3D2195D908678CEF0072537CDA6 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				95B687F43A72F0FDDCEA42130F5196F4 /* AWSCore.modulemap */,
+				F1DC5CD9C0CEDC7CB713CB950B7D7F87 /* AWSCore.xcconfig */,
+				1FF903ADF4FDEFD1C87D932CA5085333 /* AWSCore-dummy.m */,
+				37A61013E70FAA68DF4AFE02EA315301 /* AWSCore-prefix.pch */,
+				2FE06B6BFE942327741D132E8A8F38F3 /* AWSCore-umbrella.h */,
+				C5B0E20C914EFD9B1A6821E75A77596A /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/AWSCore";
+			sourceTree = "<group>";
+		};
+		C37FFF74CE09CC85F8A5D7A083FA6084 /* AWSRekognition */ = {
+			isa = PBXGroup;
+			children = (
+				D0EA92AA714A0150E1E2C2AB479965B5 /* AWSRekognition.h */,
+				DEFDBAEF6C54A2EA0377B935FEAD1E3A /* AWSRekognitionModel.h */,
+				BF0907BED793707E07AFB102033B8A91 /* AWSRekognitionModel.m */,
+				5F7B939EF0FC657F62C42BB89A516C3F /* AWSRekognitionResources.h */,
+				636183FE4E03DE08A4EA8528D7B0E6DE /* AWSRekognitionResources.m */,
+				AAE43E4DE1E9EFB75530571B53727786 /* AWSRekognitionService.h */,
+				33B2E36B0DF39DB73B62F685B38426AC /* AWSRekognitionService.m */,
+				A2A3D84D7CE336EF37C75AA5761A9955 /* Support Files */,
+			);
+			name = AWSRekognition;
+			path = AWSRekognition;
+			sourceTree = "<group>";
+		};
+		DB9F295AE43F3466CBE70141FAA6DDBE /* AWSCore */ = {
+			isa = PBXGroup;
+			children = (
+				ACAEF60A048DB117556E259A1EECED8A /* AWSBolts.h */,
+				006A1204B084A43184B52E6465594983 /* AWSBolts.m */,
+				E26D7280CA578360A677EB191ECDBEF5 /* AWSCancellationToken.h */,
+				CB5ACC753095F4E1AB482C631DF300B8 /* AWSCancellationToken.m */,
+				64E9CD35D8DADB2A1D39006309300725 /* AWSCancellationTokenRegistration.h */,
+				B369E8145F1E222EC65C07D20EC5FC91 /* AWSCancellationTokenRegistration.m */,
+				6584C74AE81B0506DEFB925DD4456741 /* AWSCancellationTokenSource.h */,
+				4EE3A93E276DB9A85EBA06E83799EA9A /* AWSCancellationTokenSource.m */,
+				7F3F138E7B1B1D2A1B60F4D5C07F7305 /* AWSCategory.h */,
+				93611DF7D9F81A8F5874DF49AD8A5EE9 /* AWSCategory.m */,
+				013D17CB3DB0F4C59428CB20793DDEA8 /* AWSClientContext.h */,
+				5BC6108AF09F6276B2854A5DFC6E8D37 /* AWSClientContext.m */,
+				8332E5B59BA3407AD7341892013B5FA3 /* AWSCocoaLumberjack.h */,
+				051E0D1B2271B293A32A1EF0F489126F /* AWSCognitoIdentity.h */,
+				B9688C132BA5B7054D18DD6F44992BCD /* AWSCognitoIdentity+Fabric.h */,
+				70D8D66EB3DFF73B5FEDB4542E96AA73 /* AWSCognitoIdentity+Fabric.m */,
+				DDC5E05DB6D92EAF4628ABB3EBF27719 /* AWSCognitoIdentityModel.h */,
+				BEE7E8E3B513CD1FE71AB6D354DB9AFA /* AWSCognitoIdentityModel.m */,
+				6E9ED8B75525E4388E32CA87655CBA6B /* AWSCognitoIdentityResources.h */,
+				84F7F1B739191741093603F80D92BAC6 /* AWSCognitoIdentityResources.m */,
+				2F6644EF67CF9D1EC72E4F2328D426BC /* AWSCognitoIdentityService.h */,
+				316E178C27BF546F64053A5F3AD99188 /* AWSCognitoIdentityService.m */,
+				0EAFF98ADEF1B6EBCE6E43545EFD158E /* AWSCore.h */,
+				4D5B4AE919032817B57A6891F7171CB3 /* AWSCredentialsProvider.h */,
+				E0D88E4562F5F2DDA3FA91FD92EF29F9 /* AWSCredentialsProvider.m */,
+				A1900729CA25A1C34069DD1471D5788F /* AWSDDAbstractDatabaseLogger.h */,
+				2F8659C34397B3622EC38932E9A57D8F /* AWSDDAbstractDatabaseLogger.m */,
+				32CB5981043582CAE76FC602EBC1BA63 /* AWSDDASLLogCapture.h */,
+				F61D57C49A1C2CF588E1E4DF8E19DDFF /* AWSDDASLLogCapture.m */,
+				041EBEE70469DDCF6CCCE04C5547EA4F /* AWSDDASLLogger.h */,
+				EBE60A7CCE65A922017EDFFEDCCDA22C /* AWSDDASLLogger.m */,
+				0F527FDFF44A16A63C1EAA5A93A3A879 /* AWSDDAssertMacros.h */,
+				0D5A8AD30E64060FDB8B808AC00AB88E /* AWSDDContextFilterLogFormatter.h */,
+				D1D048339454FE2B0B6275CF852B9F49 /* AWSDDContextFilterLogFormatter.m */,
+				CBCC9F6250F49182D17E3E484DAA1C2F /* AWSDDDispatchQueueLogFormatter.h */,
+				B5810A111BA221956857D4EFA11D4EEF /* AWSDDDispatchQueueLogFormatter.m */,
+				AE9E9C608AD369EB401D3A7329BFF2F1 /* AWSDDFileLogger.h */,
+				3A45BFCD1134994D2531A9E85B9EA526 /* AWSDDFileLogger.m */,
+				446A01C9F381CF6D34F3739CC2D24E21 /* AWSDDLegacyMacros.h */,
+				9967917063B5629825F7F5C27C455045 /* AWSDDLog.h */,
+				A08BB101B238F6EA5313125D18600051 /* AWSDDLog.m */,
+				43A8B1F5BD6E94071706E5F299D5D336 /* AWSDDLog+LOGV.h */,
+				8F043D96A95360016380279489112CAD /* AWSDDLogMacros.h */,
+				98F8FAAAE61E9E3D629B0BBA97D321DE /* AWSDDMultiFormatter.h */,
+				29EA480AE0265B2061C1B562EC3DD897 /* AWSDDMultiFormatter.m */,
+				2C8ADE7CBEFAD2C61690D601FBE33F50 /* AWSDDOSLogger.h */,
+				7259013BE602A81EC9092A05CD08B2DB /* AWSDDOSLogger.m */,
+				AB2D19840C615D9CDC14B2556C1A6A82 /* AWSDDTTYLogger.h */,
+				B43B42BC305B6F0C3563F3BB68CF166A /* AWSDDTTYLogger.m */,
+				C47D7DFD463CF93DAB15BE726696AA66 /* AWSExecutor.h */,
+				A442A60F2F50E3B6C39A80AEA8FB730C /* AWSExecutor.m */,
+				1ED55DA60BCB3C89FF1CAC45F1EDD465 /* AWSEXTKeyPathCoding.h */,
+				057656FA79FCCD0942508D1A71A870BE /* AWSEXTRuntimeExtensions.h */,
+				B06883CA5C59E4AA70461D1D3FC89BF0 /* AWSEXTRuntimeExtensions.m */,
+				5224E75156325576B726B3C0A7971534 /* AWSEXTScope.h */,
+				091A9525426A4C5661E9BBAA806A394E /* AWSEXTScope.m */,
+				7190E29D429848B87D6D9EF7EBF43EB5 /* AWSFMDatabase.h */,
+				365C55DE7AFCA928667FED1DDDE72F95 /* AWSFMDatabase.m */,
+				B7C08E19F8CE76B64C7C95B52D87726F /* AWSFMDatabase+Private.h */,
+				3907352EF2A9FA660DF2B3D176D67B35 /* AWSFMDatabaseAdditions.h */,
+				C6841AAAB69282DC5BD548BAF9D0C00A /* AWSFMDatabaseAdditions.m */,
+				677DEE7DABDE42A4144FA98862690CAC /* AWSFMDatabasePool.h */,
+				543EDF52A34A7062D690D0CE96D408AE /* AWSFMDatabasePool.m */,
+				1FF61616A87AF9F05D742617C615D5C8 /* AWSFMDatabaseQueue.h */,
+				9939B9F5648F838870A3387C4268CC7D /* AWSFMDatabaseQueue.m */,
+				D5BF6A27E9902887C55C56E694261C05 /* AWSFMDB.h */,
+				06DC905DB1E8AF74B452367DBBBC999C /* AWSFMResultSet.h */,
+				93593A1B23296196B1D328637DFC1C05 /* AWSFMResultSet.m */,
+				6FB4D2E895330465707C536C0C8D87E7 /* AWSGeneric.h */,
+				DC0CC67BC69C7F3351179394FE2EE2FA /* AWSGZIP.h */,
+				D2CC9C90E159955676B8D7C678940A58 /* AWSGZIP.m */,
+				EFCC296D6BD3559EB326DD42D44AA338 /* AWSIdentityProvider.h */,
+				3D0CFE039A6D820D90CA9C9ECB5C6D3B /* AWSIdentityProvider.m */,
+				0E64AC65693ABA194501C805CF22C49A /* AWSInfo.h */,
+				9B8B4B4A2E8224420B47AA0AFA9E2066 /* AWSInfo.m */,
+				913260F35E29C44BD206048A91AB154C /* AWSKSReachability.h */,
+				69504E47A5286ADB1C4DD0A3133FCF9E /* AWSKSReachability.m */,
+				C4B991F4001FA8D4EBC8D3E6E2385A1C /* AWSLogging.h */,
+				803124C1A479739A9163D18F3C4CDB27 /* AWSLogging.m */,
+				FEF6CF46642D0666784B418D36CADC6F /* AWSMantle.h */,
+				DE0E09003F66AA8F763AF76B5664FD77 /* AWSmetamacros.h */,
+				C7455053CAD54A9AFAFCC4F7EAECAC70 /* AWSModel.h */,
+				C26A0056E2AB5FF5B8C215CBACCA24A8 /* AWSModel.m */,
+				24122B07586990821DE90AD33AAFED2E /* AWSMTLJSONAdapter.h */,
+				29236A989B7007F60D300D7A92FE413C /* AWSMTLJSONAdapter.m */,
+				9072128DBAB33B9055E7D220021C3AAB /* AWSMTLManagedObjectAdapter.h */,
+				32D9D5A642D457A9745A12AC6C989883 /* AWSMTLManagedObjectAdapter.m */,
+				D7A7F0CCCF766E69EDC7AD112B880AB7 /* AWSMTLModel.h */,
+				B3848806F287AA1222470D6A4B3F98C9 /* AWSMTLModel.m */,
+				200C0FEBA19731EB11F51F307B6A074A /* AWSMTLModel+NSCoding.h */,
+				6CEECE938697B7189C6F432665ADD6F3 /* AWSMTLModel+NSCoding.m */,
+				818B8E128D55DBB36197AA2B602A1F51 /* AWSMTLReflection.h */,
+				1596BEE942733758094865597773A60E /* AWSMTLReflection.m */,
+				AA5EF4F705A127E5B328A2202D02BFAD /* AWSMTLValueTransformer.h */,
+				E778B1B8564AACC7F1549BABC34F372C /* AWSMTLValueTransformer.m */,
+				75BF71286D4545A789AB3F0F3854AB7C /* AWSNetworking.h */,
+				0EF75EC6525C4FC6E2916C559A7558B9 /* AWSNetworking.m */,
+				FA808C42E1B2839EEC0899370447804A /* AWSSerialization.h */,
+				4C02C50D12A39256F0216F6D85271D4C /* AWSSerialization.m */,
+				7EF1BE465E4F3EE489C8AE0354B35468 /* AWSService.h */,
+				248346C61051B1077532272FBD044F05 /* AWSService.m */,
+				94F280AB2B23C1D99BEFE7955038071B /* AWSServiceEnum.h */,
+				D006D7E0FF77A8514EACEB2BDA6AB8C2 /* AWSSignature.h */,
+				262CEE276D125BE92BA33D224BF1EBF1 /* AWSSignature.m */,
+				381A670720F28C111BBD0769941B87A0 /* AWSSTS.h */,
+				0420D54C932590BE0F268CB0A7221AF8 /* AWSSTSModel.h */,
+				D75CA99BA6D6BFF9DDC687AB8359B3D9 /* AWSSTSModel.m */,
+				BDF08730BB3E64214FB277FEBEB94796 /* AWSSTSResources.h */,
+				5E37F2E72F569FAB1D7F48C926D0467C /* AWSSTSResources.m */,
+				5465124737D389C918813BA761B5E904 /* AWSSTSService.h */,
+				A1B57416BF06FBE49A22BE617AD32B56 /* AWSSTSService.m */,
+				7C7AF181639866903D2CD7FF759C9A49 /* AWSSynchronizedMutableDictionary.h */,
+				AE78191EC7E5F10FF51C6B8D6F02FF8C /* AWSSynchronizedMutableDictionary.m */,
+				FB68A1482470204E68F58A454EE1EFD7 /* AWSTask.h */,
+				DABC89BA6F26AD6676CC4B75DEC25D26 /* AWSTask.m */,
+				45F33BE6234B9863FD4C965E81545909 /* AWSTaskCompletionSource.h */,
+				82BF7DFCA80E7D80F4915B1230AC1310 /* AWSTaskCompletionSource.m */,
+				FFCA4A8490E410756643473E76FE687C /* AWSTMCache.h */,
+				852F15831DC676E92A3E90976ACE0AEB /* AWSTMCache.m */,
+				B477F14D23800AFD5EA6A7365256BF89 /* AWSTMCacheBackgroundTaskManager.h */,
+				B3AFE936FFFC3C7EAE0D4E0FD5E509A3 /* AWSTMDiskCache.h */,
+				7158D342463FE543EDE77209E80B4E73 /* AWSTMDiskCache.m */,
+				8997F4FA43135E190DAE4698DE6669EB /* AWSTMMemoryCache.h */,
+				241AFDB6837DE1085AB7DB932306D807 /* AWSTMMemoryCache.m */,
+				4F86F6E0CA791AFAC0D13B1FCD8DA123 /* AWSUICKeyChainStore.h */,
+				A68211624633BCB259FBB2DE8B56AD71 /* AWSUICKeyChainStore.m */,
+				30890A83A43DAA5AEAEE6287C391926C /* AWSURLRequestRetryHandler.h */,
+				E5A00E3B29FDD446178FA3E6F7DD69D4 /* AWSURLRequestRetryHandler.m */,
+				B29C291849FD085450661217F95EECA9 /* AWSURLRequestSerialization.h */,
+				925BF5406393BB5084EBC30CB4EA745D /* AWSURLRequestSerialization.m */,
+				2142AD16BF53CA66428330942FD69C13 /* AWSURLResponseSerialization.h */,
+				49CFD40ACD8CB08EE172E1369E4B20E4 /* AWSURLResponseSerialization.m */,
+				E2EB3C0CFAC0326B68C74FB154FD347C /* AWSURLSessionManager.h */,
+				169F59ACDA416F93B082AD35AF1BEA54 /* AWSURLSessionManager.m */,
+				4B16E01085D9876C379ED97A71F5A791 /* AWSValidation.h */,
+				391FA3EAA842AE006F06225E45D3EF89 /* AWSValidation.m */,
+				6CF141CBDB05E94FC310F6EB473EE971 /* AWSXMLDictionary.h */,
+				F769E970E2083C827B5978982DD18044 /* AWSXMLDictionary.m */,
+				5FBB8BD6F61B4BB8D793586263615A44 /* AWSXMLWriter.h */,
+				B2C0BB2836D7DAC7C51D8F6E59E8010F /* AWSXMLWriter.m */,
+				ED93EC5CC9131A560BECC3D3D0171270 /* FABAttributes.h */,
+				439DA321C6FB781DFE6EE2E696985A5C /* FABKitProtocol.h */,
+				A032AC91293744EB055E73671F2EC06A /* Fabric.h */,
+				DAA20D3180302D433C32F629C717191E /* Fabric+FABKits.h */,
+				087E5D13F0FCF7C45FDDCA5949E691C1 /* NSArray+AWSMTLManipulationAdditions.h */,
+				5674B10420290BBD9F5A8AAF345E5835 /* NSArray+AWSMTLManipulationAdditions.m */,
+				0D262C2EDF042F81E5725287BAE71C22 /* NSDictionary+AWSMTLManipulationAdditions.h */,
+				A3E5CBEFF12999077D4C148C572630FD /* NSDictionary+AWSMTLManipulationAdditions.m */,
+				89AEEDC5F29F3524F67FA696317F9836 /* NSError+AWSMTLModelException.h */,
+				4BF7EA0B3CFD0C326B63B54DBA140F83 /* NSError+AWSMTLModelException.m */,
+				1C717E1332D8903FFC964A8F7E51A3E2 /* NSObject+AWSMTLComparisonAdditions.h */,
+				94C3396089205C91FCF3898EA09CEF4B /* NSObject+AWSMTLComparisonAdditions.m */,
+				EF0D911087FBD52AE3000AAE65D88353 /* NSValueTransformer+AWSMTLInversionAdditions.h */,
+				7397D805DB58E5B675399A39B702DB16 /* NSValueTransformer+AWSMTLInversionAdditions.m */,
+				BF4F75D2FB46D47EFD17E153FE8AD7F0 /* NSValueTransformer+AWSMTLPredefinedTransformerAdditions.h */,
+				C0FF7016EFCC9F7F745BDF295F97DF30 /* NSValueTransformer+AWSMTLPredefinedTransformerAdditions.m */,
+				A37AE3D2195D908678CEF0072537CDA6 /* Support Files */,
+			);
+			name = AWSCore;
+			path = AWSCore;
+			sourceTree = "<group>";
+		};
+		E5B4212A413E75A54D4A45E3A8BB855A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1FC95026C96D1C3A2DB888D335FBC677 /* AWSCore.framework */,
+				991AEF1A8602537E603E9C15666272FF /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F9FBFE38434AC8F74E2C3EC1CD49EE82 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5CD1586F554F47F6FE77DC11E9CB448C /* AWSCognito */,
+				DB9F295AE43F3466CBE70141FAA6DDBE /* AWSCore */,
+				C37FFF74CE09CC85F8A5D7A083FA6084 /* AWSRekognition */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1D734C8B6D88D466404079CBC0641614 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B423231D31DA0A0E4F68EE2B0233F9F /* AWSBolts.h in Headers */,
+				D7C0718569F1BD29D6C826F6920C576E /* AWSCancellationToken.h in Headers */,
+				97FF948BCB91260E19459C11E1CA6EBD /* AWSCancellationTokenRegistration.h in Headers */,
+				BA9413553EB567705BD2A249D359961E /* AWSCancellationTokenSource.h in Headers */,
+				993073F120A2C850A4E2704DB458A682 /* AWSCategory.h in Headers */,
+				C2112903DEAE71A7C29419AC9510B9B9 /* AWSClientContext.h in Headers */,
+				BD8EC732687A8EFD1B3FCBB2358E860A /* AWSCocoaLumberjack.h in Headers */,
+				A0CE86E1DB86624CE5284D5F367B2E09 /* AWSCognitoIdentity+Fabric.h in Headers */,
+				A00FF84CCD2FC1888909A68417EFAF36 /* AWSCognitoIdentity.h in Headers */,
+				03E7E0C7E49DCDEC01647CBA83626962 /* AWSCognitoIdentityModel.h in Headers */,
+				570FA88BEC405011F1C0D8A4B8B3254F /* AWSCognitoIdentityResources.h in Headers */,
+				4DE5E7DAA5C207FBE21BC36F05CDC2F7 /* AWSCognitoIdentityService.h in Headers */,
+				3AA460D2DDC8DB41B066D64F0EE98C18 /* AWSCore-umbrella.h in Headers */,
+				40264C99928B46A01927E022D5834A16 /* AWSCore.h in Headers */,
+				48ECB959EADD653A4DCFDCA2F19CFB80 /* AWSCredentialsProvider.h in Headers */,
+				261E76B60CA52B4F54F09086D007E067 /* AWSDDAbstractDatabaseLogger.h in Headers */,
+				3CCC6E4871DF687CEA48178CAB641B63 /* AWSDDASLLogCapture.h in Headers */,
+				6E66934C1FCD70B1FC8055C00F9553EF /* AWSDDASLLogger.h in Headers */,
+				43FC26779183CDEB063C33528104E1B0 /* AWSDDAssertMacros.h in Headers */,
+				90BE8777F78818F34F82EF473AAE60D4 /* AWSDDContextFilterLogFormatter.h in Headers */,
+				DEE0C7DBE902F87A91BD0A43013D58B4 /* AWSDDDispatchQueueLogFormatter.h in Headers */,
+				BF115041683F2E070E8955CEB6A63047 /* AWSDDFileLogger.h in Headers */,
+				082A64760C0B63D17D0C87C8ADA09450 /* AWSDDLegacyMacros.h in Headers */,
+				B6A1CD87C309723E491CC61EEAA84782 /* AWSDDLog+LOGV.h in Headers */,
+				C55F73343619A97DFEAC7613CBC5626C /* AWSDDLog.h in Headers */,
+				50C94B29E014F9F40F6DD24373DD5A85 /* AWSDDLogMacros.h in Headers */,
+				F7A22DA25B876BCF0B5BBA312EF56E85 /* AWSDDMultiFormatter.h in Headers */,
+				7073527D9CF14EE4DB6BEEFF832FA8CE /* AWSDDOSLogger.h in Headers */,
+				9A28081322620231EC80EA30C23C6DC2 /* AWSDDTTYLogger.h in Headers */,
+				224D04D9B57B9802F78F5D18FF7625BF /* AWSExecutor.h in Headers */,
+				A9EB7EFF61FD60A8F76D8D7BB881B80B /* AWSEXTKeyPathCoding.h in Headers */,
+				21D9AA3291CD3AAA714FF835D1D30654 /* AWSEXTRuntimeExtensions.h in Headers */,
+				EDEF253D1C06678809B73D22EBAFDDF6 /* AWSEXTScope.h in Headers */,
+				ECED437E0C28D34405B0C5E473E1DA43 /* AWSFMDatabase+Private.h in Headers */,
+				63BF6B62A59ACFA2793182866413BB9A /* AWSFMDatabase.h in Headers */,
+				7EFAC256FFEF765A53FE362B97455E9D /* AWSFMDatabaseAdditions.h in Headers */,
+				22FBEE8ABE29BD2BC2462D421A9F0BBF /* AWSFMDatabasePool.h in Headers */,
+				4E7455AAA55EF061008972C6ECCB0E5E /* AWSFMDatabaseQueue.h in Headers */,
+				2610373C16ED408B77A4A0AED672C3C2 /* AWSFMDB.h in Headers */,
+				A2982947D7175B6CE40626210D5DFBE1 /* AWSFMResultSet.h in Headers */,
+				C3C4F87E91AD8E508EF6CF0C7656476B /* AWSGeneric.h in Headers */,
+				657588440D7A253F8515EE9DD541BF6F /* AWSGZIP.h in Headers */,
+				31676A2267E4A213AC161ADCF15F50BD /* AWSIdentityProvider.h in Headers */,
+				4151C9A86047BA6D88B7BFEE7C0E1888 /* AWSInfo.h in Headers */,
+				B45F1CA2BD0A30918ABCF4E8AA0E82D8 /* AWSKSReachability.h in Headers */,
+				254CA87B15EDF9C833EB3830182A1F33 /* AWSLogging.h in Headers */,
+				F6A455266A9E8F43F8CB5D41C54376C8 /* AWSMantle.h in Headers */,
+				CAC148B4B2694272D52553F9FBC6F373 /* AWSmetamacros.h in Headers */,
+				6EF6F2978D30093FFEBEE1CDB826412E /* AWSModel.h in Headers */,
+				0EA0130E6902C0ACA221BC24E2633060 /* AWSMTLJSONAdapter.h in Headers */,
+				C319426AB04A4386E1A6626D227B8DC4 /* AWSMTLManagedObjectAdapter.h in Headers */,
+				1D96CB9BA12C9F62C1A900A05CA1A62D /* AWSMTLModel+NSCoding.h in Headers */,
+				B5F397DD4D8C76BB089B5C1AE2C8DE30 /* AWSMTLModel.h in Headers */,
+				30FA3EE4FDE2729FC84FAACD447DD420 /* AWSMTLReflection.h in Headers */,
+				309B91D0097C71F800589D701AADA034 /* AWSMTLValueTransformer.h in Headers */,
+				D3CCB84AAF4A9C7694164642EA1FAB3C /* AWSNetworking.h in Headers */,
+				08A0E156264804BE346A107E5579206A /* AWSSerialization.h in Headers */,
+				AC0E5BB842ABCEE5010B0048F43D668A /* AWSService.h in Headers */,
+				AAE5BFEB34ADBF3F8DEB424D2531B38A /* AWSServiceEnum.h in Headers */,
+				4EE4B19C191CFAED6518623DB9E61180 /* AWSSignature.h in Headers */,
+				8A614FBF75C42610E8B57700B6F99A61 /* AWSSTS.h in Headers */,
+				50A8B0CF8C380A7CAC7C7D2C841D8627 /* AWSSTSModel.h in Headers */,
+				131D8F7364814080F36F9F8A81184D56 /* AWSSTSResources.h in Headers */,
+				DDDD904098A6E4002C2CAE1539132662 /* AWSSTSService.h in Headers */,
+				6AE00DDD40FDBDE0DB8E3D52A09A1653 /* AWSSynchronizedMutableDictionary.h in Headers */,
+				E77C4C0AE50B5FA883FA78BCB4CB4FCF /* AWSTask.h in Headers */,
+				C061B7A99D48241953F2B95189ABB3F4 /* AWSTaskCompletionSource.h in Headers */,
+				F34CDDB2F49C671FA436CBA0E1422903 /* AWSTMCache.h in Headers */,
+				ABC97645C86E9139A1A273EE5525A714 /* AWSTMCacheBackgroundTaskManager.h in Headers */,
+				74F7751EBE48162F7EDFC42903074244 /* AWSTMDiskCache.h in Headers */,
+				AF3F0AA148DEDB09A7470F0B383A4BCE /* AWSTMMemoryCache.h in Headers */,
+				8B4A1F6C9B6FEB283659009A9A90BDF2 /* AWSUICKeyChainStore.h in Headers */,
+				7C41A57A4BCF7AA7EE68BBD8EE860B45 /* AWSURLRequestRetryHandler.h in Headers */,
+				BF7080DAE40B46787E36F81F1FC9EC8B /* AWSURLRequestSerialization.h in Headers */,
+				4430AD53EE0D44551B2757D19B5A5442 /* AWSURLResponseSerialization.h in Headers */,
+				5FB923E76FE0EDBB199D87538FAC48C9 /* AWSURLSessionManager.h in Headers */,
+				6D2DDE84732783DA0FD6B4CF45079217 /* AWSValidation.h in Headers */,
+				2FFF5578BDF097AFC5FC0E09A77D89B7 /* AWSXMLDictionary.h in Headers */,
+				E217BDC7D6B6397365210A41399F8B72 /* AWSXMLWriter.h in Headers */,
+				C248CE0B1EC77B178F59195DD754E1B2 /* FABAttributes.h in Headers */,
+				2FC202A3B6149337A8819B4C56768C79 /* FABKitProtocol.h in Headers */,
+				F978319F64E66217E8EAD508FA876915 /* Fabric+FABKits.h in Headers */,
+				5352444CC53F08A2167C4AE164E6F6ED /* Fabric.h in Headers */,
+				976A3577B1DF8F6F13D36AEAE4E6575D /* NSArray+AWSMTLManipulationAdditions.h in Headers */,
+				98ABA52E3CF4FF0467DDABABA12ED256 /* NSDictionary+AWSMTLManipulationAdditions.h in Headers */,
+				53C6F9FC53777EF7B7B490C5D4276894 /* NSError+AWSMTLModelException.h in Headers */,
+				A89AC992843514B00C30561DAF5EC201 /* NSObject+AWSMTLComparisonAdditions.h in Headers */,
+				282E65FB03B4803571ED55251703D764 /* NSValueTransformer+AWSMTLInversionAdditions.h in Headers */,
+				9A86891DE0F642EAD09F3E6229F816B3 /* NSValueTransformer+AWSMTLPredefinedTransformerAdditions.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51EBCFCBB9C70531285330B2F5180DDA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5B8936DF5DFC285EF8C90BC1F974177 /* Pods-test2-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2284ADD7DEBEB39D10EFD193D1F1BC5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CC0CDE65441DDD74DCEB86A410B8A2C /* AWSCognito-umbrella.h in Headers */,
+				B3C68A7AF0DC21533059A41BE1D3EE69 /* AWSCognito.h in Headers */,
+				C8D5ACCD8D38CD5CC4CF8807B6BCBC96 /* AWSCognitoConflict.h in Headers */,
+				DF7099AE45BC24EAF6F5FB1DCCC1BA65 /* AWSCognitoConflict_Internal.h in Headers */,
+				C0D2C3641B3B1747435F5DDDC8716A6E /* AWSCognitoConstants.h in Headers */,
+				DDF7DDC39EB1A6CFDED5907491D8FB08 /* AWSCognitoDataset.h in Headers */,
+				787D8DFCDC2939B57045F1E91E724AE0 /* AWSCognitoDataset_Internal.h in Headers */,
+				FD96B8C6F38EFB4E26EDFB774DE21152 /* AWSCognitoHandlers.h in Headers */,
+				EDA91BE4BD3037B66DE7E67D0790A6F7 /* AWSCognitoRecord.h in Headers */,
+				33D3DA98942FC56DDC2EDE9FAB916907 /* AWSCognitoRecord_Internal.h in Headers */,
+				6332079A53B19D5B816610D1B48897B3 /* AWSCognitoService.h in Headers */,
+				5E4D694203098683E003828D5BC80775 /* AWSCognitoSQLiteManager.h in Headers */,
+				A117A5B83B1F3559C1A70768575ADBCE /* AWSCognitoSyncModel.h in Headers */,
+				3F6E6958477B257E05763AD5C38F4F17 /* AWSCognitoSyncResources.h in Headers */,
+				37E95B2DAE973AA5C5B1318B005632CA /* AWSCognitoSyncService.h in Headers */,
+				0FE87B9A62AA4DCB49C20881780B36DB /* AWSCognitoUtil.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEF2D5178EF151DFB44EA79435AF6991 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AF39094DD8452F8FA65E7B0C03F7A8A /* AWSRekognition-umbrella.h in Headers */,
+				FD6F361AE0F82DE50BE65E70AA154DB9 /* AWSRekognition.h in Headers */,
+				D51D75A64C98F39A92AA6D1DE25CA60B /* AWSRekognitionModel.h in Headers */,
+				F664B230C0BA8583147FC323CBBF4679 /* AWSRekognitionResources.h in Headers */,
+				742FC324B3EA94F52A2A4ACA9CE79870 /* AWSRekognitionService.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1AC1CA466FC085E9419D0B99E65DA79F /* AWSCore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1F443A20530EB4ABEA32E169B66911A /* Build configuration list for PBXNativeTarget "AWSCore" */;
+			buildPhases = (
+				1D734C8B6D88D466404079CBC0641614 /* Headers */,
+				63659F615E2FBB21811CC2295325E785 /* Sources */,
+				D8528454B5EA55BB974B9E33D6E1D6CB /* Frameworks */,
+				0D3F040F665FD26EF028CEFE0FA397A0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AWSCore;
+			productName = AWSCore;
+			productReference = 5E423F02529284172EC5C54D3AF73EFC /* AWSCore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		489A50FCB16B5A8AD05CAA57C1B423D5 /* AWSCognito */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D389772244ED0E009831F1DE0F63BAAE /* Build configuration list for PBXNativeTarget "AWSCognito" */;
+			buildPhases = (
+				E2284ADD7DEBEB39D10EFD193D1F1BC5 /* Headers */,
+				72CE356330DA78E026C27557D0EC22C3 /* Sources */,
+				B56A1321F0C8BE5A3AC7FDF30FF36D44 /* Frameworks */,
+				CCC892B862384225DC640363443BED89 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F6F283D52E7D0A48ADBFC74711555924 /* PBXTargetDependency */,
+			);
+			name = AWSCognito;
+			productName = AWSCognito;
+			productReference = 60D2A2464566B2B76A044EEC7FD4E88B /* AWSCognito.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B0B3CF91AE628FF6AFE619EC327629E1 /* AWSRekognition */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 628F0ABB13A8A0A13B299173B2AD4A20 /* Build configuration list for PBXNativeTarget "AWSRekognition" */;
+			buildPhases = (
+				FEF2D5178EF151DFB44EA79435AF6991 /* Headers */,
+				49810B9F66BA123FA6650E80E78EEF34 /* Sources */,
+				FC20497BBD684F804A9F8C532BA1AFA4 /* Frameworks */,
+				9BF87A4CEF4380AC251E6056A55BE402 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BAF427A9BDFE1099E6D7E4EDA459C812 /* PBXTargetDependency */,
+			);
+			name = AWSRekognition;
+			productName = AWSRekognition;
+			productReference = 158513A92B897E774C260ACC4F6FE409 /* AWSRekognition.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F39E1A32D8D6B0924444C832C9A405E0 /* Pods-test2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9CC8DEC370536B0B466F228E1AC7A196 /* Build configuration list for PBXNativeTarget "Pods-test2" */;
+			buildPhases = (
+				51EBCFCBB9C70531285330B2F5180DDA /* Headers */,
+				37134C122EC0BB5AEE84DC0666F9D508 /* Sources */,
+				0CA22DBC51E55DD0E339F4FECFBF6E27 /* Frameworks */,
+				5CDDB329BF5DE52628A2DC497558CB6D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2576861B6778341FC8B2CB1595FB12BE /* PBXTargetDependency */,
+				202031FD5FA59FCA6BC2792726FBD375 /* PBXTargetDependency */,
+				107AD3EAD1C69D090B9A06A856915FC5 /* PBXTargetDependency */,
+			);
+			name = "Pods-test2";
+			productName = "Pods-test2";
+			productReference = 4FC5B9CF52A1B74528617ADB5A7F5208 /* Pods_test2.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 8B3D23055CAE778D5DDBC003A3DD2BB9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				489A50FCB16B5A8AD05CAA57C1B423D5 /* AWSCognito */,
+				1AC1CA466FC085E9419D0B99E65DA79F /* AWSCore */,
+				B0B3CF91AE628FF6AFE619EC327629E1 /* AWSRekognition */,
+				F39E1A32D8D6B0924444C832C9A405E0 /* Pods-test2 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0D3F040F665FD26EF028CEFE0FA397A0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5CDDB329BF5DE52628A2DC497558CB6D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BF87A4CEF4380AC251E6056A55BE402 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCC892B862384225DC640363443BED89 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		37134C122EC0BB5AEE84DC0666F9D508 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE675952F649AF9D57B7BC0C80F63E01 /* Pods-test2-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49810B9F66BA123FA6650E80E78EEF34 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				064DFF15DF2607F692DB554C81688B08 /* AWSRekognition-dummy.m in Sources */,
+				730116FE7EAB28D8F754CA8C3DD3BE54 /* AWSRekognitionModel.m in Sources */,
+				539C7CBC31BA7EA36E3BE2C85543A73A /* AWSRekognitionResources.m in Sources */,
+				71085683F0A41C0725F060084039281C /* AWSRekognitionService.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63659F615E2FBB21811CC2295325E785 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59258A3117F3EA3E53A9F1ADBFDDA49C /* AWSBolts.m in Sources */,
+				276C1CF4484053A98074C63675A98CC8 /* AWSCancellationToken.m in Sources */,
+				AD75890A5FEB61A6E5BB77B37B566D4D /* AWSCancellationTokenRegistration.m in Sources */,
+				76712EDEEF2E5248A9016DE1FFB24E43 /* AWSCancellationTokenSource.m in Sources */,
+				1EFD62FF206ED7F2034AFAC0C2CD431C /* AWSCategory.m in Sources */,
+				A78B84022CD4AEF124FC00A8EC2915C9 /* AWSClientContext.m in Sources */,
+				C02F9DC3BB2EE07A14E902670F0D07EE /* AWSCognitoIdentity+Fabric.m in Sources */,
+				F83EE166458197F5889314F896621500 /* AWSCognitoIdentityModel.m in Sources */,
+				8F2013C5169BDBC618B164F172AF67AE /* AWSCognitoIdentityResources.m in Sources */,
+				F393E86A0C0CAB2A78EE0CC1144E8E38 /* AWSCognitoIdentityService.m in Sources */,
+				2BA01CC249C4383EA1726AD3F55939C8 /* AWSCore-dummy.m in Sources */,
+				65CB83DBB4FBC1FE0FB44CE331CE1097 /* AWSCredentialsProvider.m in Sources */,
+				7B753937CF2A0FC6341D61B023D7C51A /* AWSDDAbstractDatabaseLogger.m in Sources */,
+				DCBE506739E024F0DC9330C770C2B04C /* AWSDDASLLogCapture.m in Sources */,
+				E247CEF3D9E6D1E260604D9E61F937F3 /* AWSDDASLLogger.m in Sources */,
+				FCD7BB7A376A9CDE2213C5B91CF31F1E /* AWSDDContextFilterLogFormatter.m in Sources */,
+				6237B709D3980BA1021098A67F512A81 /* AWSDDDispatchQueueLogFormatter.m in Sources */,
+				45B309484D5B826218D3E988FF7B8323 /* AWSDDFileLogger.m in Sources */,
+				D332FEBD6EB57B1FEB15F11A47B0BC18 /* AWSDDLog.m in Sources */,
+				B259C6D2CD46A47FC80CA91AEEB6B9EC /* AWSDDMultiFormatter.m in Sources */,
+				924E22DED998E1011085A74CD2975325 /* AWSDDOSLogger.m in Sources */,
+				999CF64319311507F18CECC35D401467 /* AWSDDTTYLogger.m in Sources */,
+				EDA1CE6AD1F6673C8F5285C6446DC832 /* AWSExecutor.m in Sources */,
+				719F22CFA600B4239162CD8E04F2DB90 /* AWSEXTRuntimeExtensions.m in Sources */,
+				15BC605DE39DAD1B35C36D8DCEF90526 /* AWSEXTScope.m in Sources */,
+				587ECC61C0CC24C6358021B484AC5FE2 /* AWSFMDatabase.m in Sources */,
+				475F92F1DB39C574627A9C3D4EBE8C51 /* AWSFMDatabaseAdditions.m in Sources */,
+				751BB43C9A038AEDAB7C696206999110 /* AWSFMDatabasePool.m in Sources */,
+				24E85DDDE3688AE0117B90AEAE6D105C /* AWSFMDatabaseQueue.m in Sources */,
+				12473C9607986458803A7B62CEED20A9 /* AWSFMResultSet.m in Sources */,
+				3185B7663A61B658576C204618CCD3F9 /* AWSGZIP.m in Sources */,
+				BC2C9724BA59D2260E52B48376E44BE4 /* AWSIdentityProvider.m in Sources */,
+				B9543676E3DE6C8EF87CF9F53B28ABF2 /* AWSInfo.m in Sources */,
+				5AE66F6A6F217463B3615B3B7633A6F8 /* AWSKSReachability.m in Sources */,
+				5F41282A9840C6554423B8D6DD0050CC /* AWSLogging.m in Sources */,
+				85857AE981FDC71DC85AD6A002430C0E /* AWSModel.m in Sources */,
+				FDA88BD5CCFCCB3D80E77503E5E3E79B /* AWSMTLJSONAdapter.m in Sources */,
+				7C7C1D1822EE513BA88E698A1778138A /* AWSMTLManagedObjectAdapter.m in Sources */,
+				BE3143A624413C32525DBA3102D1767F /* AWSMTLModel+NSCoding.m in Sources */,
+				5EC4F64FFCA8067B65B977EBD23BA91E /* AWSMTLModel.m in Sources */,
+				3364C533DCCE2B1BB29C5F6630336A15 /* AWSMTLReflection.m in Sources */,
+				757BEC61878A6AB77F701D377C9D10AB /* AWSMTLValueTransformer.m in Sources */,
+				432EBBEF37B194CB4B289191C6320609 /* AWSNetworking.m in Sources */,
+				CCF48730840BDBE5403FCFD422C9ED01 /* AWSSerialization.m in Sources */,
+				77FB2AC26DE948BA2D18E0D995B96809 /* AWSService.m in Sources */,
+				4684CB43352CCD74AED932D996E5D792 /* AWSSignature.m in Sources */,
+				41441D266B17D3BFB4AE71FBE64CFB8E /* AWSSTSModel.m in Sources */,
+				82963B4F2C99EBF0137543430ECB3A44 /* AWSSTSResources.m in Sources */,
+				860A24B43A81F4F015E1DBE7B564A716 /* AWSSTSService.m in Sources */,
+				68E0091DDA23079F32A438D12BF2C65E /* AWSSynchronizedMutableDictionary.m in Sources */,
+				A9E4FD2F942BE3C804A451198DF05CFF /* AWSTask.m in Sources */,
+				A94D1BB3366974B552FF1A069B7F4C62 /* AWSTaskCompletionSource.m in Sources */,
+				B0AC8A2545BFEA6A9C3F6C3EF3917BC5 /* AWSTMCache.m in Sources */,
+				A69322FC390E726752B3DB9789264CA4 /* AWSTMDiskCache.m in Sources */,
+				F14371B4FC0B3455837CCC8DB4BCEC28 /* AWSTMMemoryCache.m in Sources */,
+				1210235849D762E178A04E13ECA0A6AE /* AWSUICKeyChainStore.m in Sources */,
+				B3505D39C0FCF5DF1BD0DB9CF5976377 /* AWSURLRequestRetryHandler.m in Sources */,
+				D7AE2A6F2ECC0183BE3567180655F70B /* AWSURLRequestSerialization.m in Sources */,
+				389CCC9A6F11923E84634F7476D08F04 /* AWSURLResponseSerialization.m in Sources */,
+				88A9DA95907C6427BA57CE2D09E4118F /* AWSURLSessionManager.m in Sources */,
+				2B5EEEEDF22650D2D7DA08EC0F970014 /* AWSValidation.m in Sources */,
+				AAD05EF9B16C931BD5B977C1F3AC4DA6 /* AWSXMLDictionary.m in Sources */,
+				9363FD714EB5475BDA567D50E5173F6B /* AWSXMLWriter.m in Sources */,
+				B405AE0B6F4A06A40DEAA2119F4FBFCF /* NSArray+AWSMTLManipulationAdditions.m in Sources */,
+				261BA374E306C185F3CF8620554F5B5C /* NSDictionary+AWSMTLManipulationAdditions.m in Sources */,
+				AF67895DBCFC11C08A9B80B16B82BE5C /* NSError+AWSMTLModelException.m in Sources */,
+				ACF985D85801470084778E822A87BF73 /* NSObject+AWSMTLComparisonAdditions.m in Sources */,
+				05575B3750A2427DB7DDACF380085025 /* NSValueTransformer+AWSMTLInversionAdditions.m in Sources */,
+				D01FF2D5837C184FFAC1F495936D65C8 /* NSValueTransformer+AWSMTLPredefinedTransformerAdditions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72CE356330DA78E026C27557D0EC22C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B15EA44708AD6C690A2B8C05803F0EDF /* AWSCognito-dummy.m in Sources */,
+				D65C83C47DA258CFFF53D797D63EE6D7 /* AWSCognitoConflict.m in Sources */,
+				9B5436971EAB451F1C8A6CCD606FB1C4 /* AWSCognitoConstants.m in Sources */,
+				26B17B7182E6DE280DDF3E2B75C3C4CA /* AWSCognitoDataset.m in Sources */,
+				D89041D44798C318D28B67229DF859F2 /* AWSCognitoRecord.m in Sources */,
+				EF69F5514C68E46986B00D20F92C0A89 /* AWSCognitoService.m in Sources */,
+				2FEDBE601B9F7A883913001E7CC6EACA /* AWSCognitoSQLiteManager.m in Sources */,
+				BE2252C7AC720F4FFA40CB1E0069D5E2 /* AWSCognitoSyncModel.m in Sources */,
+				E79936A6F62433D36B5668395552CBF7 /* AWSCognitoSyncResources.m in Sources */,
+				22C1CC7D39E027200EA53AEB5E637195 /* AWSCognitoSyncService.m in Sources */,
+				6CD629C2771102A815A5650EB5CCBA6A /* AWSCognitoUtil.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		107AD3EAD1C69D090B9A06A856915FC5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AWSRekognition;
+			target = B0B3CF91AE628FF6AFE619EC327629E1 /* AWSRekognition */;
+			targetProxy = F20A9988614FB67999E6FCE932DA8BEF /* PBXContainerItemProxy */;
+		};
+		202031FD5FA59FCA6BC2792726FBD375 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AWSCore;
+			target = 1AC1CA466FC085E9419D0B99E65DA79F /* AWSCore */;
+			targetProxy = 0CC82B36E3C8A055BA602CFFF82276BB /* PBXContainerItemProxy */;
+		};
+		2576861B6778341FC8B2CB1595FB12BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AWSCognito;
+			target = 489A50FCB16B5A8AD05CAA57C1B423D5 /* AWSCognito */;
+			targetProxy = 6C1E8E9E903CDA5FD773146CEAEFAF19 /* PBXContainerItemProxy */;
+		};
+		BAF427A9BDFE1099E6D7E4EDA459C812 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AWSCore;
+			target = 1AC1CA466FC085E9419D0B99E65DA79F /* AWSCore */;
+			targetProxy = 3D688A2BBF5F541E1942568ADAA4A138 /* PBXContainerItemProxy */;
+		};
+		F6F283D52E7D0A48ADBFC74711555924 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AWSCore;
+			target = 1AC1CA466FC085E9419D0B99E65DA79F /* AWSCore */;
+			targetProxy = C192EB0F723350D5D17767D5EFF3904E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0624DAF1806F4E0939E1B1C739578230 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D64CE4CE7964BBEED79A8AF6C6A0E3C9 /* AWSRekognition.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/AWSRekognition/AWSRekognition-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AWSRekognition/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/AWSRekognition/AWSRekognition.modulemap";
+				PRODUCT_MODULE_NAME = AWSRekognition;
+				PRODUCT_NAME = AWSRekognition;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		0C02660A570B9049E46EFC3B11EA2B45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B5C2AFFC3C8B44D094D77160018E645 /* AWSCognito.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/AWSCognito/AWSCognito-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AWSCognito/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/AWSCognito/AWSCognito.modulemap";
+				PRODUCT_MODULE_NAME = AWSCognito;
+				PRODUCT_NAME = AWSCognito;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		68E7511DEAB6D00C3F33F0E4CF5D531F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DF0A6476A3B3C35877C2A48ECF42A30 /* Pods-test2.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-test2/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-test2/Pods-test2.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7C46FCE1D826A8CC39E640DBCA4BB4F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1DC5CD9C0CEDC7CB713CB950B7D7F87 /* AWSCore.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/AWSCore/AWSCore-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AWSCore/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/AWSCore/AWSCore.modulemap";
+				PRODUCT_MODULE_NAME = AWSCore;
+				PRODUCT_NAME = AWSCore;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8DFC9796FA9E6BCF680E1E0B1780DD0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		9741995D95F4BFC7209D7551B598FD73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B78FDE352DA6D61DA2CE4CEA0FFCCA38 /* Pods-test2.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-test2/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-test2/Pods-test2.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BF57D9BE3CB3DB0496E8DE2DB26294E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B5C2AFFC3C8B44D094D77160018E645 /* AWSCognito.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/AWSCognito/AWSCognito-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AWSCognito/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/AWSCognito/AWSCognito.modulemap";
+				PRODUCT_MODULE_NAME = AWSCognito;
+				PRODUCT_NAME = AWSCognito;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E19471FE7E209D0818DAFB22D649A6E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		ECAF82BD5BD6E7395D52A522BBE32992 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1DC5CD9C0CEDC7CB713CB950B7D7F87 /* AWSCore.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/AWSCore/AWSCore-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AWSCore/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/AWSCore/AWSCore.modulemap";
+				PRODUCT_MODULE_NAME = AWSCore;
+				PRODUCT_NAME = AWSCore;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FB866171FA6C809D239091144732CE1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D64CE4CE7964BBEED79A8AF6C6A0E3C9 /* AWSRekognition.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/AWSRekognition/AWSRekognition-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AWSRekognition/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/AWSRekognition/AWSRekognition.modulemap";
+				PRODUCT_MODULE_NAME = AWSRekognition;
+				PRODUCT_NAME = AWSRekognition;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E19471FE7E209D0818DAFB22D649A6E9 /* Debug */,
+				8DFC9796FA9E6BCF680E1E0B1780DD0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		628F0ABB13A8A0A13B299173B2AD4A20 /* Build configuration list for PBXNativeTarget "AWSRekognition" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0624DAF1806F4E0939E1B1C739578230 /* Debug */,
+				FB866171FA6C809D239091144732CE1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9CC8DEC370536B0B466F228E1AC7A196 /* Build configuration list for PBXNativeTarget "Pods-test2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68E7511DEAB6D00C3F33F0E4CF5D531F /* Debug */,
+				9741995D95F4BFC7209D7551B598FD73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1F443A20530EB4ABEA32E169B66911A /* Build configuration list for PBXNativeTarget "AWSCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7C46FCE1D826A8CC39E640DBCA4BB4F5 /* Debug */,
+				ECAF82BD5BD6E7395D52A522BBE32992 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D389772244ED0E009831F1DE0F63BAAE /* Build configuration list for PBXNativeTarget "AWSCognito" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C02660A570B9049E46EFC3B11EA2B45 /* Debug */,
+				BF57D9BE3CB3DB0496E8DE2DB26294E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
