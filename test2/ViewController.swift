@@ -11,8 +11,8 @@ import AWSRekognition
 import SafariServices
 //import AVFoundation
 
-class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,SFSafariViewControllerDelegate {
-    
+class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,SFSafariViewControllerDelegate{
+
 //    var captureSession = AVCaptureSession()
 //    var mainCamera : AVCaptureDevice?
 //    var innerCamera : AVCaptureDevice?
@@ -27,6 +27,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     @IBOutlet var label: UILabel!
     
     var infoLinksMap: [Int:String] = [1000:""]
+    var infoCelebName: [String] = [""]
     var searchButton:UIButton!
     //var HoldImage:UIImage!
     var celebImage:Data!
@@ -52,7 +53,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
 //
 //        self.photoOutput?.capturePhoto(with: settings, delegate: self as AVCapturePhotoCaptureDelegate)
 //        imageVIew.image = nil
-
+        
         
         let rekognitionClient:AWSRekognition = AWSRekognition.default()
         let Request = AWSRekognitionRecognizeCelebritiesRequest()
@@ -75,39 +76,44 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
                 print(res!.celebrityFaces!.enumerated())
 
                 if((res!.celebrityFaces?.count)! > 0){
-                    for (_, celebFace) in res!.celebrityFaces!.enumerated(){
-                        if(celebFace.matchConfidence!.intValue > 25){
+                    for (index, celebFace) in res!.celebrityFaces!.enumerated(){
+                        if(celebFace.matchConfidence!.intValue > 50){
                             DispatchQueue.main.async{
                                 [weak self] in
-                                self?.label.text = celebFace.name!
-                                self?.Search.isHidden = false
-                                self?.Search.isEnabled = true
+//                                self?.label.text = celebFace.name!
+//                                self?.Search.isHidden = false
+//                                self?.Search.isEnabled = true
 
 //                                let SearchButton:UIButton = (self?.createButton())!
 //                                SearchButton.tag = 1
 //                                SearchButton.addTarget(self, action: #selector(self?.search), for: UIControlEvents.touchUpInside)
 //                                self?.mainView.addSubview(SearchButton)
                                 
-//                                let celebImage = Celebrity()
-//
-//                                celebImage.scene = (self?.imageVIew)!
-//
-//                                celebImage.boundingBox = ["height":celebFace.face?.boundingBox?.height,"left":celebFace.face?.boundingBox?.left,"top":celebFace.face?.boundingBox?.top, "width":celebFace.face?.boundingBox?.width] as! [String : CGFloat]
-//
-//                                celebImage.name = celebFace.name!
-//
+                                let celebImage = Celebrity()
+
+                                celebImage.scene = (self?.imageVIew)!
+
+                                celebImage.boundingBox = ["height":celebFace.face?.boundingBox?.height,"left":celebFace.face?.boundingBox?.left,"top":celebFace.face?.boundingBox?.top, "width":celebFace.face?.boundingBox?.width] as! [String : CGFloat]
+
+                                celebImage.name = celebFace.name!
+                                celebImage.matchConfidence = celebFace.matchConfidence! as! Int
+
 //                                if (celebFace.urls!.count > 0){
 //                                    celebImage.infoLink = celebFace.urls![0]
 //                                } else {
 //                                    celebImage.infoLink = "www.google.com/search?q=" + celebImage.name
 //                                }
-//
-//                                self?.infoLinksMap[index] = "https://"+celebFace.urls![0]
-//
-//                                let infoButton:UIButton = celebImage.createInfoButton()
-//                                infoButton.tag = index
-//                                infoButton.addTarget(self, action: #selector(self?.handleTap), for: UIControlEvents.touchUpInside)
-//                                self?.imageVIew.addSubview(infoButton)
+                                
+                                let text:String = celebImage.name
+                                let Text = text.replacingOccurrences(of: " ", with: "+")
+                                self?.infoLinksMap[index] = "https://www.google.com/search?q=" + Text
+
+                                let infoButton:UIButton = celebImage.createInfoButton()
+                                infoButton.tag = index
+                                infoButton.addTarget(self, action: #selector(self?.handleTap), for: UIControlEvents.touchUpInside)
+                                self?.imageVIew.addSubview(infoButton)
+                                let Layer:CAShapeLayer = celebImage.createLayer()
+                                self?.imageVIew.layer.addSublayer(Layer)
                                 
                             }
                             
@@ -129,7 +135,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     
     func NoFaces(code: String){
         DispatchQueue.main.async {
-            self.label.text = "No faces in this pic   code:" + code
+            self.label.text = "No celeb faces in this pic. code:" + code
         }
     }
     
@@ -156,21 +162,29 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
 //        present(vc, animated: true, completion: nil)
 //    }
     
-    @IBAction func SearchToupped(_ sender: Any) {
-        let text:String = self.label.text!
-        let Text = text.replacingOccurrences(of: " ", with: "+")
-        let vc = SFSafariViewController(url: URL(string: "https://www.google.com/search?q=" + Text)!)
-        present(vc, animated: true, completion: nil)
-    }
+//    @IBAction func SearchToupped(_ sender: Any) {
+//        let text:String = self.label.text!
+//        let Text = text.replacingOccurrences(of: " ", with: "+")
+//        let vc = SFSafariViewController(url: URL(string: "https://www.google.com/search?q=" + Text)!)
+//        present(vc, animated: true, completion: nil)
+//    }
     
     //selected Photo from Album or Toupped "Use" in Camera View
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        //delete info button
+        DispatchQueue.main.async {
+            [weak self] in
+            for subView in (self?.imageVIew.subviews)! {
+                subView.removeFromSuperview()
+                self?.imageVIew.layer.sublayers = nil
+            }
+        }
+        
         dismiss(animated: true)
         guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
             fatalError("couldn't load image from Photos")
         }
-        //HoldImage = image
-        //Save taken photo with a Camara
         if Cam == true {
             UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
             Cam = false
@@ -180,20 +194,21 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         self.celebImage = UIImagePNGRepresentation(image)!
         
         self.label.text = nil
-        //Hide SearachButton
-        if self.Search.isHidden == false {
-            self.Search.isHidden = true
-        }
+//        Hide SearachButton
+//        if self.Search.isHidden == false {
+//            self.Search.isHidden = true
+//        }
     }
     
+    // info button toupped
+    @objc func handleTap(sender:UIButton){
+        print("tap recognized")
+        let celebURL = URL(string: self.infoLinksMap[sender.tag]!)
+        let safariController = SFSafariViewController(url: celebURL!)
+        safariController.delegate = self
+        self.present(safariController, animated:true)
+    }
     
-//    @objc func handleTap(sender:UIButton){
-//        print("tap recognized")
-//        let celebURL = URL(string: self.infoLinksMap[sender.tag]!)
-//        let safariController = SFSafariViewController(url: celebURL!)
-//        safariController.delegate = self
-//        self.present(safariController, animated:true)
-//    }
     
 //    func createButton()-> UIButton{
 //
@@ -208,8 +223,8 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
 //
 //        return self.searchButton
 //    }
+    
 }
-
 
 //extension ViewController{
 //    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {

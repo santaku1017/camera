@@ -17,6 +17,8 @@ class Celebrity{
     var name:String!
     var urls:[String]!
     
+    var matchConfidence:Int!
+    
     var infoLink:String!
     
     var infoLabel: UILabel!
@@ -25,26 +27,17 @@ class Celebrity{
     
     var scene: UIImageView!
     
+    var Layer = CAShapeLayer()
+    
+
     
     func createInfoButton()-> UIButton {
         //Determine position of annotations based on the bounding box of the identified face
         let size = CGSize(width: self.boundingBox["width"]! * scene.layer.bounds.width, height:self.boundingBox["height"]!*scene.layer.bounds.height)
         let origin = CGPoint(x: self.boundingBox["left"]!*scene.layer.bounds.width, y: self.boundingBox["top"]!*scene.layer.bounds.height)
-        
-        /*
-         *** Use this snippet if you want to draw a rectangle around the identified face***
-         //Create a rectangle layer
-         let rectangleLayer = CAShapeLayer()
-         rectangleLayer.borderColor = UIColor.green.cgColor
-         rectangleLayer.borderWidth = 2
-         rectangleLayer.frame = CGRect(origin: origin, size: size)
-         print(rectangleLayer.frame.origin)
-         print(rectangleLayer.frame.size)
-         ***
-         */
-        
+      
         //Create and Populate info button
-        self.infoButton = UIButton.init(frame: CGRect(origin: CGPoint(x: origin.x, y: origin.y+size.height*0.75), size: CGSize(width: 0.4*scene.layer.bounds.width, height: 0.05*scene.layer.bounds.height)))
+        self.infoButton = UIButton.init(frame: CGRect(origin: CGPoint(x: origin.x, y: origin.y+size.height), size: CGSize(width: 0.4*scene.layer.bounds.width, height: 0.05*scene.layer.bounds.height)))
         self.infoButton.backgroundColor = UIColor.black
         self.infoButton.clipsToBounds = true
         self.infoButton.layer.cornerRadius = 8
@@ -56,8 +49,20 @@ class Celebrity{
         scene.addSubview(self.infoButton)
         
         return self.infoButton
-        
     }
     
+    func createLayer()-> CAShapeLayer{
+        //Determine position of annotations based on the bounding box of the identified face
+        let size = CGSize(width: self.boundingBox["width"]! * scene.layer.bounds.width, height:self.boundingBox["height"]!*scene.layer.bounds.height)
+        let origin = CGPoint(x: self.boundingBox["left"]!*scene.layer.bounds.width, y: self.boundingBox["top"]!*scene.layer.bounds.height)
+        
+        self.Layer.borderColor = UIColor.orange.cgColor
+        self.Layer.borderWidth = 2
+        self.Layer.frame = CGRect(origin: origin, size: size)
+        //        print(rectangleLayer.frame.origin)
+        //        print(rectangleLayer.frame.size)
+        
+        return self.Layer
+    }
     
 }
