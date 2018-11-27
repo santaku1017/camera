@@ -26,8 +26,10 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     @IBOutlet var Search: UIButton!
     @IBOutlet var label: UILabel!
     
-    var infoLinksMap: [Int:String] = [1000:""]
+    var infoLinksMap: [Int:String] = [100:""]
     var infoCelebName: [String] = []
+    var infoLink: [String] = []
+    //var celebinfo: [String:String] = [:]
     var searchButton:UIButton!
     //var HoldImage:UIImage!
     var celebImage:Data!
@@ -118,8 +120,12 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
                                 //create layer
                                 let Layer:CAShapeLayer = celebImage.createLayer()
                                 self?.imageVIew.layer.addSublayer(Layer)
-                                self?.infoCelebName += [celebImage.name]
                                 
+                                //set celeb info
+                                let Link:String = (self?.infoLinksMap[index])!
+                                self?.infoCelebName += [celebImage.name]
+                                self?.infoLink += [Link]
+                                //self?.celebinfo.updateValue(Link, forKey: celebImage.name)
                             }
                             
                         }
@@ -199,10 +205,6 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         self.celebImage = UIImagePNGRepresentation(image)!
         
         self.label.text = nil
-//        Hide SearachButton
-//        if self.Search.isHidden == false {
-//            self.Search.isHidden = true
-//        }
     }
     
     // info button toupped
@@ -215,17 +217,15 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     }
     
     @IBAction func Table(_ sender: Any) {
-        //set value to table
-//        let table = TableViewController()
-//        table.rows = (self.infoCelebName.count) - 1
-//        table.celebName = (self.infoCelebName)
         self.performSegue(withIdentifier: "toTable", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! TableViewController
-        vc.rows = (self.infoCelebName.count) 
+        vc.rows = self.infoCelebName.count
         vc.celebName = self.infoCelebName
+        vc.celebLink = self.infoLink
+        //vc.celebinfo = self.celebinfo
     }
     
 //    func createButton()-> UIButton{

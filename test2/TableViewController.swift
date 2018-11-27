@@ -7,16 +7,19 @@
 //
 
 import UIKit
+import SafariServices
 
-class TableViewController: UITableViewController {
+class TableViewController: UITableViewController,SFSafariViewControllerDelegate {
     
     var rows:Int = 0
-    var celebName: [String] = [""]
-    //let array = ["a","b","c"]
+    var celebName: [String] = []
+    var celebLink: [String] = []
+    //var celebinfo: [String:String] = [:]
 
     @IBAction func Back(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -51,6 +54,26 @@ class TableViewController: UITableViewController {
 
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let celebURL = URL(string: celebLink[indexPath.row])
+        let safariController = SFSafariViewController(url: celebURL!)
+        safariController.delegate = self
+        self.present(safariController, animated:true)
+    }
+    
+//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete{
+//            tableView.beginUpdates()
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+//            self.celebName.remove(at: indexPath.row)
+//            self.celebLink.remove(at: indexPath.row)
+//        }
+//        else{
+//            print("err")
+//        }
+//    }
+    
  
 
     /*
