@@ -13,6 +13,7 @@
 		EC8440D0219AC8810068E37D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC8440CE219AC8810068E37D /* Main.storyboard */; };
 		EC8440D2219AC8850068E37D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC8440D1219AC8850068E37D /* Assets.xcassets */; };
 		EC8440D5219AC8850068E37D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC8440D3219AC8850068E37D /* LaunchScreen.storyboard */; };
+		ECD4180E21AD1536000E81D5 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD4180D21AD1536000E81D5 /* TableViewController.swift */; };
 		ECFBAEB221A3DCBA00281B45 /* Celebrity.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFBAEB121A3DCBA00281B45 /* Celebrity.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		EC8440D1219AC8850068E37D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC8440D4219AC8850068E37D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC8440D6219AC8850068E37D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECD4180D21AD1536000E81D5 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		ECFBAEB121A3DCBA00281B45 /* Celebrity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Celebrity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,6 +77,7 @@
 				EC8440CA219AC8810068E37D /* AppDelegate.swift */,
 				EC8440CC219AC8810068E37D /* ViewController.swift */,
 				ECFBAEB121A3DCBA00281B45 /* Celebrity.swift */,
+				ECD4180D21AD1536000E81D5 /* TableViewController.swift */,
 				EC8440CE219AC8810068E37D /* Main.storyboard */,
 				EC8440D1219AC8850068E37D /* Assets.xcassets */,
 				EC8440D3219AC8850068E37D /* LaunchScreen.storyboard */,
@@ -210,6 +213,7 @@
 				EC8440CD219AC8810068E37D /* ViewController.swift in Sources */,
 				ECFBAEB221A3DCBA00281B45 /* Celebrity.swift in Sources */,
 				EC8440CB219AC8810068E37D /* AppDelegate.swift in Sources */,
+				ECD4180E21AD1536000E81D5 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -27,7 +27,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     @IBOutlet var label: UILabel!
     
     var infoLinksMap: [Int:String] = [1000:""]
-    var infoCelebName: [String] = [""]
+    var infoCelebName: [String] = []
     var searchButton:UIButton!
     //var HoldImage:UIImage!
     var celebImage:Data!
@@ -96,7 +96,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
                                 celebImage.boundingBox = ["height":celebFace.face?.boundingBox?.height,"left":celebFace.face?.boundingBox?.left,"top":celebFace.face?.boundingBox?.top, "width":celebFace.face?.boundingBox?.width] as! [String : CGFloat]
 
                                 celebImage.name = celebFace.name!
-                                celebImage.matchConfidence = celebFace.matchConfidence! as! Int
+                                //celebImage.matchConfidence = celebFace.matchConfidence! as! Int
 
 //                                if (celebFace.urls!.count > 0){
 //                                    celebImage.infoLink = celebFace.urls![0]
@@ -104,16 +104,21 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
 //                                    celebImage.infoLink = "www.google.com/search?q=" + celebImage.name
 //                                }
                                 
+                                //replace space with +
                                 let text:String = celebImage.name
                                 let Text = text.replacingOccurrences(of: " ", with: "+")
                                 self?.infoLinksMap[index] = "https://www.google.com/search?q=" + Text
-
+                                
+                                //create info button
                                 let infoButton:UIButton = celebImage.createInfoButton()
                                 infoButton.tag = index
                                 infoButton.addTarget(self, action: #selector(self?.handleTap), for: UIControlEvents.touchUpInside)
                                 self?.imageVIew.addSubview(infoButton)
+                                
+                                //create layer
                                 let Layer:CAShapeLayer = celebImage.createLayer()
                                 self?.imageVIew.layer.addSublayer(Layer)
+                                self?.infoCelebName += [celebImage.name]
                                 
                             }
                             
@@ -209,6 +214,19 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         self.present(safariController, animated:true)
     }
     
+    @IBAction func Table(_ sender: Any) {
+        //set value to table
+//        let table = TableViewController()
+//        table.rows = (self.infoCelebName.count) - 1
+//        table.celebName = (self.infoCelebName)
+        self.performSegue(withIdentifier: "toTable", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! TableViewController
+        vc.rows = (self.infoCelebName.count) 
+        vc.celebName = self.infoCelebName
+    }
     
 //    func createButton()-> UIButton{
 //

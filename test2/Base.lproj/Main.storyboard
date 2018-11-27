@@ -68,6 +68,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <state key="normal" title="History"/>
+                                <connections>
+                                    <action selector="Table:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UCF-6I-rUq"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4ss-pW-CRr">
                                 <rect key="frame" x="10" y="22" width="300" height="432"/>
@@ -93,11 +96,51 @@
                         <outlet property="imageVIew" destination="4ss-pW-CRr" id="sxu-uY-dz2"/>
                         <outlet property="label" destination="KRd-gL-pXI" id="SLL-0t-N4n"/>
                         <outlet property="mainView" destination="8bC-Xf-vdC" id="Qif-QN-CF0"/>
+                        <segue destination="Ly3-7L-ymF" kind="presentation" identifier="toTable" id="UvU-jX-pfF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-73.125" y="132.04225352112675"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="Yem-h5-SZE">
+            <objects>
+                <tableViewController id="Ly3-7L-ymF" customClass="TableViewController" customModule="test2" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VMa-c8-eXv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="1Vn-vp-WAG">
+                            <rect key="frame" x="0.0" y="72" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <items>
+                                <barButtonItem title="完了" id="CB5-jq-l9N">
+                                    <connections>
+                                        <action selector="Back:" destination="Ly3-7L-ymF" id="Cnm-P8-Izz"/>
+                                    </connections>
+                                </barButtonItem>
+                            </items>
+                        </toolbar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="0js-Kv-ZMk">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0js-Kv-ZMk" id="MPE-IM-LFC">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Ly3-7L-ymF" id="bXR-dl-Suf"/>
+                            <outlet property="delegate" destination="Ly3-7L-ymF" id="vla-AP-3ow"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8eO-kL-Tex" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="806" y="134"/>
         </scene>
     </scenes>
 </document>
