@@ -16,6 +16,7 @@ class TableViewController: UITableViewController,SFSafariViewControllerDelegate 
     var celebName: [String] = []
     var celebLink: [String] = []
     var resetsignal:Bool = false
+    var deleterows:Bool = false
     //var celebinfo: [String:String] = [:]
     
     override func viewDidLoad() {
@@ -25,7 +26,7 @@ class TableViewController: UITableViewController,SFSafariViewControllerDelegate 
         navBar.frame = CGRect(x: 0, y: 0, width: 320, height: 60)
         let navItem: UINavigationItem = UINavigationItem(title: "履歴")
         navItem.leftBarButtonItem = UIBarButtonItem(title: "戻る", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.back))
-        navItem.rightBarButtonItem = UIBarButtonItem(title: "削除", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.reset))
+        //navItem.rightBarButtonItem = UIBarButtonItem(title: "削除", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.reset))
         navBar.pushItem(navItem, animated: true)
         self.view.addSubview(navBar)
         // Uncomment the following line to preserve selection between presentations
@@ -36,25 +37,30 @@ class TableViewController: UITableViewController,SFSafariViewControllerDelegate 
     }
     
     @objc func back(){
-        if resetsignal == false {
+        if deleterows == false {
             self.dismiss(animated: true, completion: nil)
         }
         else {
-            resetsignal = false
-            let storyboard: UIStoryboard = self.storyboard!
-            let mainView = storyboard.instantiateViewController(withIdentifier: "mainView")
-            self.present(mainView, animated: true, completion: nil)
-            //self.performSegue(withIdentifier: "mainView", sender: nil)
+            deleterows = false
+            self.performSegue(withIdentifier: "return", sender: nil)
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! ViewController
+        vc.infoCelebName = celebName
+        vc.infoLink = celebLink
+        vc.deletecount = true
+    }
+    
     @objc func reset(){
-        resetsignal = true
-//        let delete = ViewController()
-//        delete.infoCelebName.removeAll()
-//        delete.infoLink.removeAll()
-        self.celebName.removeAll()
-        self.celebName.removeAll()
-        self.rows = 0
+//        resetsignal = true
+////        let delete = ViewController()
+////        delete.infoCelebName.removeAll()
+////        delete.infoLink.removeAll()
+//        self.celebName.removeAll()
+//        self.celebName.removeAll()
+//        self.rows = 0
         tableView.reloadData()
     }
     
@@ -78,6 +84,7 @@ class TableViewController: UITableViewController,SFSafariViewControllerDelegate 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
         cell.textLabel?.text = celebName[indexPath.row]
+        
         // Configure the cell...
 
         return cell
@@ -90,17 +97,18 @@ class TableViewController: UITableViewController,SFSafariViewControllerDelegate 
         self.present(safariController, animated:true)
     }
     
-//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete{
-//            tableView.beginUpdates()
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-//            self.celebName.remove(at: indexPath.row)
-//            self.celebLink.remove(at: indexPath.row)
-//        }
-//        else{
-//            print("err")
-//        }
-//    }
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete{
+            self.celebName.remove(at: indexPath.row)
+            self.celebLink.remove(at: indexPath.row)
+            self.rows = self.rows - 1
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            deleterows  = true
+        }
+        else{
+            print("err")
+        }
+    }
     
  
 

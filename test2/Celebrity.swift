@@ -29,7 +29,6 @@ class Celebrity{
     
     var Layer = CAShapeLayer()
     
-
     
     func createInfoButton()-> UIButton {
         //Determine position of annotations based on the bounding box of the identified face
@@ -52,9 +51,10 @@ class Celebrity{
     }
     
     func createLayer()-> CAShapeLayer{
+
         //Determine position of annotations based on the bounding box of the identified face
-        let size = CGSize(width: self.boundingBox["width"]! * scene.layer.bounds.width, height:self.boundingBox["height"]!*scene.layer.bounds.height)
-        let origin = CGPoint(x: self.boundingBox["left"]!*scene.layer.bounds.width, y: self.boundingBox["top"]!*scene.layer.bounds.height)
+        let size = CGSize(width: self.boundingBox["width"]! * scene.layer.bounds.width, height:self.boundingBox["height"]! * scene.layer.bounds.height)
+        let origin = CGPoint(x: self.boundingBox["left"]! * scene.layer.bounds.width, y: self.boundingBox["top"]! * scene.layer.bounds.height)
         
         self.Layer.borderColor = UIColor.orange.cgColor
         self.Layer.borderWidth = 2

@@ -34,16 +34,25 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     var searchButton:UIButton!
     //var HoldImage:UIImage!
     var celebImage:Data!
+    var deletecount:Bool = false
+    
+    var imageForm:[CGFloat] = [] //[width,height,x,y]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.Search.isHidden = true
-        print("a")
-        //setupCaptureSession()
-        //setupDevice()
-        //setupInputOutput()
-        //setupPreviewLayer()
-        //captureSession.startRunning()
+        if deletecount == true {
+            self.SaveData()  //履歴画面で削除が行われていた場合、
+        }
+        else {
+            let celebdata = UserDefaults.standard
+            let checkdata = celebdata.object(forKey: "NAME_LIST")
+            if checkdata as? [String] != nil {
+                infoCelebName = celebdata.object(forKey: "NAME_LIST") as! [String]
+                infoLink = celebdata.object(forKey: "LINK_LIST") as! [String]
+            }
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -66,7 +75,6 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         let sourceImage = AWSRekognitionImage()
         sourceImage!.bytes = celebImage
         Request?.image = sourceImage
-        
         
         rekognitionClient.recognizeCelebrities(Request!) { res, err in
             if err != nil {
@@ -100,6 +108,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
                                 celebImage.boundingBox = ["height":celebFace.face?.boundingBox?.height,"left":celebFace.face?.boundingBox?.left,"top":celebFace.face?.boundingBox?.top, "width":celebFace.face?.boundingBox?.width] as! [String : CGFloat]
 
                                 celebImage.name = celebFace.name!
+                                
                                 //celebImage.matchConfidence = celebFace.matchConfidence! as! Int
 
 //                                if (celebFace.urls!.count > 0){
@@ -128,6 +137,8 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
                                 self?.infoCelebName += [celebImage.name]
                                 self?.infoLink += [Link]
                                 //self?.celebinfo.updateValue(Link, forKey: celebImage.name)
+                                
+                                self?.SaveData()
                             }
                             
                         }
@@ -152,6 +163,12 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         }
     }
     
+    func SaveData(){
+        let celebdata = UserDefaults.standard
+        celebdata.set(self.infoCelebName, forKey: "NAME_LIST")
+        celebdata.set(self.infoLink, forKey: "LINK_LIST")
+    }
+    
     var Cam:Bool = false
     @IBAction func startCamera(_ sender: Any) {
         Cam = true
@@ -164,7 +181,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     @IBAction func startAlbum(_ sender: Any) {
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
-        pickerController.sourceType = .savedPhotosAlbum
+        pickerController.sourceType = .photoLibrary
         present(pickerController, animated: true, completion: nil)
     }
     
@@ -198,6 +215,8 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
             fatalError("couldn't load image from Photos")
         }
+        getsize(image: image)
+        
         if Cam == true {
             UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
             Cam = false
@@ -230,6 +249,21 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         //vc.celebinfo = self.celebinfo
     }
     
+    func getsize(image :UIImage){
+        let width = image.size.width
+        let height = image.size.height
+        
+        if width > height {
+            let yohaku:CGFloat = (432 - height/(width/300))/2
+            imageForm = [300,432-(yohaku*2),10,22 + yohaku]
+            imageVIew.frame = CGRect(x: 10, y: 22 + yohaku, width: 300, height: 432 - (yohaku*2))
+        }
+        else {
+            let yohaku:CGFloat = 300 - width/(height/432)/2
+            imageForm = [300-(yohaku*2),432,10+yohaku,22]
+            imageVIew.frame = CGRect(x: 10 + yohaku, y: 22, width: 300 - (yohaku*2), height: 432)
+        }
+    }
 //    func createButton()-> UIButton{
 //
 //        self.searchButton = UIButton.init(frame: CGRect(origin: CGPoint(x: 233,y: 460), size: CGSize(width: 65, height: 15)))
