@@ -11,6 +11,7 @@ import AWSRekognition
 import SafariServices
 //import AVFoundation
 
+
 class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,SFSafariViewControllerDelegate{
 
 //    var captureSession = AVCaptureSession()
@@ -27,8 +28,8 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     @IBOutlet var label: UILabel!
     
     var infoLinksMap: [Int:String] = [100:""]
-    var infoCelebName: [String] = []
-    var infoLink: [String] = []
+    var infoCelebName: [String] = [""]
+    var infoLink: [String] = [""]
     //var celebinfo: [String:String] = [:]
     var searchButton:UIButton!
     //var HoldImage:UIImage!
@@ -37,6 +38,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     override func viewDidLoad() {
         super.viewDidLoad()
         self.Search.isHidden = true
+        print("a")
         //setupCaptureSession()
         //setupDevice()
         //setupInputOutput()

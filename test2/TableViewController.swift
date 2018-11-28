@@ -9,27 +9,55 @@
 import UIKit
 import SafariServices
 
+
 class TableViewController: UITableViewController,SFSafariViewControllerDelegate {
     
     var rows:Int = 0
     var celebName: [String] = []
     var celebLink: [String] = []
+    var resetsignal:Bool = false
     //var celebinfo: [String:String] = [:]
-
-    @IBAction func Back(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let navBar = UINavigationBar()
+        navBar.frame = CGRect(x: 0, y: 0, width: 320, height: 60)
+        let navItem: UINavigationItem = UINavigationItem(title: "履歴")
+        navItem.leftBarButtonItem = UIBarButtonItem(title: "戻る", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.back))
+        navItem.rightBarButtonItem = UIBarButtonItem(title: "削除", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.reset))
+        navBar.pushItem(navItem, animated: true)
+        self.view.addSubview(navBar)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
+    
+    @objc func back(){
+        if resetsignal == false {
+            self.dismiss(animated: true, completion: nil)
+        }
+        else {
+            resetsignal = false
+            let storyboard: UIStoryboard = self.storyboard!
+            let mainView = storyboard.instantiateViewController(withIdentifier: "mainView")
+            self.present(mainView, animated: true, completion: nil)
+            //self.performSegue(withIdentifier: "mainView", sender: nil)
+        }
+    }
+    @objc func reset(){
+        resetsignal = true
+//        let delete = ViewController()
+//        delete.infoCelebName.removeAll()
+//        delete.infoLink.removeAll()
+        self.celebName.removeAll()
+        self.celebName.removeAll()
+        self.rows = 0
+        tableView.reloadData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
