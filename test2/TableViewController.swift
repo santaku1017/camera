@@ -15,6 +15,7 @@ class TableViewController: UITableViewController,SFSafariViewControllerDelegate 
     var rows:Int = 0
     var celebName: [String] = []
     var celebLink: [String] = []
+    var celebImage: [Data] = []
     var resetsignal:Bool = false
     var deleterows:Bool = false
     //var celebinfo: [String:String] = [:]
@@ -26,7 +27,7 @@ class TableViewController: UITableViewController,SFSafariViewControllerDelegate 
         navBar.frame = CGRect(x: 0, y: 0, width: 320, height: 60)
         let navItem: UINavigationItem = UINavigationItem(title: "履歴")
         navItem.leftBarButtonItem = UIBarButtonItem(title: "戻る", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.back))
-        //navItem.rightBarButtonItem = UIBarButtonItem(title: "削除", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.reset))
+        navItem.rightBarButtonItem = UIBarButtonItem(title: "削除", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.reset))
         navBar.pushItem(navItem, animated: true)
         self.view.addSubview(navBar)
         // Uncomment the following line to preserve selection between presentations
@@ -50,6 +51,7 @@ class TableViewController: UITableViewController,SFSafariViewControllerDelegate 
         let vc = segue.destination as! ViewController
         vc.infoCelebName = celebName
         vc.infoLink = celebLink
+        vc.infoImage = celebImage
         vc.deletecount = true
     }
     
@@ -58,9 +60,16 @@ class TableViewController: UITableViewController,SFSafariViewControllerDelegate 
 ////        let delete = ViewController()
 ////        delete.infoCelebName.removeAll()
 ////        delete.infoLink.removeAll()
-//        self.celebName.removeAll()
-//        self.celebName.removeAll()
-//        self.rows = 0
+        self.celebName.removeAll()
+        self.celebLink.removeAll()
+        self.celebImage.removeAll()
+        self.rows = 1
+        self.celebName += [""]
+        self.celebLink += [""]
+        let image = UIImage(named: "white")
+        let data = UIImagePNGRepresentation(image!)
+        self.celebImage.append(data!)
+        deleterows = true
         tableView.reloadData()
     }
     
@@ -84,11 +93,14 @@ class TableViewController: UITableViewController,SFSafariViewControllerDelegate 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
         cell.textLabel?.text = celebName[indexPath.row]
-        
-        // Configure the cell...
-
+        let img = UIImage(data: celebImage[indexPath.row])
+        let imageView = cell.viewWithTag(1) as! UIImageView
+        imageView.contentMode = UIViewContentMode.scaleAspectFit
+        imageView.image = img
+         //Configure the cell...
         return cell
     }
+    
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let celebURL = URL(string: celebLink[indexPath.row])
@@ -101,6 +113,7 @@ class TableViewController: UITableViewController,SFSafariViewControllerDelegate 
         if editingStyle == UITableViewCellEditingStyle.delete{
             self.celebName.remove(at: indexPath.row)
             self.celebLink.remove(at: indexPath.row)
+            self.celebImage.remove(at: indexPath.row)
             self.rows = self.rows - 1
             tableView.deleteRows(at: [indexPath], with: .fade)
             deleterows  = true
@@ -108,6 +121,14 @@ class TableViewController: UITableViewController,SFSafariViewControllerDelegate 
         else{
             print("err")
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let favoriteAction = UIContextualAction(style: .normal, title: "favorite", handler: {(action: UIContextualAction, view: UIView, completion: (Bool) -> Void) in print("favorite"); completion(true)})
+        favoriteAction.backgroundColor = UIColor(red: 210/255.0, green: 82/255.0, blue: 127/255.0, alpha: 1)
+        //favoriteAction.image = UIImage(named: "ic_favorite")
+        
+        return UISwipeActionsConfiguration(actions: [favoriteAction])
     }
     
  

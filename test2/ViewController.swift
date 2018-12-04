@@ -24,26 +24,37 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     @IBOutlet var cameraButton: UIButton!
     @IBOutlet var imageVIew: UIImageView!
     @IBOutlet var mainView: UIView!
-    @IBOutlet var Search: UIButton!
     @IBOutlet var label: UILabel!
     
     var infoLinksMap: [Int:String] = [100:""]
     var infoCelebName: [String] = [""]
     var infoLink: [String] = [""]
-    //var celebinfo: [String:String] = [:]
-    var searchButton:UIButton!
+    var infoImage: [Data] = []
     //var HoldImage:UIImage!
     var celebImage:Data!
     var deletecount:Bool = false
+    var Cam:Bool = false
+    var imageForm:[CGFloat]!
+    var Aspect:Bool = false
+    let SearchButtonImage = UIImage(named: "ecalbt008_002")
     
-    var imageForm:[CGFloat] = [] //[width,height,x,y]
+    //var imageForm:[CGFloat] = [] //[width,height,x,y]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.Search.isHidden = true
+        
+        cameraButton.setImage(SearchButtonImage, for: .normal)
+        cameraButton.imageView?.contentMode = .scaleAspectFit
+        cameraButton.layer.cornerRadius = 15.0
+        cameraButton.isHidden = true
+        
+        let image = UIImage(named: "white")
+        let data = UIImagePNGRepresentation(image!)
+        self.infoImage.append(data!)
+        
         if deletecount == true {
-            self.SaveData()  //履歴画面で削除が行われていた場合、
+            self.SaveData()  //履歴画面で削除が行われていた場合
         }
         else {
             let celebdata = UserDefaults.standard
@@ -51,6 +62,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
             if checkdata as? [String] != nil {
                 infoCelebName = celebdata.object(forKey: "NAME_LIST") as! [String]
                 infoLink = celebdata.object(forKey: "LINK_LIST") as! [String]
+                infoImage = celebdata.object(forKey: "IMG_LIST") as! [Data]
             }
         }
     }
@@ -70,20 +82,33 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         
         let rekognitionClient:AWSRekognition = AWSRekognition.default()
         let Request = AWSRekognitionRecognizeCelebritiesRequest()
+        //let Requestlabels = AWSRekognitionDetectLabelsRequest()
         //let image = HoldImage
         
         let sourceImage = AWSRekognitionImage()
         sourceImage!.bytes = celebImage
         Request?.image = sourceImage
+        //Requestlabels?.image = sourceImage
+        
+//        rekognitionClient.detectLabels(Requestlabels!) { res,err in
+//            if err != nil {
+//                print("err")
+//            }
+//            if res != nil {
+//                print(res?.labels as Any)
+//
+//
+//            }
+//            else {
+//                print("err")
+//            }
+//        }
         
         rekognitionClient.recognizeCelebrities(Request!) { res, err in
             if err != nil {
-                DispatchQueue.main.async {
-                    self.NoFaces(code: "1")
-                    return
-                }
+                self.NoFaces(code: "1")
             }
-            
+
             if res != nil {
                 print(res!.celebrityFaces!.enumerated())
 
@@ -100,15 +125,17 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
 //                                SearchButton.tag = 1
 //                                SearchButton.addTarget(self, action: #selector(self?.search), for: UIControlEvents.touchUpInside)
 //                                self?.mainView.addSubview(SearchButton)
-                                
+
                                 let celebImage = Celebrity()
 
                                 celebImage.scene = (self?.imageVIew)!
 
                                 celebImage.boundingBox = ["height":celebFace.face?.boundingBox?.height,"left":celebFace.face?.boundingBox?.left,"top":celebFace.face?.boundingBox?.top, "width":celebFace.face?.boundingBox?.width] as! [String : CGFloat]
-
-                                celebImage.name = celebFace.name!
                                 
+                                celebImage.name = celebFace.name!.replacingOccurrences(of: "U014d", with: "ou")
+                                celebImage.Aspect = (self?.Aspect)!
+                                celebImage.imageSize = self?.imageForm
+
                                 //celebImage.matchConfidence = celebFace.matchConfidence! as! Int
 
 //                                if (celebFace.urls!.count > 0){
@@ -116,31 +143,52 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
 //                                } else {
 //                                    celebImage.infoLink = "www.google.com/search?q=" + celebImage.name
 //                                }
-                                
+
                                 //replace space with +
                                 let text:String = celebImage.name
                                 let Text = text.replacingOccurrences(of: " ", with: "+")
                                 self?.infoLinksMap[index] = "https://www.google.com/search?q=" + Text
-                                
+
                                 //create info button
                                 let infoButton:UIButton = celebImage.createInfoButton()
                                 infoButton.tag = index
                                 infoButton.addTarget(self, action: #selector(self?.handleTap), for: UIControlEvents.touchUpInside)
                                 self?.imageVIew.addSubview(infoButton)
-                                
+
                                 //create layer
                                 let Layer:CAShapeLayer = celebImage.createLayer()
                                 self?.imageVIew.layer.addSublayer(Layer)
-                                
+                                let width = celebFace.face?.boundingBox?.width as! CGFloat
+                                let height = celebFace.face?.boundingBox?.height as! CGFloat
+                                let size = CGSize(width: (self?.imageVIew.image?.size.width)! * width, height: (self?.imageVIew.image?.size.height)! * height)
+                                let x = celebFace.face?.boundingBox?.left as! CGFloat
+                                let y = celebFace.face?.boundingBox?.top as! CGFloat
+                                let origin = CGPoint(x: (self?.imageVIew.image?.size.width)! * x, y: (self?.imageVIew.image?.size.height)! * y)
+                                let rect = CGRect(x: origin.x, y: origin.y, width: size.width, height: size.height)
+                                let trimedImage = self?.trimmingImage((self?.imageVIew.image)!, trimmingArea: rect)
+                                let trimedData = UIImagePNGRepresentation(trimedImage!)
+//                                self?.imageVIew.layer.bounds.height
+//                                self?.imageVIew.layer.bounds.width
+
                                 //set celeb info
                                 let Link:String = (self?.infoLinksMap[index])!
+                                let nameList = self?.infoCelebName
                                 self?.infoCelebName += [celebImage.name]
                                 self?.infoLink += [Link]
+                                let orderSetName = NSOrderedSet(array: (self?.infoCelebName)!)
+                                let orderSetLink = NSOrderedSet(array: (self?.infoLink)!)
+                                self?.infoCelebName = orderSetName.array as! [String]
+                                self?.infoLink = orderSetLink.array as! [String]
+                                if nameList != self?.infoCelebName {
+                                    self?.infoImage.append(trimedData!)
+                                }
+                                let orderSetImage = NSOrderedSet(array: (self?.infoImage)!)
+                                self?.infoImage = orderSetImage.array as! [Data]
                                 //self?.celebinfo.updateValue(Link, forKey: celebImage.name)
                                 
                                 self?.SaveData()
                             }
-                            
+
                         }
                     }
                 }
@@ -149,9 +197,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
                 }
             }
             else{
-                DispatchQueue.main.async {
-                    self.NoFaces(code: "3")
-                }
+                self.NoFaces(code: "3")
             }
         }
         //self.label.text = labeltext
@@ -167,9 +213,15 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         let celebdata = UserDefaults.standard
         celebdata.set(self.infoCelebName, forKey: "NAME_LIST")
         celebdata.set(self.infoLink, forKey: "LINK_LIST")
+        celebdata.set(self.infoImage, forKey: "IMG_LIST")
     }
     
-    var Cam:Bool = false
+    func trimmingImage(_ image: UIImage, trimmingArea: CGRect) -> UIImage {
+        let imgRef = image.cgImage?.cropping(to: trimmingArea)
+        let trimImage = UIImage(cgImage: imgRef!, scale: image.scale, orientation: image.imageOrientation)
+        return trimImage
+    }
+    
     @IBAction func startCamera(_ sender: Any) {
         Cam = true
         let pickerController = UIImagePickerController()
@@ -215,7 +267,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
             fatalError("couldn't load image from Photos")
         }
-        getsize(image: image)
+        getsizeofImage(image: image)
         
         if Cam == true {
             UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
@@ -224,6 +276,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         self.imageVIew.contentMode = UIViewContentMode.scaleAspectFit
         self.imageVIew.image = image
         self.celebImage = UIImagePNGRepresentation(image)!
+        self.cameraButton.isHidden = false
         
         self.label.text = nil
     }
@@ -246,23 +299,20 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         vc.rows = self.infoCelebName.count
         vc.celebName = self.infoCelebName
         vc.celebLink = self.infoLink
+        vc.celebImage = self.infoImage
         //vc.celebinfo = self.celebinfo
     }
     
-    func getsize(image :UIImage){
+    func getsizeofImage(image :UIImage){
         let width = image.size.width
         let height = image.size.height
-        
-        if width > height {
-            let yohaku:CGFloat = (432 - height/(width/300))/2
-            imageForm = [300,432-(yohaku*2),10,22 + yohaku]
-            imageVIew.frame = CGRect(x: 10, y: 22 + yohaku, width: 300, height: 432 - (yohaku*2))
+        if 432/300 > height/width {
+            Aspect = true
         }
         else {
-            let yohaku:CGFloat = 300 - width/(height/432)/2
-            imageForm = [300-(yohaku*2),432,10+yohaku,22]
-            imageVIew.frame = CGRect(x: 10 + yohaku, y: 22, width: 300 - (yohaku*2), height: 432)
+            Aspect = false
         }
+        imageForm = [width,height]
     }
 //    func createButton()-> UIButton{
 //
