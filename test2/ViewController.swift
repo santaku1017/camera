@@ -25,6 +25,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     @IBOutlet var imageVIew: UIImageView!
     @IBOutlet var mainView: UIView!
     @IBOutlet var label: UILabel!
+    @IBOutlet var indicator: UIActivityIndicatorView!
     
     var infoLinksMap: [Int:String] = [100:""]
     var infoCelebName: [String] = [""]
@@ -36,7 +37,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     var Cam:Bool = false
     var imageForm:[CGFloat]!
     var Aspect:Bool = false
-    let SearchButtonImage = UIImage(named: "ecalbt008_002")
+    
     
     //var imageForm:[CGFloat] = [] //[width,height,x,y]
     
@@ -44,10 +45,8 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        cameraButton.setImage(SearchButtonImage, for: .normal)
-        cameraButton.imageView?.contentMode = .scaleAspectFit
-        cameraButton.layer.cornerRadius = 15.0
         cameraButton.isHidden = true
+        indicator.hidesWhenStopped = true
         
         let image = UIImage(named: "white")
         let data = UIImagePNGRepresentation(image!)
@@ -79,6 +78,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
 //        self.photoOutput?.capturePhoto(with: settings, delegate: self as AVCapturePhotoCaptureDelegate)
 //        imageVIew.image = nil
         
+        indicator.startAnimating()
         
         let rekognitionClient:AWSRekognition = AWSRekognition.default()
         let Request = AWSRekognitionRecognizeCelebritiesRequest()
@@ -187,6 +187,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
                                 //self?.celebinfo.updateValue(Link, forKey: celebImage.name)
                                 
                                 self?.SaveData()
+                                self?.indicator.stopAnimating()
                             }
 
                         }
@@ -206,6 +207,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     func NoFaces(code: String){
         DispatchQueue.main.async {
             self.label.text = "No celeb faces in this pic. code:" + code
+            self.indicator.stopAnimating()
         }
     }
     
@@ -275,6 +277,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         }
         self.imageVIew.contentMode = UIViewContentMode.scaleAspectFit
         self.imageVIew.image = image
+        self.imageVIew.backgroundColor = nil
         self.celebImage = UIImagePNGRepresentation(image)!
         self.cameraButton.isHidden = false
         
@@ -306,7 +309,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     func getsizeofImage(image :UIImage){
         let width = image.size.width
         let height = image.size.height
-        if 432/300 > height/width {
+        if 4/3 > height/width {
             Aspect = true
         }
         else {

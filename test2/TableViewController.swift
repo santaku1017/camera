@@ -18,6 +18,7 @@ class TableViewController: UITableViewController,SFSafariViewControllerDelegate 
     var celebImage: [Data] = []
     var resetsignal:Bool = false
     var deleterows:Bool = false
+    var addmemorow:Int = 0
     //var celebinfo: [String:String] = [:]
     
     override func viewDidLoad() {
@@ -48,11 +49,18 @@ class TableViewController: UITableViewController,SFSafariViewControllerDelegate 
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! ViewController
-        vc.infoCelebName = celebName
-        vc.infoLink = celebLink
-        vc.infoImage = celebImage
-        vc.deletecount = true
+        if segue.identifier == "return" {
+            let vc = segue.destination as! ViewController
+            vc.infoCelebName = celebName
+            vc.infoLink = celebLink
+            vc.infoImage = celebImage
+            vc.deletecount = true
+        }
+        else if segue.identifier == "memo" {
+            let vc = segue.destination as! memo
+            vc.celebName = self.celebName[addmemorow]
+            vc.celebFace = self.celebImage[addmemorow]
+        }
     }
     
     @objc func reset(){
@@ -124,10 +132,10 @@ class TableViewController: UITableViewController,SFSafariViewControllerDelegate 
     }
     
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let favoriteAction = UIContextualAction(style: .normal, title: "favorite", handler: {(action: UIContextualAction, view: UIView, completion: (Bool) -> Void) in print("favorite"); completion(true)})
-        favoriteAction.backgroundColor = UIColor(red: 210/255.0, green: 82/255.0, blue: 127/255.0, alpha: 1)
+        let favoriteAction = UIContextualAction(style: .normal, title: "memo", handler: {(action: UIContextualAction, view: UIView, completion: (Bool) -> Void) in self.performSegue(withIdentifier: "memo", sender: nil); completion(true)})
+        favoriteAction.backgroundColor = UIColor(red: 0/255.0, green: 193/255.0, blue: 0/255.0, alpha: 1)
         //favoriteAction.image = UIImage(named: "ic_favorite")
-        
+        addmemorow = indexPath.row
         return UISwipeActionsConfiguration(actions: [favoriteAction])
     }
     
