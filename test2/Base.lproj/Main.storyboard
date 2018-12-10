@@ -42,6 +42,10 @@
                                     <action selector="startAlbum:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ioL-EQ-e6G"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4ss-pW-CRr">
+                                <rect key="frame" x="10" y="30" width="300" height="400"/>
+                                <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRd-gL-pXI">
                                 <rect key="frame" x="20" y="37" width="280" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -60,10 +64,6 @@
                                     <action selector="startCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4D5-nx-Tcb"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="UGa-Bl-pqv">
-                                <rect key="frame" x="142" y="218" width="37" height="37"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                            </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GTx-N9-Rnp" colorLabel="IBBuiltInLabel-Blue">
                                 <rect key="frame" x="75" y="438" width="170" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -82,17 +82,16 @@
                                     <action selector="cameraButton_TouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y71-cv-600"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4ss-pW-CRr">
-                                <rect key="frame" x="10" y="30" width="300" height="400"/>
-                                <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="UGa-Bl-pqv">
+                                <rect key="frame" x="142" y="212" width="37" height="37"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="lZ8-F6-QEM" firstAttribute="leading" secondItem="nln-RV-K3N" secondAttribute="trailing" constant="55" id="7O3-Ep-D70"/>
                             <constraint firstItem="RLl-FA-KPf" firstAttribute="leading" secondItem="lZ8-F6-QEM" secondAttribute="trailing" constant="55" id="AX0-2O-55r"/>
                             <constraint firstItem="GTx-N9-Rnp" firstAttribute="centerX" secondItem="4ss-pW-CRr" secondAttribute="centerX" id="Fml-R7-Pid"/>
-                            <constraint firstItem="UGa-Bl-pqv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="198" id="HAV-ha-LTj"/>
                             <constraint firstItem="GTx-N9-Rnp" firstAttribute="centerX" secondItem="KRd-gL-pXI" secondAttribute="centerX" id="Hy9-up-VsJ"/>
                             <constraint firstItem="4ss-pW-CRr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="J06-Md-Ud5"/>
                             <constraint firstItem="KRd-gL-pXI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="4" id="JE4-tf-IAY"/>
@@ -109,6 +108,7 @@
                             <constraint firstItem="GTx-N9-Rnp" firstAttribute="top" secondItem="4ss-pW-CRr" secondAttribute="bottom" constant="8" id="mV7-ik-1co"/>
                             <constraint firstItem="GTx-N9-Rnp" firstAttribute="centerX" secondItem="UGa-Bl-pqv" secondAttribute="centerX" id="n1y-FK-nzN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nln-RV-K3N" secondAttribute="bottom" constant="30" id="n6G-vN-p9y"/>
+                            <constraint firstItem="UGa-Bl-pqv" firstAttribute="centerY" secondItem="4ss-pW-CRr" secondAttribute="centerY" id="rMc-Uf-dze"/>
                             <constraint firstItem="nln-RV-K3N" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="45" id="tHM-nU-a0m"/>
                             <constraint firstItem="GTx-N9-Rnp" firstAttribute="centerX" secondItem="lZ8-F6-QEM" secondAttribute="centerX" id="xOw-3S-Y1G"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RLl-FA-KPf" secondAttribute="trailing" constant="45" id="yqL-If-gho"/>
@@ -178,23 +178,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9nt-eD-RzA">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <items>
-                                    <barButtonItem title="戻る" id="olm-U6-fLh">
-                                        <connections>
-                                            <action selector="retrurn:" destination="lNp-Wy-GOK" id="CnS-qa-nf8"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O5m-Ku-VoW">
                                 <rect key="frame" x="204" y="77" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kMB-Xo-QmU">
-                                <rect key="frame" x="16" y="97" width="288" height="21"/>
+                                <rect key="frame" x="32" y="104" width="164" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>

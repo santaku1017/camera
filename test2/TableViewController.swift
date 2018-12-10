@@ -111,7 +111,9 @@ class TableViewController: UITableViewController,SFSafariViewControllerDelegate 
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let celebURL = URL(string: celebLink[indexPath.row])
+        let inURL:String = celebLink[indexPath.row]
+        let encodeURL = inURL.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!
+        let celebURL = URL(string: encodeURL)
         let safariController = SFSafariViewController(url: celebURL!)
         safariController.delegate = self
         self.present(safariController, animated:true)

@@ -12,7 +12,7 @@ import SafariServices
 //import AVFoundation
 
 
-class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,SFSafariViewControllerDelegate{
+class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,SFSafariViewControllerDelegate,UITextFieldDelegate{
 
 //    var captureSession = AVCaptureSession()
 //    var mainCamera : AVCaptureDevice?
@@ -26,6 +26,9 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     @IBOutlet var mainView: UIView!
     @IBOutlet var label: UILabel!
     @IBOutlet var indicator: UIActivityIndicatorView!
+    
+    var textField: UITextField!
+    var RegistButton: UIButton!
     
     var infoLinksMap: [Int:String] = [100:""]
     var infoCelebName: [String] = [""]
@@ -45,6 +48,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print(self.view.subviews.count)
         cameraButton.isHidden = true
         indicator.hidesWhenStopped = true
         
@@ -79,11 +83,11 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
 //        imageVIew.image = nil
         
         indicator.startAnimating()
+        self.cameraButton.isHidden = true
         
         let rekognitionClient:AWSRekognition = AWSRekognition.default()
         let Request = AWSRekognitionRecognizeCelebritiesRequest()
         //let Requestlabels = AWSRekognitionDetectLabelsRequest()
-        //let image = HoldImage
         
         let sourceImage = AWSRekognitionImage()
         sourceImage!.bytes = celebImage
@@ -96,7 +100,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
 //            }
 //            if res != nil {
 //                print(res?.labels as Any)
-//
+//                let x = res.unsafelyUn
 //
 //            }
 //            else {
@@ -106,7 +110,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         
         rekognitionClient.recognizeCelebrities(Request!) { res, err in
             if err != nil {
-                self.NoFaces(code: "1")
+                self.NoFaces(code: "1") // Detect error
             }
 
             if res != nil {
@@ -131,7 +135,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
                                 celebImage.scene = (self?.imageVIew)!
 
                                 celebImage.boundingBox = ["height":celebFace.face?.boundingBox?.height,"left":celebFace.face?.boundingBox?.left,"top":celebFace.face?.boundingBox?.top, "width":celebFace.face?.boundingBox?.width] as! [String : CGFloat]
-                                
+
                                 celebImage.name = celebFace.name!.replacingOccurrences(of: "U014d", with: "ou")
                                 celebImage.Aspect = (self?.Aspect)!
                                 celebImage.imageSize = self?.imageForm
@@ -171,21 +175,9 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
 //                                self?.imageVIew.layer.bounds.width
 
                                 //set celeb info
-                                let Link:String = (self?.infoLinksMap[index])!
-                                let nameList = self?.infoCelebName
-                                self?.infoCelebName += [celebImage.name]
-                                self?.infoLink += [Link]
-                                let orderSetName = NSOrderedSet(array: (self?.infoCelebName)!)
-                                let orderSetLink = NSOrderedSet(array: (self?.infoLink)!)
-                                self?.infoCelebName = orderSetName.array as! [String]
-                                self?.infoLink = orderSetLink.array as! [String]
-                                if nameList != self?.infoCelebName {
-                                    self?.infoImage.append(trimedData!)
-                                }
-                                let orderSetImage = NSOrderedSet(array: (self?.infoImage)!)
-                                self?.infoImage = orderSetImage.array as! [Data]
-                                //self?.celebinfo.updateValue(Link, forKey: celebImage.name)
-                                
+                                self?.setcelebinfo(name: celebImage.name, link: (self?.infoLinksMap[index])!, image: trimedData!)
+
+
                                 self?.SaveData()
                                 self?.indicator.stopAnimating()
                             }
@@ -194,21 +186,80 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
                     }
                 }
                 else {
-                    self.NoFaces(code: "2")
+                    self.NoFaces(code: "2") //responsed but no celeb face.
                 }
             }
             else{
-                self.NoFaces(code: "3")
+                self.NoFaces(code: "3") //No response.
             }
         }
         //self.label.text = labeltext
     }
+    func setcelebinfo(name:String, link:String, image:Data){
+        let Link:String = link
+        let nameList = self.infoCelebName
+        self.infoCelebName += [name]
+        self.infoLink += [Link]
+        let orderSetName = NSOrderedSet(array: (self.infoCelebName))
+        let orderSetLink = NSOrderedSet(array: (self.infoLink))
+        self.infoCelebName = orderSetName.array as! [String]
+        self.infoLink = orderSetLink.array as! [String]
+        if nameList != self.infoCelebName {
+            self.infoImage.append(image)
+        }
+        let orderSetImage = NSOrderedSet(array: (self.infoImage))
+        self.infoImage = orderSetImage.array as! [Data]
+        //self?.celebinfo.updateValue(Link, forKey: celebImage.name)
+    }
     
     func NoFaces(code: String){
         DispatchQueue.main.async {
+            self.cameraButton.isHidden = true
+            self.label.backgroundColor = UIColor.white
             self.label.text = "No celeb faces in this pic. code:" + code
             self.indicator.stopAnimating()
+            
+            self.textField = UITextField()
+            self.RegistButton = UIButton()
+            
+            self.textField.frame = CGRect(x: 25, y: 70, width: 200, height: 40)
+            self.textField.delegate = self
+            self.textField.borderStyle = .roundedRect
+            self.textField.clearButtonMode = .whileEditing
+            self.textField.returnKeyType = .done
+            self.textField.placeholder = "Enter Name"
+            self.view.addSubview(self.textField)
+            
+            self.RegistButton.frame = CGRect(x: 225, y: 70, width: 70, height: 40)
+            self.RegistButton.layer.cornerRadius = 5.0
+            self.RegistButton.backgroundColor = UIColor.red
+            self.RegistButton.setTitle("Regist", for: UIControlState.normal)
+            self.RegistButton.setTitleColor(UIColor.white, for: UIControlState.normal)
+            self.RegistButton.addTarget(self, action: #selector(self.RegistTapped), for: UIControlEvents.touchUpInside)
+            self.view.addSubview(self.RegistButton)
+            
         }
+    }
+    
+    @objc func RegistTapped(){
+        if textField.text != nil{
+            let name: String = textField.text!
+            let link: String = "https://www.google.com/search?q=" + name
+            let image: Data = UIImagePNGRepresentation(imageVIew.image!)!
+            setcelebinfo(name: name, link: link, image: image)
+            self.textField.removeFromSuperview()
+            self.RegistButton.removeFromSuperview()
+            self.label.text = "Complete Registration"
+            self.SaveData()
+        }
+        else {
+            self.label.text = "Please enter name!!!"
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     func SaveData(){
@@ -263,6 +314,10 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
                 subView.removeFromSuperview()
                 self?.imageVIew.layer.sublayers = nil
             }
+            if (self?.view.subviews.count)! > 7{
+                self?.textField.removeFromSuperview()
+                self?.RegistButton.removeFromSuperview()
+            }
         }
         
         dismiss(animated: true)
@@ -281,6 +336,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         self.celebImage = UIImagePNGRepresentation(image)!
         self.cameraButton.isHidden = false
         
+        self.label.backgroundColor = nil
         self.label.text = nil
     }
     
